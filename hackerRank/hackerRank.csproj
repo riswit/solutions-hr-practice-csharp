@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppleAndOrange.cs" />
+    <Compile Include="BetweenTwoSets.cs" />
     <Compile Include="GradingStudents.cs" />
     <Compile Include="Kangaroo.cs" />
     <Compile Include="Program.cs" />
