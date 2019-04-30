@@ -61,6 +61,7 @@
     <Compile Include="BetweenTwoSets.cs" />
     <Compile Include="BirthdayChocolate.cs" />
     <Compile Include="BreakingRecords.cs" />
+    <Compile Include="DivisibleSumPairs.cs" />
     <Compile Include="GradingStudents.cs" />
     <Compile Include="Kangaroo.cs" />
     <Compile Include="Program.cs" />

@@ -25,8 +25,11 @@ namespace hackerRank
             //BreakingRecords breakingRecords = new BreakingRecords();
             //breakingRecords.Execute();
 
-            BirthdayChocolate birthdayChocolate = new BirthdayChocolate();
-            birthdayChocolate.Execute();
+            //BirthdayChocolate birthdayChocolate = new BirthdayChocolate();
+            //birthdayChocolate.Execute();
+
+            DivisibleSumPairs divisibleSumPairs = new DivisibleSumPairs();
+            divisibleSumPairs.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
