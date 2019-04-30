@@ -22,8 +22,11 @@ namespace hackerRank
             //BetweenTwoSets betweenTwoSets = new BetweenTwoSets();
             //betweenTwoSets.Execute();
 
-            BreakingRecords breakingRecords = new BreakingRecords();
-            breakingRecords.Execute();
+            //BreakingRecords breakingRecords = new BreakingRecords();
+            //breakingRecords.Execute();
+
+            BirthdayChocolate birthdayChocolate = new BirthdayChocolate();
+            birthdayChocolate.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
