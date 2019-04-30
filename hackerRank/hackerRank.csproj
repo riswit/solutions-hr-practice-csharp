@@ -64,6 +64,7 @@
     <Compile Include="DivisibleSumPairs.cs" />
     <Compile Include="GradingStudents.cs" />
     <Compile Include="Kangaroo.cs" />
+    <Compile Include="MigratoryBirds.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

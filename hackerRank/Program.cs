@@ -28,8 +28,11 @@ namespace hackerRank
             //BirthdayChocolate birthdayChocolate = new BirthdayChocolate();
             //birthdayChocolate.Execute();
 
-            DivisibleSumPairs divisibleSumPairs = new DivisibleSumPairs();
-            divisibleSumPairs.Execute();
+            //DivisibleSumPairs divisibleSumPairs = new DivisibleSumPairs();
+            //divisibleSumPairs.Execute();
+
+            //MigratoryBirds migratoryBirds = new MigratoryBirds();
+            //migratoryBirds.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
