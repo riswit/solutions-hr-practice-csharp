@@ -64,6 +64,7 @@
     <Compile Include="BreakingRecords.cs" />
     <Compile Include="DayOfTheProgrammer.cs" />
     <Compile Include="DivisibleSumPairs.cs" />
+    <Compile Include="DrawingBook.cs" />
     <Compile Include="GradingStudents.cs" />
     <Compile Include="Kangaroo.cs" />
     <Compile Include="MigratoryBirds.cs" />

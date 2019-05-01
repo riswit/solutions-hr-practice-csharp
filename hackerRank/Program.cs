@@ -40,8 +40,11 @@ namespace hackerRank
             //BonAppetit bonAppetit = new BonAppetit();
             //bonAppetit.Execute();
 
-            SockMerchant sockMerchant = new SockMerchant();
-            sockMerchant.Execute();
+            //SockMerchant sockMerchant = new SockMerchant();
+            //sockMerchant.Execute();
+
+            DrawingBook drawingBook = new DrawingBook();
+            drawingBook.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
