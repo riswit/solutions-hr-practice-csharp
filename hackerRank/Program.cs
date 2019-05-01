@@ -34,8 +34,11 @@ namespace hackerRank
             //MigratoryBirds migratoryBirds = new MigratoryBirds();
             //migratoryBirds.Execute();
 
-            DayOfTheProgrammer dayOfTheProgrammer = new DayOfTheProgrammer();
-            dayOfTheProgrammer.Execute();
+            //DayOfTheProgrammer dayOfTheProgrammer = new DayOfTheProgrammer();
+            //dayOfTheProgrammer.Execute();
+
+            BonAppetit bonAppetit = new BonAppetit();
+            bonAppetit.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
