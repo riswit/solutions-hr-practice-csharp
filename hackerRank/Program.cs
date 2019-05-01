@@ -43,8 +43,11 @@ namespace hackerRank
             //SockMerchant sockMerchant = new SockMerchant();
             //sockMerchant.Execute();
 
-            DrawingBook drawingBook = new DrawingBook();
-            drawingBook.Execute();
+            //DrawingBook drawingBook = new DrawingBook();
+            //drawingBook.Execute();
+
+            CountingValleys countingValleys = new CountingValleys();
+            countingValleys.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
