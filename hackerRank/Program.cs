@@ -49,8 +49,11 @@ namespace hackerRank
             //CountingValleys countingValleys = new CountingValleys();
             //countingValleys.Execute();
 
-            ElectronicsShop electronicsShop = new ElectronicsShop();
-            electronicsShop.Execute();
+            //ElectronicsShop electronicsShop = new ElectronicsShop();
+            //electronicsShop.Execute();
+
+            CatsAndMouse catsAndMouse = new CatsAndMouse();
+            catsAndMouse.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
