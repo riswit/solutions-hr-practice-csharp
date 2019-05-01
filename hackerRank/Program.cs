@@ -37,8 +37,11 @@ namespace hackerRank
             //DayOfTheProgrammer dayOfTheProgrammer = new DayOfTheProgrammer();
             //dayOfTheProgrammer.Execute();
 
-            BonAppetit bonAppetit = new BonAppetit();
-            bonAppetit.Execute();
+            //BonAppetit bonAppetit = new BonAppetit();
+            //bonAppetit.Execute();
+
+            SockMerchant sockMerchant = new SockMerchant();
+            sockMerchant.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
