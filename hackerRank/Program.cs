@@ -46,8 +46,11 @@ namespace hackerRank
             //DrawingBook drawingBook = new DrawingBook();
             //drawingBook.Execute();
 
-            CountingValleys countingValleys = new CountingValleys();
-            countingValleys.Execute();
+            //CountingValleys countingValleys = new CountingValleys();
+            //countingValleys.Execute();
+
+            ElectronicsShop electronicsShop = new ElectronicsShop();
+            electronicsShop.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
