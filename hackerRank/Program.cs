@@ -52,8 +52,11 @@ namespace hackerRank
             //ElectronicsShop electronicsShop = new ElectronicsShop();
             //electronicsShop.Execute();
 
-            CatsAndMouse catsAndMouse = new CatsAndMouse();
-            catsAndMouse.Execute();
+            //CatsAndMouse catsAndMouse = new CatsAndMouse();
+            //catsAndMouse.Execute();
+
+            FormingMagicSquare formingMagicSquare = new FormingMagicSquare();
+            formingMagicSquare.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
