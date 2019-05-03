@@ -10,19 +10,19 @@ namespace hackerRank
     {
         public void Execute()
         {
-            int[][] s = new int[][] { 
-                new int[] { 4, 9, 2 },
-                new int[] { 3, 5, 7 },
-                new int[] { 8, 1, 5 }
-            };
-            int resExp = 1;
-
-            //int[][] s = new int[][] {
-            //    new int[] { 5, 3, 4 },
-            //    new int[] { 1, 5, 8 },
-            //    new int[] { 6, 4, 2 }
+            //int[][] s = new int[][] { 
+            //    new int[] { 4, 9, 2 },
+            //    new int[] { 3, 5, 7 },
+            //    new int[] { 8, 1, 5 }
             //};
-            //int resExp = 7;
+            //int resExp = 1;
+
+            int[][] s = new int[][] {
+                new int[] { 5, 3, 4 },
+                new int[] { 1, 5, 8 },
+                new int[] { 6, 4, 2 }
+            };
+            int resExp = 7;
 
             int result = formingMagicSquare(s);
 
@@ -40,97 +40,205 @@ namespace hackerRank
 
         static int formingMagicSquare(int[][] s)
         {
+            int[][][] c = new int[][][]{
+                new int[][] {
+                    new int[] { 8, 1, 6 },
+                    new int[] { 3, 5, 7 },
+                    new int[] { 4, 9, 2 }
+                },
+                new int[][] {
+                    new int[] { 6, 1, 8 },
+                    new int[] { 7, 5, 3 },
+                    new int[] { 2, 9, 4 }
+                },
+                new int[][] {
+                    new int[] { 2, 7, 6 },
+                    new int[] { 9, 5, 1 },
+                    new int[] { 4, 3, 8 }
+                },
+                new int[][] {
+                    new int[] { 4, 3, 8 },
+                    new int[] { 9, 5, 1 },
+                    new int[] { 2, 7, 6 }
+                },
+                new int[][] {
+                    new int[] { 2, 9, 4 },
+                    new int[] { 7, 5, 3 },
+                    new int[] { 6, 1, 8 }
+                },
+                new int[][] {
+                    new int[] { 4, 9, 2 },
+                    new int[] { 3, 5, 7 },
+                    new int[] { 8, 1, 6 }
+                },
+                new int[][] {
+                    new int[] { 6, 7, 2 },
+                    new int[] { 1, 5, 9 },
+                    new int[] { 8, 3, 4 }
+                },
+                new int[][] {
+                    new int[] { 8, 3, 4 },
+                    new int[] { 1, 5, 9 },
+                    new int[] { 6, 7, 2 }
+                }
+            };
+
             int costMin = 0;
-            List<int> list = loadSquareInList(s);
-            List<int> listMissing = getNumsMissing(list);
+            int actualCost = 0;
 
-            if (listMissing.Count == 0)
+            for (int i = 0; i < c.Length; i++) 
             {
-                return 0;
-            }
+                actualCost = verifyAndChange(c[i], s);
 
-            while (!isCorrectSquare(list))
-            {
-
+                if (actualCost < costMin || i == 0)
+                {
+                    costMin = actualCost;
+                }
             }
 
             return costMin;
         }
 
-        static List<int> getNumsMissing(List<int> list)
+        static int verifyAndChange(int[][] model, int[][] s)
+        {
+            int cost = 0;
+            int[][] sOut = s;
+
+            for (int j = 0; j < s.Length; j++)
+            {
+                for (int jj = 0; jj < s.Length; jj++)
+                {
+                    cost += Math.Abs(model[j][jj] - s[j][jj]);
+                }
+            }
+
+            return cost;
+        }
+
+
+
+        static int[] getNumMissing(int[][] s)
         {
             List<int> listMissing = new List<int>();
+
+            bool f = false;
             int j = 0;
+            int jj = 0;
 
             for (int i = 1; i <= 9; i++)
             {
-                for (j = 0; j < list.Count; j++)
+                f = false;
+
+                for (j = 0; j < s.Length && !f; j++)
                 {
-                    if (i == list[j])
+                    for (jj = 0; jj < s.Length && !f; jj++)
                     {
-                        break;
+                        if (i == s[j][jj])
+                        {
+                            f = true;
+                        }
                     }
                 }
-                if (j == list.Count)
+
+                if (!f)
                 {
                     listMissing.Add(i);
                 }
             }
 
-            return listMissing;
+            return listMissing.ToArray();
         }
 
-        static bool isCorrectSquare(List<int> list)
+        static int sumLines(int[][] s, int line)
         {
-            for (int i = 0; i < list.Count - 1; i++)
+            int sum = 0;
+
+            for (int col = 0; col < s.Length; col++)
             {
-                for (int j = i + 1; j < list.Count; j++)
-                {
-                    if (list[i] == list[j])
+                sum += s[line][col];
+            }
+
+            return sum;
+        }
+
+        static int sumCols(int[][] s, int col)
+        {
+            int sum = 0;
+
+            for (int line = 0; line < s.Length; line++)
+            {
+                sum += s[line][col];
+            }
+
+            return sum;
+        }
+
+        static int sumDiag(int[][] s, string d = "sx")
+        {
+            int sum = 0;
+
+            switch (d)
+            {
+                case "sx":
+                    for (int i = 0; i < s.Length; i++)
                     {
-                        return false;
+                        sum += s[i][i];
                     }
-                }
+                    break;
+                case "dx":
+                    int col = s.Length - 1;
+                    for (int i = 0; i < s.Length; i++)
+                    {
+                        sum += s[i][col];
+                        col--;
+                    }
+                    break;
+            }
+
+            return sum;
+        }
+
+        static bool isCorrect(int[][] s)
+        {
+            int magicSum = 15;
+
+            int line1 = sumLines(s, 0);
+            int line2 = sumLines(s, 1);
+            int line3 = sumLines(s, 2);
+            int col1 = sumCols(s, 0);
+            int col2 = sumCols(s, 0);
+            int col3 = sumCols(s, 0);
+            int diagSx = sumDiag(s, "sx");
+            int diagDx = sumDiag(s, "dx");
+
+            if (line1 == magicSum 
+                && line2 == magicSum 
+                && line3 == magicSum
+                && col1 == magicSum
+                && col2 == magicSum
+                && col3 == magicSum
+                && diagSx == magicSum
+                && diagDx == magicSum)
+            {
+                return true;
             }
 
             return false;
         }
 
-        static List<int> loadSquareInList(int[][] s)
-        {
-            List<int> list = new List<int>();
-
-            for (int i = 0; i < s.Length; i++)
-            {
-                for (int j = 0; j < s.Length; j++)
-                {
-                    list.Add(s[i][j]);
-                }
-            }
-
-            return list;
-        }
-
-
-
-
-
-        //static int[] getSumArray(int[][] s)
+        //static List<int> loadSquareInList(int[][] s)
         //{
-        //    int line1 = s[0][0] + s[0][1] + s[0][2];
-        //    int line2 = s[1][0] + s[1][1] + s[1][2];
-        //    int line3 = s[2][0] + s[2][1] + s[2][2];
+        //    List<int> list = new List<int>();
 
-        //    int hor1 = s[0][0] + s[1][0] + s[2][0];
-        //    int hor2 = s[0][1] + s[1][1] + s[2][1];
-        //    int hor3 = s[0][2] + s[1][2] + s[2][2];
+        //    for (int i = 0; i < s.Length; i++)
+        //    {
+        //        for (int j = 0; j < s.Length; j++)
+        //        {
+        //            list.Add(s[i][j]);
+        //        }
+        //    }
 
-        //    int diagLR = s[0][0] + s[1][1] + s[2][2];
-        //    int diagRL = s[0][2] + s[1][1] + s[2][0];
-
-        //    int[] sumArray = new int[] { line1, line2, line3, hor1, hor2, hor3, diagLR, diagRL };
-
-        //    return sumArray;
+        //    return list;
         //}
 
 
