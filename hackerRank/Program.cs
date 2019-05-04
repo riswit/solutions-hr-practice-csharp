@@ -61,8 +61,11 @@ namespace hackerRank
             //PickingNumbers pickingNumbers = new PickingNumbers();
             //pickingNumbers.Execute();
 
-            ClimbingLeaderboard climbingLeaderboard = new ClimbingLeaderboard();
-            climbingLeaderboard.Execute();
+            //ClimbingLeaderboard climbingLeaderboard = new ClimbingLeaderboard();
+            //climbingLeaderboard.Execute();
+
+            TheHurdleRace theHurdleRace = new TheHurdleRace();
+            theHurdleRace.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
