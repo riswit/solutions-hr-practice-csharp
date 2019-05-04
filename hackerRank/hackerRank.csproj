@@ -63,6 +63,7 @@
     <Compile Include="BonAppetit.cs" />
     <Compile Include="BreakingRecords.cs" />
     <Compile Include="CatsAndMouse.cs" />
+    <Compile Include="ClimbingLeaderboard.cs" />
     <Compile Include="CountingValleys.cs" />
     <Compile Include="DayOfTheProgrammer.cs" />
     <Compile Include="DivisibleSumPairs.cs" />
@@ -91,6 +92,10 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="testClimbingLeaderboard\input06.txt" />
+    <Content Include="testClimbingLeaderboard\output06.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -58,8 +58,11 @@ namespace hackerRank
             //FormingMagicSquare formingMagicSquare = new FormingMagicSquare();
             //formingMagicSquare.Execute();
 
-            PickingNumbers pickingNumbers = new PickingNumbers();
-            pickingNumbers.Execute();
+            //PickingNumbers pickingNumbers = new PickingNumbers();
+            //pickingNumbers.Execute();
+
+            ClimbingLeaderboard climbingLeaderboard = new ClimbingLeaderboard();
+            climbingLeaderboard.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
