@@ -70,8 +70,11 @@ namespace hackerRank
             //DesignerPDFViewer designerPDFViewer = new DesignerPDFViewer();
             //designerPDFViewer.Execute();
 
-            UtopianTree utopianTree = new UtopianTree();
-            utopianTree.Execute();
+            //UtopianTree utopianTree = new UtopianTree();
+            //utopianTree.Execute();
+
+            AngryProfessor angryProfessor = new AngryProfessor();
+            angryProfessor.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

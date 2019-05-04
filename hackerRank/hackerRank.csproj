@@ -57,6 +57,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AngryProfessor.cs" />
     <Compile Include="AppleAndOrange.cs" />
     <Compile Include="BetweenTwoSets.cs" />
     <Compile Include="BirthdayChocolate.cs" />
