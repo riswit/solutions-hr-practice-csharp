@@ -66,6 +66,7 @@
     <Compile Include="ClimbingLeaderboard.cs" />
     <Compile Include="CountingValleys.cs" />
     <Compile Include="DayOfTheProgrammer.cs" />
+    <Compile Include="DesignerPDFViewer.cs" />
     <Compile Include="DivisibleSumPairs.cs" />
     <Compile Include="DrawingBook.cs" />
     <Compile Include="ElectronicsShop.cs" />
