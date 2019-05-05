@@ -73,8 +73,11 @@ namespace hackerRank
             //UtopianTree utopianTree = new UtopianTree();
             //utopianTree.Execute();
 
-            AngryProfessor angryProfessor = new AngryProfessor();
-            angryProfessor.Execute();
+            //AngryProfessor angryProfessor = new AngryProfessor();
+            //angryProfessor.Execute();
+
+            BeautifulDaysMovies beautifulDaysMovies = new BeautifulDaysMovies();
+            beautifulDaysMovies.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

@@ -59,6 +59,7 @@
   <ItemGroup>
     <Compile Include="AngryProfessor.cs" />
     <Compile Include="AppleAndOrange.cs" />
+    <Compile Include="BeautifulDaysMovies.cs" />
     <Compile Include="BetweenTwoSets.cs" />
     <Compile Include="BirthdayChocolate.cs" />
     <Compile Include="BonAppetit.cs" />
