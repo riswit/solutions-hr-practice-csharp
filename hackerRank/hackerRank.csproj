@@ -79,6 +79,7 @@
     <Compile Include="PickingNumbers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveThePrisoner.cs" />
     <Compile Include="SockMerchant.cs" />
     <Compile Include="TheHurdleRace.cs" />
     <Compile Include="UtopianTree.cs" />

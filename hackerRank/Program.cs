@@ -79,8 +79,11 @@ namespace hackerRank
             //BeautifulDaysMovies beautifulDaysMovies = new BeautifulDaysMovies();
             //beautifulDaysMovies.Execute();
 
-            ViralAdvertising viralAdvertising = new ViralAdvertising();
-            viralAdvertising.Execute();
+            //ViralAdvertising viralAdvertising = new ViralAdvertising();
+            //viralAdvertising.Execute();
+
+            SaveThePrisoner saveThePrisoner = new SaveThePrisoner();
+            saveThePrisoner.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
