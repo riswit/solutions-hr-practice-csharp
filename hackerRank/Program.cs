@@ -76,8 +76,11 @@ namespace hackerRank
             //AngryProfessor angryProfessor = new AngryProfessor();
             //angryProfessor.Execute();
 
-            BeautifulDaysMovies beautifulDaysMovies = new BeautifulDaysMovies();
-            beautifulDaysMovies.Execute();
+            //BeautifulDaysMovies beautifulDaysMovies = new BeautifulDaysMovies();
+            //beautifulDaysMovies.Execute();
+
+            ViralAdvertising viralAdvertising = new ViralAdvertising();
+            viralAdvertising.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

@@ -82,6 +82,7 @@
     <Compile Include="SockMerchant.cs" />
     <Compile Include="TheHurdleRace.cs" />
     <Compile Include="UtopianTree.cs" />
+    <Compile Include="ViralAdvertising.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
