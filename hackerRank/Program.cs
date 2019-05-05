@@ -82,8 +82,11 @@ namespace hackerRank
             //ViralAdvertising viralAdvertising = new ViralAdvertising();
             //viralAdvertising.Execute();
 
-            SaveThePrisoner saveThePrisoner = new SaveThePrisoner();
-            saveThePrisoner.Execute();
+            //SaveThePrisoner saveThePrisoner = new SaveThePrisoner();
+            //saveThePrisoner.Execute();
+
+            CircularArrayRotation circularArrayRotation = new CircularArrayRotation();
+            circularArrayRotation.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

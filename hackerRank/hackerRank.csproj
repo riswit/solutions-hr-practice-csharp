@@ -65,6 +65,7 @@
     <Compile Include="BonAppetit.cs" />
     <Compile Include="BreakingRecords.cs" />
     <Compile Include="CatsAndMouse.cs" />
+    <Compile Include="CircularArrayRotation.cs" />
     <Compile Include="ClimbingLeaderboard.cs" />
     <Compile Include="CountingValleys.cs" />
     <Compile Include="DayOfTheProgrammer.cs" />
