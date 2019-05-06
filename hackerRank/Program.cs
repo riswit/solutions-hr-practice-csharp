@@ -85,8 +85,11 @@ namespace hackerRank
             //SaveThePrisoner saveThePrisoner = new SaveThePrisoner();
             //saveThePrisoner.Execute();
 
-            CircularArrayRotation circularArrayRotation = new CircularArrayRotation();
-            circularArrayRotation.Execute();
+            //CircularArrayRotation circularArrayRotation = new CircularArrayRotation();
+            //circularArrayRotation.Execute();
+
+            SequenceEquation sequenceEquation = new SequenceEquation();
+            sequenceEquation.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
