@@ -49,6 +49,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,6 +74,7 @@
     <Compile Include="DivisibleSumPairs.cs" />
     <Compile Include="DrawingBook.cs" />
     <Compile Include="ElectronicsShop.cs" />
+    <Compile Include="ExtraLongFactorials.cs" />
     <Compile Include="FindDigits.cs" />
     <Compile Include="FormingMagicSquare.cs" />
     <Compile Include="GradingStudents.cs" />
