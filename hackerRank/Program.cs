@@ -88,8 +88,11 @@ namespace hackerRank
             //CircularArrayRotation circularArrayRotation = new CircularArrayRotation();
             //circularArrayRotation.Execute();
 
-            SequenceEquation sequenceEquation = new SequenceEquation();
-            sequenceEquation.Execute();
+            //SequenceEquation sequenceEquation = new SequenceEquation();
+            //sequenceEquation.Execute();
+
+            JumpingClouds jumpingClouds = new JumpingClouds();
+            jumpingClouds.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
