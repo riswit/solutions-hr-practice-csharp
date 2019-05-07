@@ -91,8 +91,11 @@ namespace hackerRank
             //SequenceEquation sequenceEquation = new SequenceEquation();
             //sequenceEquation.Execute();
 
-            JumpingClouds jumpingClouds = new JumpingClouds();
-            jumpingClouds.Execute();
+            //JumpingClouds jumpingClouds = new JumpingClouds();
+            //jumpingClouds.Execute();
+
+            FindDigits findDigits = new FindDigits();
+            findDigits.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

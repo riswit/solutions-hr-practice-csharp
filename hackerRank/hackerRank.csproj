@@ -73,6 +73,7 @@
     <Compile Include="DivisibleSumPairs.cs" />
     <Compile Include="DrawingBook.cs" />
     <Compile Include="ElectronicsShop.cs" />
+    <Compile Include="FindDigits.cs" />
     <Compile Include="FormingMagicSquare.cs" />
     <Compile Include="GradingStudents.cs" />
     <Compile Include="JumpingClouds.cs" />
