@@ -100,8 +100,11 @@ namespace hackerRank
             //ExtraLongFactorials extraLongFactorials = new ExtraLongFactorials();
             //extraLongFactorials.Execute();
 
-            AppendDelete appendDelete = new AppendDelete();
-            appendDelete.Execute();
+            //AppendDelete appendDelete = new AppendDelete();
+            //appendDelete.Execute();
+
+            SherlockSquares sherlockSquares = new SherlockSquares();
+            sherlockSquares.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
