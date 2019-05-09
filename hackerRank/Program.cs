@@ -97,8 +97,11 @@ namespace hackerRank
             //FindDigits findDigits = new FindDigits();
             //findDigits.Execute();
 
-            ExtraLongFactorials extraLongFactorials = new ExtraLongFactorials();
-            extraLongFactorials.Execute();
+            //ExtraLongFactorials extraLongFactorials = new ExtraLongFactorials();
+            //extraLongFactorials.Execute();
+
+            AppendDelete appendDelete = new AppendDelete();
+            appendDelete.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
