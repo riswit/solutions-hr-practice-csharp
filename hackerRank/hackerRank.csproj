@@ -81,6 +81,7 @@
     <Compile Include="GradingStudents.cs" />
     <Compile Include="JumpingClouds.cs" />
     <Compile Include="Kangaroo.cs" />
+    <Compile Include="LibraryFine.cs" />
     <Compile Include="MigratoryBirds.cs" />
     <Compile Include="PickingNumbers.cs" />
     <Compile Include="Program.cs" />

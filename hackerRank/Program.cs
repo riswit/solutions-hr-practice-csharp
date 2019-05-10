@@ -103,8 +103,11 @@ namespace hackerRank
             //AppendDelete appendDelete = new AppendDelete();
             //appendDelete.Execute();
 
-            SherlockSquares sherlockSquares = new SherlockSquares();
-            sherlockSquares.Execute();
+            //SherlockSquares sherlockSquares = new SherlockSquares();
+            //sherlockSquares.Execute();
+
+            LibraryFine libraryFine = new LibraryFine();
+            libraryFine.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
