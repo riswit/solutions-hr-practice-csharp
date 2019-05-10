@@ -70,6 +70,7 @@
     <Compile Include="CircularArrayRotation.cs" />
     <Compile Include="ClimbingLeaderboard.cs" />
     <Compile Include="CountingValleys.cs" />
+    <Compile Include="CutSticks.cs" />
     <Compile Include="DayOfTheProgrammer.cs" />
     <Compile Include="DesignerPDFViewer.cs" />
     <Compile Include="DivisibleSumPairs.cs" />

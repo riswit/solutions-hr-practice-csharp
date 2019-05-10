@@ -106,8 +106,11 @@ namespace hackerRank
             //SherlockSquares sherlockSquares = new SherlockSquares();
             //sherlockSquares.Execute();
 
-            LibraryFine libraryFine = new LibraryFine();
-            libraryFine.Execute();
+            //LibraryFine libraryFine = new LibraryFine();
+            //libraryFine.Execute();
+
+            CutSticks cutSticks = new CutSticks();
+            cutSticks.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
