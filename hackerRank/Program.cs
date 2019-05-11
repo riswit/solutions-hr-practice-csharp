@@ -109,8 +109,11 @@ namespace hackerRank
             //LibraryFine libraryFine = new LibraryFine();
             //libraryFine.Execute();
 
-            CutSticks cutSticks = new CutSticks();
-            cutSticks.Execute();
+            //CutSticks cutSticks = new CutSticks();
+            //cutSticks.Execute();
+
+            NonDivisibleSubset nonDivisibleSubset = new NonDivisibleSubset();
+            nonDivisibleSubset.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

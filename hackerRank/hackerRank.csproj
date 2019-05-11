@@ -84,6 +84,7 @@
     <Compile Include="Kangaroo.cs" />
     <Compile Include="LibraryFine.cs" />
     <Compile Include="MigratoryBirds.cs" />
+    <Compile Include="NonDivisibleSubset.cs" />
     <Compile Include="PickingNumbers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,6 +112,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="testNonDivisibleSubset\input09.txt" />
     <Content Include="testClimbingLeaderboard\input06.txt" />
     <Content Include="testClimbingLeaderboard\output06.txt" />
   </ItemGroup>
