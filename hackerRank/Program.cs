@@ -115,8 +115,11 @@ namespace hackerRank
             //NonDivisibleSubset nonDivisibleSubset = new NonDivisibleSubset();
             //nonDivisibleSubset.Execute();
 
-            RepeatedString repeatedString = new RepeatedString();
-            repeatedString.Execute();
+            //RepeatedString repeatedString = new RepeatedString();
+            //repeatedString.Execute();
+
+            JumpingOnTheClouds jumpingOnTheClouds = new JumpingOnTheClouds();
+            jumpingOnTheClouds.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

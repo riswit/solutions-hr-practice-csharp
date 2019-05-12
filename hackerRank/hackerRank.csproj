@@ -81,6 +81,7 @@
     <Compile Include="FormingMagicSquare.cs" />
     <Compile Include="GradingStudents.cs" />
     <Compile Include="JumpingClouds.cs" />
+    <Compile Include="JumpingOnTheClouds.cs" />
     <Compile Include="Kangaroo.cs" />
     <Compile Include="LibraryFine.cs" />
     <Compile Include="MigratoryBirds.cs" />
