@@ -118,8 +118,14 @@ namespace hackerRank
             //RepeatedString repeatedString = new RepeatedString();
             //repeatedString.Execute();
 
-            JumpingOnTheClouds jumpingOnTheClouds = new JumpingOnTheClouds();
-            jumpingOnTheClouds.Execute();
+            //JumpingOnTheClouds jumpingOnTheClouds = new JumpingOnTheClouds();
+            //jumpingOnTheClouds.Execute();
+
+            //EqualizeTheArray equalizeTheArray = new EqualizeTheArray();
+            //equalizeTheArray.Execute();
+
+            QueensAttackII queensAttackII = new QueensAttackII();
+            queensAttackII.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

@@ -76,6 +76,7 @@
     <Compile Include="DivisibleSumPairs.cs" />
     <Compile Include="DrawingBook.cs" />
     <Compile Include="ElectronicsShop.cs" />
+    <Compile Include="EqualizeTheArray.cs" />
     <Compile Include="ExtraLongFactorials.cs" />
     <Compile Include="FindDigits.cs" />
     <Compile Include="FormingMagicSquare.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="PickingNumbers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueensAttackII.cs" />
     <Compile Include="RepeatedString.cs" />
     <Compile Include="SaveThePrisoner.cs" />
     <Compile Include="SequenceEquation.cs" />
