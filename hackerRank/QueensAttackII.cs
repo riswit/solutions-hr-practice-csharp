@@ -10,10 +10,10 @@ namespace hackerRank
     {
         public void Execute()
         {
-            int n = 9;
+            int n = 8;
             int k = 0;
             int r_q = 4;
-            int c_q = 4;
+            int c_q = 7;
             int[][] obstacles = new int[][] {
                 new int[] { 5, 5 },
                 new int[] { 4, 2 },
@@ -283,7 +283,7 @@ namespace hackerRank
                 diffR = (n - 1) - rowQ;
                 if (colQ < diffR)
                 {
-                    totSquares += rowQ;
+                    totSquares += colQ;
                 }
                 else
                 {
