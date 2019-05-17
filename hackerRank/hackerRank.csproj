@@ -97,6 +97,7 @@
     <Compile Include="SequenceEquation.cs" />
     <Compile Include="SherlockSquares.cs" />
     <Compile Include="SockMerchant.cs" />
+    <Compile Include="TaumBday.cs" />
     <Compile Include="TheHurdleRace.cs" />
     <Compile Include="UtopianTree.cs" />
     <Compile Include="ViralAdvertising.cs" />

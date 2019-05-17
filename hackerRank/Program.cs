@@ -127,8 +127,11 @@ namespace hackerRank
             //QueensAttackII queensAttackII = new QueensAttackII();
             //queensAttackII.Execute();
 
-            ACMICPCTeam aCMICPCTeam = new ACMICPCTeam();
-            aCMICPCTeam.Execute();
+            //ACMICPCTeam aCMICPCTeam = new ACMICPCTeam();
+            //aCMICPCTeam.Execute();
+
+            TaumBday taumBday = new TaumBday();
+            taumBday.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
