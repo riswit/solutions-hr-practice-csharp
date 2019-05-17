@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACMICPCTeam.cs" />
     <Compile Include="AngryProfessor.cs" />
     <Compile Include="AppendDelete.cs" />
     <Compile Include="AppleAndOrange.cs" />
@@ -116,10 +117,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="testACMICPCTeam\input03.txt" />
     <Content Include="testNonDivisibleSubset\input09.txt" />
     <Content Include="testClimbingLeaderboard\input06.txt" />
     <Content Include="testClimbingLeaderboard\output06.txt" />
     <Content Include="testQueensAttackII\input06.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

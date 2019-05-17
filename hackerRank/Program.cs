@@ -124,8 +124,11 @@ namespace hackerRank
             //EqualizeTheArray equalizeTheArray = new EqualizeTheArray();
             //equalizeTheArray.Execute();
 
-            QueensAttackII queensAttackII = new QueensAttackII();
-            queensAttackII.Execute();
+            //QueensAttackII queensAttackII = new QueensAttackII();
+            //queensAttackII.Execute();
+
+            ACMICPCTeam aCMICPCTeam = new ACMICPCTeam();
+            aCMICPCTeam.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
