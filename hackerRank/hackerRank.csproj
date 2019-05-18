@@ -88,6 +88,7 @@
     <Compile Include="LibraryFine.cs" />
     <Compile Include="MigratoryBirds.cs" />
     <Compile Include="NonDivisibleSubset.cs" />
+    <Compile Include="OrganizingContainersBalls.cs" />
     <Compile Include="PickingNumbers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
