@@ -64,6 +64,7 @@
     <Compile Include="AppleAndOrange.cs" />
     <Compile Include="BeautifulDaysMovies.cs" />
     <Compile Include="BetweenTwoSets.cs" />
+    <Compile Include="BiggerGreater.cs" />
     <Compile Include="BirthdayChocolate.cs" />
     <Compile Include="BonAppetit.cs" />
     <Compile Include="BreakingRecords.cs" />

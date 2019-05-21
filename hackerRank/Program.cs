@@ -136,8 +136,11 @@ namespace hackerRank
             //OrganizingContainersBalls organizingContainersBalls = new OrganizingContainersBalls();
             //organizingContainersBalls.Execute();
 
-            Encryption encryption = new Encryption();
-            encryption.Execute();
+            //Encryption encryption = new Encryption();
+            //encryption.Execute();
+
+            BiggerGreater biggerGreater = new BiggerGreater();
+            biggerGreater.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
