@@ -139,8 +139,11 @@ namespace hackerRank
             //Encryption encryption = new Encryption();
             //encryption.Execute();
 
-            BiggerGreater biggerGreater = new BiggerGreater();
-            biggerGreater.Execute();
+            //BiggerGreater biggerGreater = new BiggerGreater();
+            //biggerGreater.Execute();
+
+            ModifiedKaprekarNumbers modifiedKaprekarNumbers = new ModifiedKaprekarNumbers();
+            modifiedKaprekarNumbers.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
