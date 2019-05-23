@@ -90,6 +90,7 @@
     <Compile Include="Kangaroo.cs" />
     <Compile Include="LibraryFine.cs" />
     <Compile Include="MigratoryBirds.cs" />
+    <Compile Include="MinimumDistances.cs" />
     <Compile Include="ModifiedKaprekarNumbers.cs" />
     <Compile Include="NonDivisibleSubset.cs" />
     <Compile Include="OrganizingContainersBalls.cs" />

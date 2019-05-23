@@ -145,8 +145,11 @@ namespace hackerRank
             //ModifiedKaprekarNumbers modifiedKaprekarNumbers = new ModifiedKaprekarNumbers();
             //modifiedKaprekarNumbers.Execute();
 
-            BeautifulTriplets beautifulTriplets = new BeautifulTriplets();
-            beautifulTriplets.Execute();
+            //BeautifulTriplets beautifulTriplets = new BeautifulTriplets();
+            //beautifulTriplets.Execute();
+
+            MinimumDistances minimumDistances = new MinimumDistances();
+            minimumDistances.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
