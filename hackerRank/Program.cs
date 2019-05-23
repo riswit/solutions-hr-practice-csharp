@@ -142,8 +142,11 @@ namespace hackerRank
             //BiggerGreater biggerGreater = new BiggerGreater();
             //biggerGreater.Execute();
 
-            ModifiedKaprekarNumbers modifiedKaprekarNumbers = new ModifiedKaprekarNumbers();
-            modifiedKaprekarNumbers.Execute();
+            //ModifiedKaprekarNumbers modifiedKaprekarNumbers = new ModifiedKaprekarNumbers();
+            //modifiedKaprekarNumbers.Execute();
+
+            BeautifulTriplets beautifulTriplets = new BeautifulTriplets();
+            beautifulTriplets.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
