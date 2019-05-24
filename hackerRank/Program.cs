@@ -154,8 +154,11 @@ namespace hackerRank
             //HalloweenSale halloweenSale = new HalloweenSale();
             //halloweenSale.Execute();
 
-            TheTimeInWords theTimeInWords = new TheTimeInWords();
-            theTimeInWords.Execute();
+            //TheTimeInWords theTimeInWords = new TheTimeInWords();
+            //theTimeInWords.Execute();
+
+            ServiceLane serviceLane = new ServiceLane();
+            serviceLane.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

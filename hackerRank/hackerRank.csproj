@@ -102,6 +102,7 @@
     <Compile Include="RepeatedString.cs" />
     <Compile Include="SaveThePrisoner.cs" />
     <Compile Include="SequenceEquation.cs" />
+    <Compile Include="ServiceLane.cs" />
     <Compile Include="SherlockSquares.cs" />
     <Compile Include="SockMerchant.cs" />
     <Compile Include="TaumBday.cs" />
