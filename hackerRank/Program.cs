@@ -151,8 +151,11 @@ namespace hackerRank
             //MinimumDistances minimumDistances = new MinimumDistances();
             //minimumDistances.Execute();
 
-            HalloweenSale halloweenSale = new HalloweenSale();
-            halloweenSale.Execute();
+            //HalloweenSale halloweenSale = new HalloweenSale();
+            //halloweenSale.Execute();
+
+            TheTimeInWords theTimeInWords = new TheTimeInWords();
+            theTimeInWords.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

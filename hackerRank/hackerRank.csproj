@@ -106,6 +106,7 @@
     <Compile Include="SockMerchant.cs" />
     <Compile Include="TaumBday.cs" />
     <Compile Include="TheHurdleRace.cs" />
+    <Compile Include="TheTimeInWords.cs" />
     <Compile Include="UtopianTree.cs" />
     <Compile Include="ViralAdvertising.cs" />
   </ItemGroup>
