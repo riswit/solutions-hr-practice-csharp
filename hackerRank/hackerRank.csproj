@@ -85,6 +85,7 @@
     <Compile Include="FindDigits.cs" />
     <Compile Include="FormingMagicSquare.cs" />
     <Compile Include="GradingStudents.cs" />
+    <Compile Include="HalloweenSale.cs" />
     <Compile Include="JumpingClouds.cs" />
     <Compile Include="JumpingOnTheClouds.cs" />
     <Compile Include="Kangaroo.cs" />

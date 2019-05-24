@@ -148,8 +148,11 @@ namespace hackerRank
             //BeautifulTriplets beautifulTriplets = new BeautifulTriplets();
             //beautifulTriplets.Execute();
 
-            MinimumDistances minimumDistances = new MinimumDistances();
-            minimumDistances.Execute();
+            //MinimumDistances minimumDistances = new MinimumDistances();
+            //minimumDistances.Execute();
+
+            HalloweenSale halloweenSale = new HalloweenSale();
+            halloweenSale.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
