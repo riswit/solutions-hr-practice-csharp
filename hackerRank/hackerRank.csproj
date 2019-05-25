@@ -83,6 +83,7 @@
     <Compile Include="EqualizeTheArray.cs" />
     <Compile Include="ExtraLongFactorials.cs" />
     <Compile Include="FindDigits.cs" />
+    <Compile Include="FlatlandSpaceStations.cs" />
     <Compile Include="FormingMagicSquare.cs" />
     <Compile Include="GradingStudents.cs" />
     <Compile Include="HalloweenSale.cs" />
