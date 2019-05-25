@@ -163,8 +163,11 @@ namespace hackerRank
             //LisaWorkbook lisaWorkbook = new LisaWorkbook();
             //lisaWorkbook.Execute();
 
-            FlatlandSpaceStations flatlandSpaceStations = new FlatlandSpaceStations();
-            flatlandSpaceStations.Execute();
+            //FlatlandSpaceStations flatlandSpaceStations = new FlatlandSpaceStations();
+            //flatlandSpaceStations.Execute();
+
+            FairRations fairRations = new FairRations();
+            fairRations.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

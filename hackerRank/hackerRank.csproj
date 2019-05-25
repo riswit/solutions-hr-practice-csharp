@@ -82,6 +82,7 @@
     <Compile Include="Encryption.cs" />
     <Compile Include="EqualizeTheArray.cs" />
     <Compile Include="ExtraLongFactorials.cs" />
+    <Compile Include="FairRations.cs" />
     <Compile Include="FindDigits.cs" />
     <Compile Include="FlatlandSpaceStations.cs" />
     <Compile Include="FormingMagicSquare.cs" />
