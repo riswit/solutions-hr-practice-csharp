@@ -169,8 +169,11 @@ namespace hackerRank
             //FairRations fairRations = new FairRations();
             //fairRations.Execute();
 
-            CavityMap cavityMap = new CavityMap();
-            cavityMap.Execute();
+            //CavityMap cavityMap = new CavityMap();
+            //cavityMap.Execute();
+
+            ManasaStones manasaStones = new ManasaStones();
+            manasaStones.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
