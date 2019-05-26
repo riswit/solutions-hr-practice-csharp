@@ -166,8 +166,11 @@ namespace hackerRank
             //FlatlandSpaceStations flatlandSpaceStations = new FlatlandSpaceStations();
             //flatlandSpaceStations.Execute();
 
-            FairRations fairRations = new FairRations();
-            fairRations.Execute();
+            //FairRations fairRations = new FairRations();
+            //fairRations.Execute();
+
+            CavityMap cavityMap = new CavityMap();
+            cavityMap.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
