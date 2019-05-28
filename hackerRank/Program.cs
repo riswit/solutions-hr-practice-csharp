@@ -172,8 +172,11 @@ namespace hackerRank
             //CavityMap cavityMap = new CavityMap();
             //cavityMap.Execute();
 
-            ManasaStones manasaStones = new ManasaStones();
-            manasaStones.Execute();
+            //ManasaStones manasaStones = new ManasaStones();
+            //manasaStones.Execute();
+
+            TheGridSearch theGridSearch = new TheGridSearch();
+            theGridSearch.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

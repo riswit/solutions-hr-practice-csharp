@@ -111,6 +111,7 @@
     <Compile Include="SherlockSquares.cs" />
     <Compile Include="SockMerchant.cs" />
     <Compile Include="TaumBday.cs" />
+    <Compile Include="TheGridSearch.cs" />
     <Compile Include="TheHurdleRace.cs" />
     <Compile Include="TheTimeInWords.cs" />
     <Compile Include="UtopianTree.cs" />
