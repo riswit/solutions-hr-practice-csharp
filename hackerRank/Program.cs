@@ -175,8 +175,11 @@ namespace hackerRank
             //ManasaStones manasaStones = new ManasaStones();
             //manasaStones.Execute();
 
-            TheGridSearch theGridSearch = new TheGridSearch();
-            theGridSearch.Execute();
+            //TheGridSearch theGridSearch = new TheGridSearch();
+            //theGridSearch.Execute();
+
+            HappyLadybugs happyLadybugs = new HappyLadybugs();
+            happyLadybugs.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
