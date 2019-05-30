@@ -178,8 +178,11 @@ namespace hackerRank
             //TheGridSearch theGridSearch = new TheGridSearch();
             //theGridSearch.Execute();
 
-            HappyLadybugs happyLadybugs = new HappyLadybugs();
-            happyLadybugs.Execute();
+            //HappyLadybugs happyLadybugs = new HappyLadybugs();
+            //happyLadybugs.Execute();
+
+            StrangeCounter strangeCounter = new StrangeCounter();
+            strangeCounter.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
