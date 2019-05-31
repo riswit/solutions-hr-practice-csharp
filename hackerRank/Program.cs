@@ -181,8 +181,11 @@ namespace hackerRank
             //HappyLadybugs happyLadybugs = new HappyLadybugs();
             //happyLadybugs.Execute();
 
-            StrangeCounter strangeCounter = new StrangeCounter();
-            strangeCounter.Execute();
+            //StrangeCounter strangeCounter = new StrangeCounter();
+            //strangeCounter.Execute();
+
+            _3DSurfaceArea _3DSurfaceArea = new _3DSurfaceArea();
+            _3DSurfaceArea.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
