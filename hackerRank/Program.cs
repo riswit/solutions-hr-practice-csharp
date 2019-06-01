@@ -184,8 +184,11 @@ namespace hackerRank
             //StrangeCounter strangeCounter = new StrangeCounter();
             //strangeCounter.Execute();
 
-            _3DSurfaceArea _3DSurfaceArea = new _3DSurfaceArea();
-            _3DSurfaceArea.Execute();
+            //_3DSurfaceArea _3DSurfaceArea = new _3DSurfaceArea();
+            //_3DSurfaceArea.Execute();
+
+            AbsolutePermutation absolutePermutation = new AbsolutePermutation();
+            absolutePermutation.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

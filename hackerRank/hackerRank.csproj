@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="3DSurfaceArea.cs" />
+    <Compile Include="AbsolutePermutation.cs" />
     <Compile Include="ACMICPCTeam.cs" />
     <Compile Include="AngryProfessor.cs" />
     <Compile Include="AppendDelete.cs" />
