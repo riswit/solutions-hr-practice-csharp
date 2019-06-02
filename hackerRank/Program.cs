@@ -187,8 +187,11 @@ namespace hackerRank
             //_3DSurfaceArea _3DSurfaceArea = new _3DSurfaceArea();
             //_3DSurfaceArea.Execute();
 
-            AbsolutePermutation absolutePermutation = new AbsolutePermutation();
-            absolutePermutation.Execute();
+            //AbsolutePermutation absolutePermutation = new AbsolutePermutation();
+            //absolutePermutation.Execute();
+
+            TheBombermanGame theBombermanGame = new TheBombermanGame();
+            theBombermanGame.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

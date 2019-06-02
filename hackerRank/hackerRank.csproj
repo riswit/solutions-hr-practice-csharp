@@ -115,6 +115,7 @@
     <Compile Include="SockMerchant.cs" />
     <Compile Include="StrangeCounter.cs" />
     <Compile Include="TaumBday.cs" />
+    <Compile Include="TheBombermanGame.cs" />
     <Compile Include="TheGridSearch.cs" />
     <Compile Include="TheHurdleRace.cs" />
     <Compile Include="TheTimeInWords.cs" />
