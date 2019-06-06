@@ -190,8 +190,11 @@ namespace hackerRank
             //AbsolutePermutation absolutePermutation = new AbsolutePermutation();
             //absolutePermutation.Execute();
 
-            TheBombermanGame theBombermanGame = new TheBombermanGame();
-            theBombermanGame.Execute();
+            //TheBombermanGame theBombermanGame = new TheBombermanGame();
+            //theBombermanGame.Execute();
+
+            EmasSupercomputer emasSupercomputer = new EmasSupercomputer();
+            emasSupercomputer.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
