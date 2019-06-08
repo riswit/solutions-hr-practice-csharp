@@ -193,7 +193,7 @@ namespace hackerRank
             //TheBombermanGame theBombermanGame = new TheBombermanGame();
             //theBombermanGame.Execute();
 
-            EmasSupercomputer emasSupercomputer = new EmasSupercomputer();
+            EmasSupercomputer3 emasSupercomputer = new EmasSupercomputer3();
             emasSupercomputer.Execute();
 
             Console.WriteLine("Press any key to continue ...");
