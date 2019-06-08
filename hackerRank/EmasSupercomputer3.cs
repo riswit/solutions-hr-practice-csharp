@@ -181,11 +181,12 @@ namespace hackerRank
             {
                 arr = listRowG[i];
                 rowElab = arr[0];
-                //size = arr[1];
+                term = false;
 
                 if (rowElab != 0 && rowElab != listCh.Count() - 1)
                 {
                     r1 = listCh[rowElab];
+
                     for (int j = 1; j < r1.Count() - 1 && !term; j++)
                     {
                         branchP1 = getBranchPlus(k, rowElab, j, boardGame, dtBads);
@@ -270,12 +271,24 @@ namespace hackerRank
 
             nTop = calcTop(k, row, col, dtBads);
             branch = nTop;
+            if (branch == 0)
+            {
+                return 0;
+            }
 
             nRight = calcRight(boardGame, k, row, col, dtBads);
             if (nRight < branch) { branch = nRight; }
+            if (branch == 0)
+            {
+                return 0;
+            }
 
             nBottom = calcBottom(boardGame, k, row, col, dtBads);
             if (nBottom < branch) { branch = nBottom; }
+            if (branch == 0)
+            {
+                return 0;
+            }
 
             nLeft = calcLeft(k, row, col, dtBads);
             if (nLeft < branch) { branch = nLeft; }
@@ -295,13 +308,6 @@ namespace hackerRank
 
         static DataTable addPlus1ToList(int branchP, int row, int col, List<char[]> listChOrig, ref List<char[]> listCh2, DataTable dtBads, ref int k2)
         {
-            //char[] c;
-            //for (int i = 0; i < listChOrig.Count(); i++)
-            //{
-            //    c = listChOrig[i].ToArray();
-            //    listCh2.Add(c);
-            //}
-
             DataTable dtBadsMorePlus = addMorePlusToDtBads(branchP, row, col, dtBads, ref listCh2, ref k2);
 
             return dtBadsMorePlus;
@@ -329,9 +335,6 @@ namespace hackerRank
             dtBadsMorePlus.Rows.Add(newRow);
             k2 += 1;
 
-            //char[] c = listCh2[row];
-            //c[col] = 'P';
-
             for (int i = row - 1; i >= (row - branchP); i--)
             {
                 newRow = dtBadsMorePlus.NewRow();
@@ -339,8 +342,6 @@ namespace hackerRank
                 newRow[1] = col;
                 dtBadsMorePlus.Rows.Add(newRow);
 
-                //c = listCh2[i];
-                //c[col] = 'P';
                 k2 += 1;
             }
             for (int j = col + 1; j <= (col + branchP); j++)
@@ -350,8 +351,6 @@ namespace hackerRank
                 newRow[1] = j;
                 dtBadsMorePlus.Rows.Add(newRow);
 
-                //c = listCh2[row];
-                //c[j] = 'P';
                 k2 += 1;
             }
             for (int i = row + 1; i <= (row + branchP); i++)
@@ -361,8 +360,6 @@ namespace hackerRank
                 newRow[1] = col;
                 dtBadsMorePlus.Rows.Add(newRow);
 
-                //c = listCh2[i];
-                //c[col] = 'P';
                 k2 += 1;
             }
             for (int j = col - 1; j >= (col - branchP); j--)
@@ -372,8 +369,6 @@ namespace hackerRank
                 newRow[1] = j;
                 dtBadsMorePlus.Rows.Add(newRow);
 
-                //c = listCh2[row];
-                //c[j] = 'P';
                 k2 += 1;
             }
 

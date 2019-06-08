@@ -82,8 +82,6 @@
     <Compile Include="DivisibleSumPairs.cs" />
     <Compile Include="DrawingBook.cs" />
     <Compile Include="ElectronicsShop.cs" />
-    <Compile Include="EmasSupercomputer.cs" />
-    <Compile Include="EmasSupercomputer2.cs" />
     <Compile Include="EmasSupercomputer3.cs" />
     <Compile Include="Encryption.cs" />
     <Compile Include="EqualizeTheArray.cs" />
