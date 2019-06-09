@@ -96,6 +96,7 @@
     <Compile Include="JumpingClouds.cs" />
     <Compile Include="JumpingOnTheClouds.cs" />
     <Compile Include="Kangaroo.cs" />
+    <Compile Include="LarrysArray.cs" />
     <Compile Include="LibraryFine.cs" />
     <Compile Include="LisaWorkbook.cs" />
     <Compile Include="ManasaStones.cs" />
