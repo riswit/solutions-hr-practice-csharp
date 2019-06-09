@@ -61,6 +61,7 @@
     <Compile Include="3DSurfaceArea.cs" />
     <Compile Include="AbsolutePermutation.cs" />
     <Compile Include="ACMICPCTeam.cs" />
+    <Compile Include="AlmostSorted.cs" />
     <Compile Include="AngryProfessor.cs" />
     <Compile Include="AppendDelete.cs" />
     <Compile Include="AppleAndOrange.cs" />

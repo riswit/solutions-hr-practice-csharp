@@ -155,16 +155,6 @@ namespace hackerRank
             return A;
         }
 
-        static bool isOrdered(int[] r)
-        {
-            if ((r[0] < r[1] && r[1] - r[0] == 1)
-                && (r[1] < r[2] && r[2] - r[1] == 1))
-            {
-                return true;
-            }
-            return false;
-        }
-
         static int getIndexBreak(int[] A, int start)
         {
             int i = 0;

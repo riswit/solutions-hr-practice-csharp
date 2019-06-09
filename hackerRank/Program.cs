@@ -196,8 +196,11 @@ namespace hackerRank
             //EmasSupercomputer3 emasSupercomputer = new EmasSupercomputer3();
             //emasSupercomputer.Execute();
 
-            LarrysArray larrysArray = new LarrysArray();
-            larrysArray.Execute();
+            //LarrysArray larrysArray = new LarrysArray();
+            //larrysArray.Execute();
+
+            AlmostSorted almostSorted = new AlmostSorted();
+            almostSorted.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
