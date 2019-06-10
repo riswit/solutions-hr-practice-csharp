@@ -101,6 +101,7 @@
     <Compile Include="LibraryFine.cs" />
     <Compile Include="LisaWorkbook.cs" />
     <Compile Include="ManasaStones.cs" />
+    <Compile Include="MatrixLayerRotation.cs" />
     <Compile Include="MigratoryBirds.cs" />
     <Compile Include="MinimumDistances.cs" />
     <Compile Include="ModifiedKaprekarNumbers.cs" />
