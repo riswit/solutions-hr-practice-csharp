@@ -123,6 +123,7 @@
     <Compile Include="TheGridSearch.cs" />
     <Compile Include="TheHurdleRace.cs" />
     <Compile Include="TheTimeInWords.cs" />
+    <Compile Include="TravelHackerLand.cs" />
     <Compile Include="UtopianTree.cs" />
     <Compile Include="ViralAdvertising.cs" />
   </ItemGroup>
