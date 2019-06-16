@@ -149,6 +149,8 @@
     <Content Include="testClimbingLeaderboard\output06.txt" />
     <Content Include="testQueensAttackII\input06.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="testTravelHackerLand\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
