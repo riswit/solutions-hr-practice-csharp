@@ -124,7 +124,6 @@ namespace hackerRank
             int s = 0;
             int e = 0;
             int u = 0;
-            int i = 0;
             int cX = x;
             int cY = y;
             int c = 0;
@@ -169,14 +168,26 @@ namespace hackerRank
                 pathFound = true;
             }
 
-            while (counterListStart + counterListEnd <= t.Length && !pathFound)
+            while (nBuildMet <= t.Length && !pathFound)
             {
-                var roadsTmp = from array in roadsOrig
-                               where (array[0] == c || array[1] == c)
-                               orderby array[2] select array;
+                for (int i = 0; i < listCityPathStart.Count(); i++)
+                {
+                    var roadsE = from array in listCityPathEnd
+                                   where (array[0] == listCityPathStart[i][1] || array[1] == listCityPathStart[i][1])
+                                   select array;
+                    if (roadsE.Count() > 0)
+                    {
+                        pathFound = true;
+                        break;
+                    }
+                }
 
+                if (!pathFound)
+                {
+                    tot = getRoadsOfNumCity(c, k, t, roadsOrig, listBuild, listCrowd, listPath, listCityPathStart);
 
-                totBuildMet += nBuildMet;
+                }
+
                 countCycle += 1;
             }
 
