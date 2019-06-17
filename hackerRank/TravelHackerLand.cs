@@ -103,6 +103,7 @@ namespace hackerRank
         {
             List<int> listBuild = new List<int>();
             List<int> listCrowd = new List<int>();
+            List<int[]> listPathTmp = new List<int[]>();
             List<int[]> listPath = new List<int[]>();
             List<int[]> listCityPathStart = new List<int[]>();
             List<int[]> listCityPathEnd = new List<int[]>();
@@ -121,8 +122,8 @@ namespace hackerRank
             int end = max;
             int[] r;
             int tot = 0;
-            int s = 0;
-            int e = 0;
+            int a = 0;
+            int b = 0;
             int u = 0;
             int cX = x;
             int cY = y;
@@ -132,12 +133,15 @@ namespace hackerRank
             int counterListStart = 0;
             int counterListEnd = 0;
             int actListAnalyze = 0; // 0: Start - 1: End
+            int totListStart = 0;
+            int totListEnd = 0;
+            int numCityAnalyzed = 0;
 
             //find path from x to y
 
             for (int i1 = 1; i1 <= 2; i1++)
             {
-                if (i1 == 1) { c = cX; counterListStart++; } else { c = cY; counterListEnd++; }
+                if (i1 == 1) { c = cX; } else { c = cY; }
 
                 hashPathsNumCityAnalyzed.Add(c);                
 
@@ -168,30 +172,48 @@ namespace hackerRank
                 pathFound = true;
             }
 
+            pathFound = verifyStartEnd(0, listCityPathStart, listCityPathEnd);
+
             while (nBuildMet <= t.Length && !pathFound)
             {
-                for (int i = 0; i < listCityPathStart.Count(); i++)
+
+                totListStart = listCityPathStart.Count();
+                totListEnd = listCityPathEnd.Count();
+
+                for (int i = counterListStart; i < totListStart && !pathFound; i++)
                 {
-                    var roadsE = from array in listCityPathEnd
-                                   where (array[0] == listCityPathStart[i][1] || array[1] == listCityPathStart[i][1])
-                                   select array;
-                    if (roadsE.Count() > 0)
+                    c = listCityPathStart[counterListStart][1];
+                    counterListStart++;
+
+                    if (!existInHashPathsNumCityAnalyzed(c, hashPathsNumCityAnalyzed))
                     {
-                        pathFound = true;
-                        break;
+                        hashPathsNumCityAnalyzed.Add(c);
+
+                        tot = getRoadsOfNumCity(c, k, t, roadsOrig, listBuild, listCrowd, listPath, listCityPathStart);
+
+                        pathFound = verifyStartEnd(totListStart - 1, listCityPathStart, listCityPathEnd);
+
+                        if (pathFound)
+                        {
+                            c = listCityPathEnd[counterListEnd][1];
+                            counterListEnd++;
+
+                            hashPathsNumCityAnalyzed.Add(c);
+
+                            tot = getRoadsOfNumCity(c, k, t, roadsOrig, listBuild, listCrowd, listPath, listCityPathEnd);
+
+                            pathFound = verifyEndStart(totListEnd - 1, listCityPathStart, listCityPathEnd);
+
+                        }
                     }
                 }
 
-                if (!pathFound)
-                {
-                    tot = getRoadsOfNumCity(c, k, t, roadsOrig, listBuild, listCrowd, listPath, listCityPathStart);
-
-                }
+                nBuildMet = listBuild.Distinct().Count();
 
                 countCycle += 1;
             }
 
-            if (counterListStart + counterListEnd >= t.Length && !pathFound)
+            if (nBuildMet >= t.Length && !pathFound)
             {
                 Console.WriteLine("-1");
                 return;
@@ -207,40 +229,40 @@ namespace hackerRank
 
         }
 
-        static int findRoadsOfity(int c, int k, int[] t, int[][] roadsOrig, List<int> listBuild,
-                            List<int> listCrowd, List<int[]> listPath, List<int[]> listCityPath)
+        static bool existInHashPathsNumCityAnalyzed(int n, HashSet<int> hashPathsNumCityAnalyzed)
         {
-            int i = 0;
-            int[] r;
-            int s = 0;
-            int e = 0;
-            int u = 0;
+            var roadsE = from elem in hashPathsNumCityAnalyzed
+                         where elem == n
+                         select elem;
+            if (roadsE.Count() > 0) { return true; }
 
-            var roadsTmp = from array in roadsOrig
-                           where (array[0] == c || array[1] == c)
-                           orderby array[2]
-                           select array;
-            i = 0;
-            foreach (int[] road in roadsTmp)
+            return false;
+        }
+
+        static bool verifyStartEnd(int start, List<int[]> listCityPathStart, List<int[]> listCityPathEnd)
+        {
+            for (int i2 = start; i2 < listCityPathStart.Count(); i2++)
             {
-                if (road[0] == c)
-                {
-                    listBuild.Add(t[road[1] - 1]);
-                    e = road[1];
-                }
-                else
-                {
-                    listBuild.Add(t[road[0] - 1]);
-                    e = road[0];
-                }
-                listCrowd.Add(road[2]);
-                //r = new int[2] { c, e };
-                listCityPath.Add(road);
-
-                i++;
+                var roadsE = from array in listCityPathEnd
+                             where (array[0] == listCityPathStart[i2][1] || array[1] == listCityPathStart[i2][1])
+                             select array;
+                if (roadsE.Count() > 0) { return true; }
             }
 
-            return i;
+            return false;
+        }
+
+        static bool verifyEndStart(int start, List<int[]> listCityPathStart, List<int[]> listCityPathEnd)
+        {
+            for (int i2 = start; i2 < listCityPathEnd.Count(); i2++)
+            {
+                var roadsE = from array in listCityPathStart
+                             where (array[0] == listCityPathEnd[i2][1] || array[1] == listCityPathEnd[i2][1])
+                             select array;
+                if (roadsE.Count() > 0) { return true; }
+            }
+
+            return false;
         }
 
         static int getRoadsOfNumCity(int c, int k, int[] t, int[][] roadsOrig, List<int> listBuild, 
@@ -254,20 +276,19 @@ namespace hackerRank
 
             var roadsTmp = from array in roadsOrig
                            where (array[0] == c || array[1] == c)
-                           orderby array[2]
-                           select array;
+                           orderby array[2] select array;
             i = 0;
             foreach (int[] road in roadsTmp)
             {
                 if (road[0] == c)
                 {
                     listBuild.Add(t[road[1] - 1]);
-                    e = road[1];
+                    //e = road[1];
                 }
                 else
                 {
                     listBuild.Add(t[road[0] - 1]);
-                    e = road[0];
+                    //e = road[0];
                 }
                 listCrowd.Add(road[2]);
                 //r = new int[2] { c, e };
