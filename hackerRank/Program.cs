@@ -208,6 +208,12 @@ namespace hackerRank
             TravelHackerLand travelHackerLand = new TravelHackerLand();
             travelHackerLand.Execute();
 
+            //JoinArrayLinq joinArrayLinq = new JoinArrayLinq();
+            //joinArrayLinq.Execute();
+
+            //LeftOuterJoinExample leftOuterJoinExample = new LeftOuterJoinExample();
+            //leftOuterJoinExample.ExeLeftOuterJoinExample();
+
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
         }

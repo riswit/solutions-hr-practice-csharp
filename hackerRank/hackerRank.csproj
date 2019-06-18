@@ -124,6 +124,8 @@
     <Compile Include="TheHurdleRace.cs" />
     <Compile Include="TheTimeInWords.cs" />
     <Compile Include="TravelHackerLand.cs" />
+    <Compile Include="tutorial\JoinArrayLinq.cs" />
+    <Compile Include="tutorial\LeftOuterJoinExample.cs" />
     <Compile Include="UtopianTree.cs" />
     <Compile Include="ViralAdvertising.cs" />
   </ItemGroup>
