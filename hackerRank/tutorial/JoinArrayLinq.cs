@@ -83,13 +83,35 @@ namespace hackerRank
             var array2 = new double[][]
                         {
               new double[] {1,2,5,6},
+              //new double[] {5,6,9,10},
               new double[] {7,8,9,10},
               new double[] {9,10,11,12}
                         };
 
             var key = new int[] { 0, 1 };
 
+            double?[][] p1 = (from a in array1
+                     from b in array2.Where(bi => key.Select(k => bi[k] == a[k]).Aggregate((k1, k2) => k1 && k2))
+
+                              select a.Select(an => (double?)an)
+                             .Concat(b == null ?
+                                     a.Select(an => (double?)null) :
+                                     b.Select(bn => (double?)bn))
+                             .ToArray()
+                             ).ToArray();
+
             double?[][] res = (from a in array1
+                               from b in array2.Where(bi => key.Select(k => bi[k] == a[k])
+                                                               .Aggregate((k1, k2) => k1 && k2))
+                                               .DefaultIfEmpty()
+                               select a.Select(an => (double?)an)
+                                       .Concat(b == null ?
+                                               a.Select(an => (double?)null) :
+                                               b.Select(bn => (double?)bn))
+                                       .ToArray()
+                                  ).ToArray();
+
+            res = (from a in array1
                                   from b in array2.Where(bi => key.Select(k => bi[k] == a[k])
                                                                   .Aggregate((k1, k2) => k1 && k2))
                                                   .DefaultIfEmpty()
