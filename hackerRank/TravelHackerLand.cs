@@ -290,7 +290,7 @@ namespace hackerRank
             int max = 0;
             List<int> numKMet = new List<int>();
             int[][] tmp;
-            int totBuildMet = 0;
+            int totBuild = 0;
             int nBuildMet = 0;
             if (x > y) { min = y; max = x; } else { min = x; max = y; }
             int start = min;
@@ -311,6 +311,18 @@ namespace hackerRank
             int totListStart = 0;
             int totListEnd = 0;
             int numCityAnalyzed = 0;
+
+            totBuild = getNumTotBuildsInRoads(roadsOrig, t);
+
+            int[] arr1 = getIntersInRoads(roadsOrig);
+            IGrouping<int,int>[] ig = getRoadsConnected(roadsOrig);
+
+            if (totBuild < k)
+            {
+                return "-1";
+            }
+
+            int totTypeBuild = t.Distinct().Count();
 
             //find paths from x to y
 
@@ -409,6 +421,36 @@ namespace hackerRank
             return res;
         }
 
+        static IGrouping<int,int>[] getRoadsConnected(int[][] roadsOrig)
+        {
+            var res = ((from a in roadsOrig select a[0]).Concat(
+                                from b in roadsOrig
+                                select b[1])
+                            ).GroupBy(x => x).Where(g => g.Count() > 1)
+                            //.Select(y => y.Key)
+                            .ToArray();
+            return res;
+        }
+
+        static int[] getIntersInRoads(int[][] roadsOrig)
+        {
+            var res = (from a in roadsOrig.Select(e => e[0])
+                       select a).Intersect(
+                                from b in roadsOrig.Select(e2 => e2[1])
+                                select b
+                            ).ToArray();
+            return res;
+        }
+
+        static int getNumTotBuildsInRoads(int[][] roadsOrig, int[] t)
+        {
+            int res = (from a in roadsOrig.Select(e => e[0])
+                            select t[a]).Concat(
+                                from b in roadsOrig.Select(e2 => e2[1])
+                                    select t[b]
+                            ).Distinct().Count();
+            return res;
+        }
 
         static bool existInHashPathsNumCityAnalyzed(int n, HashSet<int> hashPathsNumCityAnalyzed)
         {
