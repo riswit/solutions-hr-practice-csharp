@@ -123,7 +123,7 @@
     <Compile Include="TheGridSearch.cs" />
     <Compile Include="TheHurdleRace.cs" />
     <Compile Include="TheTimeInWords.cs" />
-    <Compile Include="TravelHackerLand.cs" />
+    <Compile Include="THL.cs" />
     <Compile Include="tutorial\JoinArrayLinq.cs" />
     <Compile Include="tutorial\LeftOuterJoinExample.cs" />
     <Compile Include="UtopianTree.cs" />
@@ -152,7 +152,7 @@
     <Content Include="testQueensAttackII\input06.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="testTravelHackerLand\" />
+    <Folder Include="testTHL\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

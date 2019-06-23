@@ -7,7 +7,7 @@ using System.IO;
 
 namespace hackerRank
 {
-    class TravelHackerLand
+    class THL
     {
         public void Execute()
         {
@@ -21,53 +21,57 @@ namespace hackerRank
                 new int[] { 5, 7, 9 }
             };
             int[][] queries = new int[][] {
-                new int[] { 7, 1, 4 },
-                new int[] { 6, 1, 4 },
                 new int[] { 1, 2, 4 }
             };
             //int resExp = 4;
+
+            bool testFile = true;
 
             int n = 0;
             int m = 0;
             int q = 0;
             int[] S = { };
+            string dir = "";
 
-            string dir = @"F:\test\hr\hackerRank\hackerRank\testTravelHackerLand\";
-            var fileStream = new FileStream(dir + "input01.txt", FileMode.Open, FileAccess.Read);
-
-            using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
+            if (testFile)
             {
-                string line;
-                int i = 0;
-                int countR = 0;
-                int countQ = 0;
-                while ((line = streamReader.ReadLine()) != null)
+                dir = @"F:\test\hr\hackerRank\hackerRank\testTHL\";
+                var fileStream = new FileStream(dir + "input01.txt", FileMode.Open, FileAccess.Read);
+
+                using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
                 {
-                    if (i == 0)
+                    string line;
+                    int i = 0;
+                    int countR = 0;
+                    int countQ = 0;
+                    while ((line = streamReader.ReadLine()) != null)
                     {
-                        S = line.Split(' ').Select(Int32.Parse).ToArray();
-                        n = S[0];
-                        m = S[1];
-                        q = S[2];
-                        t = new int[n];
-                        roads = new int[m][];
-                        queries = new int[q][];
+                        if (i == 0)
+                        {
+                            S = line.Split(' ').Select(Int32.Parse).ToArray();
+                            n = S[0];
+                            m = S[1];
+                            q = S[2];
+                            t = new int[n];
+                            roads = new int[m][];
+                            queries = new int[q][];
+                        }
+                        else if (i == 1)
+                        {
+                            t = line.Split(' ').Select(Int32.Parse).ToArray();
+                        }
+                        else if (i >= 2 && i < n + 2)
+                        {
+                            roads[countR] = line.Split(' ').Select(Int32.Parse).ToArray();
+                            countR++;
+                        }
+                        else if (i >= n + 2)
+                        {
+                            queries[countQ] = line.Split(' ').Select(Int32.Parse).ToArray();
+                            countQ++;
+                        }
+                        i++;
                     }
-                    else if (i == 1)
-                    {
-                        t = line.Split(' ').Select(Int32.Parse).ToArray();
-                    }
-                    else if (i >= 2 && i < n + 2)
-                    {
-                        roads[countR] = line.Split(' ').Select(Int32.Parse).ToArray();
-                        countR++;
-                    }
-                    else if (i >= n + 2)
-                    {
-                        queries[countQ] = line.Split(' ').Select(Int32.Parse).ToArray();
-                        countQ++;
-                    }
-                    i++;
                 }
             }
 
@@ -80,12 +84,12 @@ namespace hackerRank
             Console.WriteLine($"Execution Time: {watch.ElapsedMilliseconds} ms");
 
             ////////////////////////// test with output
-            bool exeTest = false;
+            bool exeTestResults = false;
 
-            if (exeTest)
+            if (exeTestResults)
             {
-                dir = @"F:\test\hr\hackerRank\hackerRank\testTravelHackerLand\";
-                fileStream = new FileStream(dir + "output01.txt", FileMode.Open, FileAccess.Read);
+                dir = @"F:\test\hr\hackerRank\hackerRank\testTHL\";
+                var fileStream = new FileStream(dir + "output01.txt", FileMode.Open, FileAccess.Read);
 
                 using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
                 {
@@ -119,10 +123,17 @@ namespace hackerRank
 
         static void travel(int[] t, int[][] roads, int[][] queries)
         {
+            string res = "";
             int[] arrQ;
             int x = 0;
             int y = 0;
             int k = 0;
+
+            IGrouping<int, int>[] roadsWithConn = getRoadsWithConnects(roads);
+            int[][] roadsWithConnArr = (from a in roadsWithConn select new int[2] { a.Key, a.Count() }).ToArray();
+            var totBuildsDistConnected = (from arr in roadsWithConn.Select(e => t[e.Key]) select arr).Distinct();
+
+            int totBuildDistConnected = totBuildsDistConnected.Count();
 
             for (int q = 0; q < queries.Length; q++)
             {
@@ -131,8 +142,15 @@ namespace hackerRank
                 y = arrQ[1];
                 k = arrQ[2];
 
-                printAnswerOfQuery(x, y, k, t, roads, queries);
-
+                if (totBuildDistConnected < k)
+                {
+                    Console.WriteLine("-1");
+                }
+                else
+                {
+                    res = printAnswerOfQuery(x, y, k, t, roads, roadsWithConnArr);
+                    Console.WriteLine(res);
+                }
             }
         }
 
@@ -271,145 +289,43 @@ namespace hackerRank
         //    return res;
         //}
 
-        static string printAnswerOfQuery(int x, int y, int k, int[] t, int[][] roadsOrig, int[][] queries)
+        static string printAnswerOfQuery(int x, int y, int k, int[] t, int[][] roadsOrig, int[][] roadsWithConn)
         {
             string res = "";
 
-            List<int> listBuild = new List<int>();
-            List<int> listCrowd = new List<int>();
-            List<int[]> listPathTmp = new List<int[]>();
-            List<int[]> listPaths = new List<int[]>();
-            List<int[]> listCityPathStart = new List<int[]>();
-            List<int[]> listCityPathEnd = new List<int[]>();
-            List<int[]> listConnectedPoints = new List<int[]>();
-            HashSet<int> hashPathsNumCityAnalyzed = new HashSet<int>();
-            HashSet<int> hashBuild = new HashSet<int>();
-            int maxCrowd = 0;
-            bool finish = false;
-            int min = 0;
-            int max = 0;
-            List<int> numKMet = new List<int>();
-            int[][] tmp;
-            int totBuild = 0;
-            int nBuildMet = 0;
-            if (x > y) { min = y; max = x; } else { min = x; max = y; }
-            int start = min;
-            int end = max;
-            int[] r;
-            int tot = 0;
-            int a = 0;
-            int b = 0;
-            int u = 0;
-            int cX = x;
-            int cY = y;
-            int c = 0;
-            bool pathFound = false;
-            int countCycle = 0;
-            int counterListStart = 0;
-            int counterListEnd = 0;
-            int actListAnalyze = 0; // 0: Start - 1: End
-            int totListStart = 0;
-            int totListEnd = 0;
+            List<int[][]> listPathsFound = new List<int[][]>();
             int numCityAnalyzed = 0;
 
-            totBuild = getNumTotBuildsInRoads(roadsOrig, t);
+            //find alls paths from x to y
 
-            int[] arr1 = getIntersInRoads(roadsOrig);
-            IGrouping<int,int>[] ig = getRoadsConnected(roadsOrig);
+            int[][] roadsCityTo = (from a in roadsOrig
+                                where a[0].Equals(x) || a[1].Equals(x)
+                                select new int[3] { a[0].Equals(x) ? a[0] : a[1], a[0].Equals(x) ? a[1] : a[0], a[2] } ).ToArray();
 
-            if (totBuild < k)
+            if (roadsCityTo.Count() == 0)
             {
-                return "-1";
-            }
-
-            int totTypeBuild = t.Distinct().Count();
-
-            //find paths from x to y
-
-            /*var roadsTmp = from arrayS in roadsOrig.Where((s, index) => s[0].Equals(x) || s[1].Equals(x))
-                           from arrayE in roadsOrig.Where((e, index) => e[0].Equals(y) || e[1].Equals(y))
-                           //where (array[0] == c || array[1] == c)
-                           select arrayS.Concat(arrayE);*/
-
-
-
-            for (int i1 = 1; i1 <= 2; i1++)
-            {
-                if (i1 == 1) { c = cX; } else { c = cY; }
-
-                hashPathsNumCityAnalyzed.Add(c);
-
-                if (i1 == 1)
-                {
-                    listCityPathStart = getRoadsOfNumCity(c, roadsOrig);
-                }
-                else
-                {
-                    listCityPathEnd = getRoadsOfNumCity(c, roadsOrig);
-                }
-
-                if (tot == 0)
-                {
-                    //Console.WriteLine("-1");
-                    res = "-1";
-                    return res;
-                }
-            }
-
-            //nBuildMet = listBuild.Distinct().Count();
-
-            if (existPath(x, y, listCityPathStart, listCityPathEnd) > 0)
-            {
-                pathFound = true;
-            }
-
-            //pathFound = verifyStartEnd(0, listCityPathStart, listCityPathEnd);
-
-            while (!finish)
-            {
-
-                totListStart = listCityPathStart.Count();
-                totListEnd = listCityPathEnd.Count();
-
-                for (int i = counterListStart; i < totListStart && !pathFound; i++)
-                {
-                    c = listCityPathStart[counterListStart][1];
-                    counterListStart++;
-
-                    if (!existInHashPathsNumCityAnalyzed(c, hashPathsNumCityAnalyzed))
-                    {
-                        hashPathsNumCityAnalyzed.Add(c);
-
-                        listCityPathStart = getRoadsOfNumCity(c, roadsOrig);
-
-                        //pathFound = verifyStartEnd(totListStart - 1, listCityPathStart, listCityPathEnd, listConnectedPoint);
-
-                        if (pathFound)
-                        {
-                            c = listCityPathEnd[counterListEnd][1];
-                            counterListEnd++;
-
-                            hashPathsNumCityAnalyzed.Add(c);
-
-                            listCityPathEnd = getRoadsOfNumCity(c, roadsOrig);
-
-                            //pathFound = verifyEndStart(totListEnd - 1, listCityPathStart, listCityPathEnd, listConnectedPoint);
-
-                        }
-                    }
-                }
-
-                nBuildMet = listBuild.Distinct().Count();
-
-                countCycle += 1;
-            }
-
-            if (nBuildMet >= t.Length && !pathFound)
-            {
-                //Console.WriteLine("-1");
                 res = "-1";
                 return res;
             }
+
+            listPathsFound.Add(roadsCityTo);
+
+            var roadsCityToDelete = new int[1] { x };
+
+            int[][] roadsDone = (from a in roadsOrig
+                                 select new int[3] { roadsCityToDelete.Contains(a[0]) && !a[0].Equals(y) ? a[0] * -1 : a[0],
+                                                     roadsCityToDelete.Contains(a[1]) && !a[0].Equals(y) ? a[1] * -1 : a[1],
+                                                        a[2] }).ToArray();
+
+            Dictionary<int, int[][]> dictPathsWithY = new Dictionary<int, int[][]>();
+
+            int[][] pathsY = (from a in roadsCityTo.Where(e => e.Contains(y))
+                              select a).ToArray();
+
+            dictPathsWithY.Add(0, pathsY);
+
+            dictPathsWithY = getPaths(x, y, roadsWithConn, roadsDone, roadsCityTo, listPathsFound, dictPathsWithY);
+
 
 
             //path found, then find better road (road wih min crowd)
@@ -421,37 +337,60 @@ namespace hackerRank
             return res;
         }
 
-        static IGrouping<int,int>[] getRoadsConnected(int[][] roadsOrig)
+        static Dictionary<int, int[][]> getPaths(int x, int y, int[][] roadsWithConn, int[][] roadsDone, int[][] roadsCityTo, List<int[][]> listPathsFound, Dictionary<int, int[][]> dictPathsWithY)
+        {
+            int level = 0;
+            findParents(x, y, level, roadsDone, roadsCityTo, listPathsFound, dictPathsWithY);
+
+            return dictPathsWithY;
+        }
+
+        static bool findParents(int from, int to, int level, int[][] roadsDone, int[][] roadsCityTo, List<int[][]> listPathsFound, Dictionary<int, int[][]> dictPathsWithY)
+        {
+            var roadsCityToTmp = roadsCityTo.Select(s => s[1]);
+
+            int[][] roadsCityNearCity = (from c in roadsDone.Where(cn =>
+                            roadsCityToTmp.Contains(cn[0]) || roadsCityToTmp.Contains(cn[1]))
+                                        where c[0] > 0 && c[1] > 0
+                                        orderby c[2]
+                                         select new int[3] { roadsCityToTmp.Contains(c[0]) ? c[0] : c[1],
+                                                             roadsCityToTmp.Contains(c[0]) ? c[1] : c[0],
+                                                                                                    c[2] })
+                                         .ToArray();
+
+            if (roadsCityNearCity.Count() == 0) { return true; };
+
+            listPathsFound.Add(roadsCityNearCity);
+
+            var roadsCityToDelete = roadsCityTo.Select(s => s[1]);
+            roadsDone = (from a in roadsDone
+                        select new int[3] { roadsCityToDelete.Contains(a[0]) && !a[0].Equals(to) ? a[0] * -1 : a[0],
+                                            roadsCityToDelete.Contains(a[1]) && !a[1].Equals(to) ? a[1] * -1 : a[1],
+                                                        a[2] }).ToArray();
+
+            int[][] pathsY = (from a in roadsCityNearCity.Where(e => e.Contains(to))
+                                    select a).ToArray();
+
+            level++;
+            dictPathsWithY.Add(level, pathsY);
+
+            return findParents(from, to, level, roadsDone, roadsCityNearCity, listPathsFound, dictPathsWithY);
+        }
+
+        static IGrouping<int,int>[] getRoadsWithConnects(int[][] roadsOrig)
         {
             var res = ((from a in roadsOrig select a[0]).Concat(
-                                from b in roadsOrig
-                                select b[1])
-                            ).GroupBy(x => x).Where(g => g.Count() > 1)
+                            from b in roadsOrig select b[1])
+                                ).GroupBy(x => x).Where(g => g.Count() > 0);
                             //.Select(y => y.Key)
-                            .ToArray();
-            return res;
+                            //.ToArray();
+
+            var res1 = (from a in res orderby a.Count() descending select a).ToArray();
+
+            return res1;
         }
 
-        static int[] getIntersInRoads(int[][] roadsOrig)
-        {
-            var res = (from a in roadsOrig.Select(e => e[0])
-                       select a).Intersect(
-                                from b in roadsOrig.Select(e2 => e2[1])
-                                select b
-                            ).ToArray();
-            return res;
-        }
-
-        static int getNumTotBuildsInRoads(int[][] roadsOrig, int[] t)
-        {
-            int res = (from a in roadsOrig.Select(e => e[0])
-                            select t[a]).Concat(
-                                from b in roadsOrig.Select(e2 => e2[1])
-                                    select t[b]
-                            ).Distinct().Count();
-            return res;
-        }
-
+        /*
         static bool existInHashPathsNumCityAnalyzed(int n, HashSet<int> hashPathsNumCityAnalyzed)
         {
             var roadsE = from elem in hashPathsNumCityAnalyzed
@@ -538,5 +477,6 @@ namespace hackerRank
             return roadsTmp;
         }
 
+        */
     }
 }

@@ -205,8 +205,8 @@ namespace hackerRank
             //MatrixLayerRotation matrixLayerRotation = new MatrixLayerRotation();
             //matrixLayerRotation.Execute();
 
-            TravelHackerLand travelHackerLand = new TravelHackerLand();
-            travelHackerLand.Execute();
+            THL thl = new THL();
+            thl.Execute();
 
             //JoinArrayLinq joinArrayLinq = new JoinArrayLinq();
             //joinArrayLinq.Execute();
