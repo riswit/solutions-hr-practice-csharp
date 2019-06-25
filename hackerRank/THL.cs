@@ -100,6 +100,19 @@ namespace hackerRank
                     int k = 0;
                     int[] arrQ;
                     string res = "";
+
+                    var roadsQueries = ((from a in queries select a[0]).Concat(
+                                    from b in queries select b[1])
+                                    ).Distinct();
+
+                    Dictionary<int, int[][]> roadsQConn = roadsQueries.ToDictionary(
+                                                    p => p,
+                                                    p => (from a in roads.Where(a => a[0].Equals(p) || a[1].Equals(p))
+                                                          select a).ToArray()
+                                                    );
+
+                    int totBuildInRoads = roads.Select(a => t[a[0]]).Concat(roads.Select(b => t[b[1]])).Distinct().Count();
+
                     while ((line = streamReader.ReadLine()) != null)
                     {
 
@@ -107,7 +120,15 @@ namespace hackerRank
                         x = arrQ[0];
                         y = arrQ[1];
                         k = arrQ[2];
-                        res = printAnswerOfQuery(x, y, k, t, roads, queries);
+
+                        if (totBuildInRoads < k)
+                        {
+                            res = "-1";
+                        }
+                        else
+                        {
+                            res = printAnswerOfQuery(x, y, k, t, roads, roadsQConn);
+                        }
 
                         if (res.Trim() != line.Trim())
                         {
@@ -124,92 +145,122 @@ namespace hackerRank
         static void travel(int[] t, int[][] roads, int[][] queries)
         {
             string res = "";
-            int[] arrQ;
             int x = 0;
             int y = 0;
             int k = 0;
 
-            IGrouping<int, int>[] roadsWithConn = getRoadsWithConnects(roads);
-            int[][] roadsWithConnArr = (from a in roadsWithConn select new int[2] { a.Key, a.Count() }).ToArray();
-            var totBuildsDistConnected = (from arr in roadsWithConn.Select(e => t[e.Key]) select arr).Distinct();
-
-            int totBuildDistConnected = totBuildsDistConnected.Count();
+            //IGrouping<int, int>[] roadsWithConn = getRoadsWithConnects(roads);
+            //int[][] roadsWithConnArr = (from a in roadsWithConn select new int[2] { a.Key, a.Count() }).ToArray();
+            //var totBuildsDistConnected = (from arr in roadsWithConn.Select(e => t[e.Key]) select arr).Distinct();
 
             var roadsQueries = ((from a in queries select a[0]).Concat(
                 from b in queries select b[1])
-                    ).GroupBy(c => c);
+                    ).Distinct();
 
-            int[][] roadsCityNearCity = (from c in roadsDone.Where(cn =>
-                roadsCityToTmp.Contains(cn[0]) || roadsCityToTmp.Contains(cn[1]))
-                                         where c[0] > 0 && c[1] > 0
-                                         orderby c[2]
-                                         select new int[3] { roadsCityToTmp.Contains(c[0]) ? c[0] : c[1],
-                                                                roadsCityToTmp.Contains(c[0]) ? c[1] : c[0],
-                                                                                                    c[2] })
+            Dictionary<int, int[][]> roadsQConn = roadsQueries.ToDictionary(
+                                            p => p,
+                                            p => (from a in roads.Where(a => a[0].Equals(p) || a[1].Equals(p))
+                                                    select a).ToArray()
+                                            );
 
-            for (int q = 0; q < queries.Length; q++)
+            int totBuildInRoads = roads.Select(a => t[a[0]]).Concat(roads.Select(b => t[b[1]])).Distinct().Count();
+
+            foreach (int[] arrQ in queries)
             {
-                arrQ = queries[q];
                 x = arrQ[0];
                 y = arrQ[1];
                 k = arrQ[2];
 
-                if (totBuildDistConnected < k)
+                if (totBuildInRoads < k)
                 {
                     Console.WriteLine("-1");
                 }
                 else
                 {
-                    res = printAnswerOfQuery(x, y, k, t, roads, roadsWithConnArr);
+                    res = printAnswerOfQuery(x, y, k, t, roads, roadsQConn);
                     Console.WriteLine(res);
                 }
             }
         }
 
-        static string printAnswerOfQuery(int x, int y, int k, int[] t, int[][] roadsOrig, int[][] roadsWithConn)
+        //static string printAnswerOfQuery(int x, int y, int k, int[] t, int[][] roadsOrig, Dictionary<int, int[][]> roadsQConn)
+        //{
+        //    string res = "";
+
+        //    List<int[][]> listPathsFound = new List<int[][]>();
+        //    int numCityAnalyzed = 0;
+
+        //    //find alls paths from x to y
+
+        //    int[][] roadsCityTo = (from a in roadsOrig
+        //                        where a[0].Equals(x) || a[1].Equals(x)
+        //                            orderby a[2]
+        //                            select new int[3] { a[0].Equals(x) ? a[0] : a[1], a[0].Equals(x) ? a[1] : a[0], a[2] } ).ToArray();
+
+        //    if (roadsCityTo.Count() == 0)
+        //    {
+        //        res = "-1";
+        //        return res;
+        //    }
+
+        //    listPathsFound.Add(roadsCityTo);
+
+        //    var roadsCityToDelete = new int[1] { x };
+
+        //    int[][] roadsDone = (from a in roadsOrig
+        //                            select new int[3] { roadsCityToDelete.Contains(a[0]) && !a[0].Equals(y) ? a[0] * -1 : a[0],
+        //                                                roadsCityToDelete.Contains(a[1]) && !a[0].Equals(y) ? a[1] * -1 : a[1],
+        //                                                a[2] }).ToArray();
+
+        //    Dictionary<int, int[][]> dictPathsWithY = new Dictionary<int, int[][]>();
+
+        //    int[][] pathsY = (from a in roadsCityTo.Where(e => e.Contains(y))
+        //                        select a).ToArray();
+
+        //    dictPathsWithY.Add(0, pathsY);
+
+        //    //dictPathsWithY = getPaths(x, y, roadsWithConn, roadsDone, roadsCityTo, listPathsFound, dictPathsWithY);
+
+
+
+        //    //path found, then find better road (road wih min crowd)
+
+
+        //    //write max Crowd
+
+
+        //    return res;
+        //}
+
+        static string printAnswerOfQuery(int x, int y, int k, int[] t, int[][] roadsOrig, Dictionary<int, int[][]> roadsQConn)
         {
             string res = "";
 
             List<int[][]> listPathsFound = new List<int[][]>();
-            int numCityAnalyzed = 0;
 
-            //find alls paths from x to y
+            int[][] roadsCityX = (from a in roadsQConn
+                                    where a.Key.Equals(x)
+                                    select  a.Value);
 
-            int[][] roadsCityTo = (from a in roadsOrig
-                                where a[0].Equals(x) || a[1].Equals(x)
-                                    orderby a[2]
-                                    select new int[3] { a[0].Equals(x) ? a[0] : a[1], a[0].Equals(x) ? a[1] : a[0], a[2] } ).ToArray();
+            IEnumerable<int[][]> roadsCityY = (from b in roadsQConn
+                                    where b.Key.Equals(y)
+                                    select b.Value);
 
-            if (roadsCityTo.Count() == 0)
+            if (roadsCityX.Select(a => a).Count() == 0 || roadsCityY.Select(a => a).Count() == 0)
             {
                 res = "-1";
                 return res;
             }
 
-            listPathsFound.Add(roadsCityTo);
+            var direct = (from a in roadsCityX where a.Count() > 0 && (a[0].Equals(x) && a[1].Equals(y))
+                                                    || (a[0].Equals(y) && a[1].Equals(x)) select a);
 
-            var roadsCityToDelete = new int[1] { x };
+            if (direct.Count() > 0)
+            {
+                //direct
 
-            int[][] roadsDone = (from a in roadsOrig
-                                    select new int[3] { roadsCityToDelete.Contains(a[0]) && !a[0].Equals(y) ? a[0] * -1 : a[0],
-                                                        roadsCityToDelete.Contains(a[1]) && !a[0].Equals(y) ? a[1] * -1 : a[1],
-                                                        a[2] }).ToArray();
-
-            Dictionary<int, int[][]> dictPathsWithY = new Dictionary<int, int[][]>();
-
-            int[][] pathsY = (from a in roadsCityTo.Where(e => e.Contains(y))
-                                select a).ToArray();
-
-            dictPathsWithY.Add(0, pathsY);
-
-            //dictPathsWithY = getPaths(x, y, roadsWithConn, roadsDone, roadsCityTo, listPathsFound, dictPathsWithY);
-
-
-
-            //path found, then find better road (road wih min crowd)
-
-
-            //write max Crowd
+                return res;
+            }
 
 
             return res;
