@@ -238,30 +238,66 @@ namespace hackerRank
 
             List<int[][]> listPathsFound = new List<int[][]>();
 
-            int[][] roadsCityX = (from a in roadsQConn
-                                    where a.Key.Equals(x)
-                                    select  a.Value);
+            int[][] connX;
+            roadsQConn.TryGetValue(x, out connX);
 
-            IEnumerable<int[][]> roadsCityY = (from b in roadsQConn
-                                    where b.Key.Equals(y)
-                                    select b.Value);
+            int[][] connY;
+            roadsQConn.TryGetValue(y, out connY);
 
-            if (roadsCityX.Select(a => a).Count() == 0 || roadsCityY.Select(a => a).Count() == 0)
+
+            if (connX.Count() == 0 || connY.Count() == 0)
             {
                 res = "-1";
                 return res;
             }
 
-            var direct = (from a in roadsCityX where a.Count() > 0 && (a[0].Equals(x) && a[1].Equals(y))
-                                                    || (a[0].Equals(y) && a[1].Equals(x)) select a);
+            connX = (from a in connX orderby a[2] select new int[3] { a[0].Equals(x) ? a[0] : a[1], a[0].Equals(x) ? a[1] : a[0], a[2] } ).ToArray();
+            connY = (from a in connY orderby a[2] select new int[3] { a[0].Equals(y) ? a[0] : a[1], a[0].Equals(y) ? a[1] : a[0], a[2] } ).ToArray();
 
-            if (direct.Count() > 0)
+            //int d = connX.Where(a => (a[0].Equals(x) && a[1].Equals(y)) || (a[0].Equals(y) && a[1].Equals(x))).Count();
+            int d = (from a in connX
+                     where (a[0].Equals(x) && a[1].Equals(y)) || (a[0].Equals(y) && a[1].Equals(x))
+                     select a).Count();
+
+            if (d > 0)
             {
-                //direct
 
                 return res;
             }
 
+            var roadsCityToTmp = connX.Select(s => s[1]);
+
+            var pr1 = (from c in roadsOrig
+                       group c by roadsCityToTmp.Contains(c[0]) || roadsCityToTmp.Contains(c[1]) into g
+                       select g).Where(e => e.Key == true).SelectMany(p => p).ToArray();
+
+            var roadsCityToTmp2 = connY.Select(s => s[1]);
+
+            var pr2 = (from c in roadsOrig
+                       group c by roadsCityToTmp2.Contains(c[0]) || roadsCityToTmp2.Contains(c[1]) into g
+                       select g).Where(e => e.Key == true).SelectMany(p => p).ToArray();
+
+            //var vPr1 = pr1.Where(a => a.Key == true);
+
+            //int[][] roadsCityNearX = (from c in roadsOrig
+            //                          where (roadsCityToTmp.Contains(c[0]) || roadsCityToTmp.Contains(c[1]))
+            //                          && c[0] > 0 && c[1] > 0
+            //                          orderby c[2]
+            //                          select new int[3] { roadsCityToTmp.Contains(c[0]) ? c[0] : c[1],
+            //                                                    roadsCityToTmp.Contains(c[0]) ? c[1] : c[0],
+            //                                                                                        c[2] })
+            //                                .ToArray();
+
+            //var roadsCityToTmp2 = connY.Select(s => s[1]);
+
+            //int[][] roadsCityNearY = (from c in roadsOrig
+            //                          where (roadsCityToTmp.Contains(c[0]) || roadsCityToTmp.Contains(c[1]))
+            //                          && c[0] > 0 && c[1] > 0
+            //                          orderby c[2]
+            //                          select new int[3] { roadsCityToTmp.Contains(c[0]) ? c[0] : c[1],
+            //                                                    roadsCityToTmp.Contains(c[0]) ? c[1] : c[0],
+            //                                                                                        c[2] })
+            //                                .ToArray();
 
             return res;
         }
