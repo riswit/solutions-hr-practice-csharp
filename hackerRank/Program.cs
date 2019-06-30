@@ -226,8 +226,11 @@ namespace hackerRank
             //InsertionSortPart2 insertionSortPart2 = new InsertionSortPart2();
             //insertionSortPart2.Execute();
 
-            CorrectnessLoopInvariant correctnessLoopInvariant = new CorrectnessLoopInvariant();
-            correctnessLoopInvariant.Execute();
+            //CorrectnessLoopInvariant correctnessLoopInvariant = new CorrectnessLoopInvariant();
+            //correctnessLoopInvariant.Execute();
+
+            RunningTimeAlgorithms runningTimeAlgorithms = new RunningTimeAlgorithms();
+            runningTimeAlgorithms.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
