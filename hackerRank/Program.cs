@@ -214,8 +214,11 @@ namespace hackerRank
             //LeftOuterJoinExample leftOuterJoinExample = new LeftOuterJoinExample();
             //leftOuterJoinExample.ExeLeftOuterJoinExample();
 
-            BigSorting bigSorting = new BigSorting();
-            bigSorting.Execute();
+            //BigSorting bigSorting = new BigSorting();
+            //bigSorting.Execute();
+
+            IntroTutorialChallenges introTutorialChallenges = new IntroTutorialChallenges();
+            introTutorialChallenges.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

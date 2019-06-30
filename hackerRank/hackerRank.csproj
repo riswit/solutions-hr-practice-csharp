@@ -95,6 +95,7 @@
     <Compile Include="GradingStudents.cs" />
     <Compile Include="HalloweenSale.cs" />
     <Compile Include="HappyLadybugs.cs" />
+    <Compile Include="IntroTutorialChallenges.cs" />
     <Compile Include="JumpingClouds.cs" />
     <Compile Include="JumpingOnTheClouds.cs" />
     <Compile Include="Kangaroo.cs" />
