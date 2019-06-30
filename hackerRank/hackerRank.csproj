@@ -96,6 +96,7 @@
     <Compile Include="HalloweenSale.cs" />
     <Compile Include="HappyLadybugs.cs" />
     <Compile Include="InsertionSortPart1.cs" />
+    <Compile Include="InsertionSortPart2.cs" />
     <Compile Include="IntroTutorialChallenges.cs" />
     <Compile Include="JumpingClouds.cs" />
     <Compile Include="JumpingOnTheClouds.cs" />

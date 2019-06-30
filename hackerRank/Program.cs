@@ -220,8 +220,13 @@ namespace hackerRank
             //IntroTutorialChallenges introTutorialChallenges = new IntroTutorialChallenges();
             //introTutorialChallenges.Execute();
 
-            InsertionSortPart1 insertionSortPart1 = new InsertionSortPart1();
-            insertionSortPart1.Execute();
+            //InsertionSortPart1 insertionSortPart1 = new InsertionSortPart1();
+            //insertionSortPart1.Execute();
+
+            InsertionSortPart2 insertionSortPart2 = new InsertionSortPart2();
+            insertionSortPart2.Execute();
+
+
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
