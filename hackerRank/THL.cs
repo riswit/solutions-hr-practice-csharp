@@ -151,10 +151,6 @@ namespace hackerRank
             int y = 0;
             int k = 0;
 
-            //IGrouping<int, int>[] roadsWithConn = getRoadsWithConnects(roads);
-            //int[][] roadsWithConnArr = (from a in roadsWithConn select new int[2] { a.Key, a.Count() }).ToArray();
-            //var totBuildsDistConnected = (from arr in roadsWithConn.Select(e => t[e.Key]) select arr).Distinct();
-
             var roadsTmp = ((from a in roads select a[0]).Concat(
                 from b in roads select b[1])
                     ).Distinct();
@@ -162,7 +158,7 @@ namespace hackerRank
             Dictionary<int, int[][]> roadsQConn = roadsTmp.ToDictionary(
                                             p => p,
                                             p => (from a in roads.Where(a => a[0].Equals(p) || a[1].Equals(p))
-                                                  orderby a[2]
+                                                    orderby a[2]
                                                     select a).ToArray()
                                             );
 
@@ -189,7 +185,8 @@ namespace hackerRank
         static string printAnswerOfQuery(int x, int y, int k, int[] t, int[][] roadsOrig, Dictionary<int, int[][]> roadsConn)
         {
             string res = "";
-            int level = 0;
+            int levelS = 0;
+            int levelE = 0;
 
             List<int> listPathsFound = new List<int>();
             HashSet<int> listCityVisited = new HashSet<int>();
@@ -199,15 +196,14 @@ namespace hackerRank
 
             if (connX == null || connY == null)
             {
-                res = "-1";
-                return res;
+                return "-1";
             }
 
             listPathsFound.Add(x);
 
             int d = (from a in connX
-                     where (a[0].Equals(x) && a[1].Equals(y)) || (a[0].Equals(y) && a[1].Equals(x))
-                     select a).Count();
+                        where (a[0].Equals(x) && a[1].Equals(y)) || (a[0].Equals(y) && a[1].Equals(x))
+                        select a).Count();
 
             if (d > 0)
             {
@@ -236,14 +232,19 @@ namespace hackerRank
 
             listCityVisited.Add(start);
             listCityVisited.Add(finish);
-            level++;
 
             Dictionary<int, int[][]> citiesMetX = new Dictionary<int, int[][]>();
             Dictionary<int, int[][]> citiesMetY = new Dictionary<int, int[][]>();
 
+            levelS++;
+            levelE++;
+
+            citiesMetX.Add(levelS, connX);
+            citiesMetY.Add(levelE, connY);
+
             var roadsElab = (from a in roadsConn
-                         where !listCityVisited.Contains(a.Key)
-                         select a);
+                            where !listCityVisited.Contains(a.Key)
+                            select a);
 
             while (!pathFound)
             {
@@ -262,12 +263,35 @@ namespace hackerRank
                 arrST = ((from a in nextXT select a[0]).Concat(from b in nextXT select b[1])).Where(c => !arrS.Contains(c)).Distinct().ToArray();
 
                 se = arrST.Intersect(arrE);
-                if (se.Count() > 0) { pathFound = true; break; }
+                if (se.Count() > 0)
+                {
+                    levelS++;
+                    citiesMetX.Add(levelS, nextXT.ToArray());
 
+                    pathFound = true;
+                    break;
+                }
+
+                levelE++;
+                citiesMetY.Add(levelE, nextYT.ToArray());
                 arrET = ((from a in nextYT select a[0]).Concat(from b in nextYT select b[1])).Where(c => !arrE.Contains(c)).Distinct().ToArray();
 
+                se = arrET.Intersect(arrS);
+                if (se.Count() > 0)
+                {
+                    pathFound = true;
+                    break;
+                }
+
+                levelS++;
+                citiesMetX.Add(levelS, nextXT.ToArray());
+
                 se = arrST.Intersect(arrET);
-                if (se.Count() > 0) { pathFound = true; break; }
+                if (se.Count() > 0)
+                {
+                    pathFound = true;
+                    break;
+                }
 
                 listCityVisited.UnionWith(arrST);
                 listCityVisited.UnionWith(arrET);
@@ -276,13 +300,24 @@ namespace hackerRank
 
                 arrS = arrST;
                 arrE = arrET;
-                level++;
             }
 
             if (!pathFound)
             {
                 return "-1";
             }
+
+            int totx = citiesMetX.Aggregate(0, (total, kv) =>
+            {
+                total += (kv.Value.Select(a => t[a[0]]).Concat(kv.Value.Select(a => t[a[1]]))).Distinct().Count();
+                return total;
+            });
+
+            int toty = citiesMetY.Aggregate(0, (total, kv) =>
+            {
+                total += (kv.Value.Select(a => t[a[0]]).Concat(kv.Value.Select(a => t[a[1]]))).Distinct().Count();
+                return total;
+            });
 
 
             return res;
@@ -306,152 +341,5 @@ namespace hackerRank
             return conn;
         }
 
-        static Dictionary<int, int[][]> getPaths(int x, int y, int[][] roadsWithConn, int[][] roadsDone, int[][] roadsCityTo, List<int[][]> listPathsFound, Dictionary<int, int[][]> dictPathsWithY)
-        {
-            int level = 1;
-            int[][] roadsCityNearCity = findParents(x, y, level, roadsDone, roadsCityTo, listPathsFound, dictPathsWithY);
-
-            while (roadsCityNearCity.Count() > 0)
-            {
-                level++;
-
-                roadsCityNearCity = findParents(x, y, level, roadsDone, roadsCityTo, listPathsFound, dictPathsWithY);
-            }
-            return dictPathsWithY;
-        }
-
-        static int[][] findParents(int from, int to, int level, int[][] roadsDone, int[][] roadsCityTo, List<int[][]> listPathsFound, Dictionary<int, int[][]> dictPathsWithY)
-        {
-            var roadsCityToTmp = roadsCityTo.Select(s => s[1]);
-
-            int[][] roadsCityNearCity = (from c in roadsDone.Where(cn =>
-                            roadsCityToTmp.Contains(cn[0]) || roadsCityToTmp.Contains(cn[1]))
-                                        where c[0] > 0 && c[1] > 0 
-                                            orderby c[2]
-                                            select new int[3] { roadsCityToTmp.Contains(c[0]) ? c[0] : c[1],
-                                                                roadsCityToTmp.Contains(c[0]) ? c[1] : c[0],
-                                                                                                    c[2] })
-                                            .ToArray();
-
-            //if (roadsCityNearCity.Count() == 0) { return true; };
-
-            listPathsFound.Add(roadsCityNearCity);
-
-            var roadsCityToDelete = roadsCityTo.Select(s => s[1]);
-            roadsDone = (from a in roadsDone
-                        select new int[3] { roadsCityToDelete.Contains(a[0]) && !a[0].Equals(to) ? a[0] * -1 : a[0],
-                                            roadsCityToDelete.Contains(a[1]) && !a[1].Equals(to) ? a[1] * -1 : a[1],
-                                                        a[2] }).ToArray();
-
-            int[][] pathsY = (from a in roadsCityNearCity.Where(e => e.Contains(to))
-                                    select a).ToArray();
-
-            dictPathsWithY.Add(level, pathsY);
-
-            //return findParents(from, to, level, roadsDone, roadsCityNearCity, listPathsFound, dictPathsWithY);
-            return roadsCityNearCity;
-        }
-
-        static IGrouping<int,int>[] getRoadsWithConnects(int[][] roadsOrig)
-        {
-            var res = ((from a in roadsOrig select a[0]).Concat(
-                            from b in roadsOrig select b[1])
-                                ).GroupBy(x => x).Where(g => g.Count() > 0);
-                            //.Select(y => y.Key)
-                            //.ToArray();
-
-            var res1 = (from a in res orderby a.Count() descending select a).ToArray();
-
-            return res1;
-        }
-
-        /*
-        static bool existInHashPathsNumCityAnalyzed(int n, HashSet<int> hashPathsNumCityAnalyzed)
-        {
-            var roadsE = from elem in hashPathsNumCityAnalyzed
-                         where elem == n
-                         select elem;
-            if (roadsE.Count() > 0) { return true; }
-
-            return false;
-        }
-
-        static bool verifyStartEnd(int start, List<int[]> listCityPathStart, List<int[]> listCityPathEnd, List<int[]> listConnectedPoint)
-        {
-            int e = 0;
-            for (int i2 = start; i2 < listCityPathStart.Count(); i2++)
-            {
-                var roadsE = from array in listCityPathEnd
-                             where (array[0] == listCityPathStart[i2][1] || array[1] == listCityPathStart[i2][1])
-                             select array;
-                if (roadsE.Count() > 0) {
-
-                    int[][] arr = roadsE.ToArray();
-                    if (listCityPathStart[i2][1] == arr[0][1])
-                    {
-                        e = arr[0][0];
-                    }
-                    else
-                    {
-                        e = arr[0][1];
-                    }
-
-                    listConnectedPoint.Add(new int[2] { listCityPathStart[i2][1] , e });
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        static bool verifyEndStart(int start, List<int[]> listCityPathStart, List<int[]> listCityPathEnd, List<int[]> listConnectedPoint)
-        {
-            int e = 0;
-            for (int i2 = start; i2 < listCityPathEnd.Count(); i2++)
-            {
-                var roadsE = from array in listCityPathStart
-                             where (array[0] == listCityPathEnd[i2][1] || array[1] == listCityPathEnd[i2][1])
-                             select array;
-                if (roadsE.Count() > 0)
-                {
-                    int[][] arr = roadsE.ToArray();
-                    if (listCityPathEnd[i2][1] == arr[0][1])
-                    {
-                        e = arr[0][0];
-                    }
-                    else
-                    {
-                        e = arr[0][1];
-                    }
-
-                    listConnectedPoint.Add(new int[2] { listCityPathEnd[i2][1], e });
-                    return true;
-                }
-            }
-
-            return false;
-        }
-
-        static List<int[]> getRoadsOfNumCity(int c, int[][] roadsOrig)
-        {
-            var roadsTmp = from array in roadsOrig
-                           where (array[0].Equals(c) || array[1].Equals(c))
-                           orderby array[2] select array;
-
-            return roadsTmp.ToList();
-        }
-
-        static int existPath(int a, int b, List<int[]> listCityPathStart, List<int[]> listCityPathEnd)
-        {
-            int roadsTmp = (from arrayS in listCityPathStart
-                            from arrayE in listCityPathEnd
-                            where (arrayS[0].Equals(a) && arrayS[1].Equals(b)) || (arrayS[0].Equals(b) && arrayS[1].Equals(a))
-                                || (arrayE[0].Equals(a) && arrayE[1].Equals(b)) || (arrayE[0].Equals(b) && arrayE[1].Equals(a))
-                                || (arrayS[0].Equals(a) && arrayE[0].Equals(b))
-                            select arrayS).Count();
-            return roadsTmp;
-        }
-
-        */
     }
 }
