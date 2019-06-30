@@ -217,8 +217,11 @@ namespace hackerRank
             //BigSorting bigSorting = new BigSorting();
             //bigSorting.Execute();
 
-            IntroTutorialChallenges introTutorialChallenges = new IntroTutorialChallenges();
-            introTutorialChallenges.Execute();
+            //IntroTutorialChallenges introTutorialChallenges = new IntroTutorialChallenges();
+            //introTutorialChallenges.Execute();
+
+            InsertionSortPart1 insertionSortPart1 = new InsertionSortPart1();
+            insertionSortPart1.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
