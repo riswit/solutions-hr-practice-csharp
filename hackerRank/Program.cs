@@ -205,14 +205,17 @@ namespace hackerRank
             //MatrixLayerRotation matrixLayerRotation = new MatrixLayerRotation();
             //matrixLayerRotation.Execute();
 
-            THL thl = new THL();
-            thl.Execute();
+            //THL thl = new THL();
+            //thl.Execute();
 
             //JoinArrayLinq joinArrayLinq = new JoinArrayLinq();
             //joinArrayLinq.Execute();
 
             //LeftOuterJoinExample leftOuterJoinExample = new LeftOuterJoinExample();
             //leftOuterJoinExample.ExeLeftOuterJoinExample();
+
+            BigSorting bigSorting = new BigSorting();
+            bigSorting.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

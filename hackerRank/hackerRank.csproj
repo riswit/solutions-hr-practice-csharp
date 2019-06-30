@@ -69,6 +69,7 @@
     <Compile Include="BeautifulTriplets.cs" />
     <Compile Include="BetweenTwoSets.cs" />
     <Compile Include="BiggerGreater.cs" />
+    <Compile Include="BigSorting.cs" />
     <Compile Include="BirthdayChocolate.cs" />
     <Compile Include="BonAppetit.cs" />
     <Compile Include="BreakingRecords.cs" />
@@ -152,6 +153,7 @@
     <Content Include="testQueensAttackII\input06.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="testBigSorting\" />
     <Folder Include="testTHL\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
