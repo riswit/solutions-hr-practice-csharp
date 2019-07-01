@@ -79,6 +79,7 @@
     <Compile Include="ClimbingLeaderboard.cs" />
     <Compile Include="CorrectnessLoopInvariant.cs" />
     <Compile Include="CountingSort1.cs" />
+    <Compile Include="CountingSort2.cs" />
     <Compile Include="CountingValleys.cs" />
     <Compile Include="CutSticks.cs" />
     <Compile Include="DayOfTheProgrammer.cs" />

@@ -235,8 +235,11 @@ namespace hackerRank
             //Quicksort1Partition quicksort1Partition = new Quicksort1Partition();
             //quicksort1Partition.Execute();
 
-            CountingSort1 countingSort1 = new CountingSort1();
-            countingSort1.Execute();
+            //CountingSort1 countingSort1 = new CountingSort1();
+            //countingSort1.Execute();
+
+            CountingSort2 countingSort2 = new CountingSort2();
+            countingSort2.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
