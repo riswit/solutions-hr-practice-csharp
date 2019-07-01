@@ -232,8 +232,11 @@ namespace hackerRank
             //RunningTimeAlgorithms runningTimeAlgorithms = new RunningTimeAlgorithms();
             //runningTimeAlgorithms.Execute();
 
-            Quicksort1Partition quicksort1Partition = new Quicksort1Partition();
-            quicksort1Partition.Execute();
+            //Quicksort1Partition quicksort1Partition = new Quicksort1Partition();
+            //quicksort1Partition.Execute();
+
+            CountingSort1 countingSort1 = new CountingSort1();
+            countingSort1.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
