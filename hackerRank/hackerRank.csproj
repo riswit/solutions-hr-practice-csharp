@@ -129,6 +129,7 @@
     <Compile Include="StrangeCounter.cs" />
     <Compile Include="TaumBday.cs" />
     <Compile Include="TheBombermanGame.cs" />
+    <Compile Include="TheFullCountingSort.cs" />
     <Compile Include="TheGridSearch.cs" />
     <Compile Include="TheHurdleRace.cs" />
     <Compile Include="TheTimeInWords.cs" />
@@ -162,6 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="testBigSorting\" />
+    <Folder Include="testTheFullCountingSort\" />
     <Folder Include="testTHL\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
