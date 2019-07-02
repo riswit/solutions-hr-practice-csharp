@@ -241,8 +241,11 @@ namespace hackerRank
             //CountingSort2 countingSort2 = new CountingSort2();
             //countingSort2.Execute();
 
-            TheFullCountingSort theFullCountingSort = new TheFullCountingSort();
-            theFullCountingSort.Execute();
+            //TheFullCountingSort theFullCountingSort = new TheFullCountingSort();
+            //theFullCountingSort.Execute();
+
+            ClosestNumbers closestNumbers = new ClosestNumbers();
+            closestNumbers.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
