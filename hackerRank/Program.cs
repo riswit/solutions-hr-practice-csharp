@@ -247,8 +247,11 @@ namespace hackerRank
             //ClosestNumbers closestNumbers = new ClosestNumbers();
             //closestNumbers.Execute();
 
-            FindMedian findMedian = new FindMedian();
-            findMedian.Execute();
+            //FindMedian findMedian = new FindMedian();
+            //findMedian.Execute();
+
+            InsertionSortAdvancedAnalysis insertionSortAdvancedAnalysis = new InsertionSortAdvancedAnalysis();
+            insertionSortAdvancedAnalysis.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

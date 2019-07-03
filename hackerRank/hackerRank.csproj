@@ -100,6 +100,7 @@
     <Compile Include="GradingStudents.cs" />
     <Compile Include="HalloweenSale.cs" />
     <Compile Include="HappyLadybugs.cs" />
+    <Compile Include="InsertionSortAdvancedAnalysis.cs" />
     <Compile Include="InsertionSortPart1.cs" />
     <Compile Include="InsertionSortPart2.cs" />
     <Compile Include="IntroTutorialChallenges.cs" />
