@@ -244,8 +244,11 @@ namespace hackerRank
             //TheFullCountingSort theFullCountingSort = new TheFullCountingSort();
             //theFullCountingSort.Execute();
 
-            ClosestNumbers closestNumbers = new ClosestNumbers();
-            closestNumbers.Execute();
+            //ClosestNumbers closestNumbers = new ClosestNumbers();
+            //closestNumbers.Execute();
+
+            FindMedian findMedian = new FindMedian();
+            findMedian.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
