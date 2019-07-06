@@ -97,6 +97,7 @@
     <Compile Include="FindMedian.cs" />
     <Compile Include="FlatlandSpaceStations.cs" />
     <Compile Include="FormingMagicSquare.cs" />
+    <Compile Include="FraudulentActivityNotifications.cs" />
     <Compile Include="GradingStudents.cs" />
     <Compile Include="HalloweenSale.cs" />
     <Compile Include="HappyLadybugs.cs" />
