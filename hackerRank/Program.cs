@@ -253,8 +253,11 @@ namespace hackerRank
             //InsertionSortAdvancedAnalysis insertionSortAdvancedAnalysis = new InsertionSortAdvancedAnalysis();
             //insertionSortAdvancedAnalysis.Execute();
 
-            FraudulentActivityNotifications fraudulentActivityNotifications = new FraudulentActivityNotifications();
-            fraudulentActivityNotifications.Execute();
+            //FraudulentActivityNotifications fraudulentActivityNotifications = new FraudulentActivityNotifications();
+            //fraudulentActivityNotifications.Execute();
+
+            SuperReducedString superReducedString = new SuperReducedString();
+            superReducedString.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

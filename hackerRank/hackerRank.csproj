@@ -131,6 +131,7 @@
     <Compile Include="SherlockSquares.cs" />
     <Compile Include="SockMerchant.cs" />
     <Compile Include="StrangeCounter.cs" />
+    <Compile Include="SuperReducedString.cs" />
     <Compile Include="TaumBday.cs" />
     <Compile Include="TheBombermanGame.cs" />
     <Compile Include="TheFullCountingSort.cs" />
