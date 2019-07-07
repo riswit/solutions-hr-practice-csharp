@@ -73,6 +73,7 @@
     <Compile Include="BirthdayChocolate.cs" />
     <Compile Include="BonAppetit.cs" />
     <Compile Include="BreakingRecords.cs" />
+    <Compile Include="CamelCase.cs" />
     <Compile Include="CatsAndMouse.cs" />
     <Compile Include="CavityMap.cs" />
     <Compile Include="CircularArrayRotation.cs" />

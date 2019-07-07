@@ -256,8 +256,11 @@ namespace hackerRank
             //FraudulentActivityNotifications fraudulentActivityNotifications = new FraudulentActivityNotifications();
             //fraudulentActivityNotifications.Execute();
 
-            SuperReducedString superReducedString = new SuperReducedString();
-            superReducedString.Execute();
+            //SuperReducedString superReducedString = new SuperReducedString();
+            //superReducedString.Execute();
+
+            CamelCase camelCase = new CamelCase();
+            camelCase.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
