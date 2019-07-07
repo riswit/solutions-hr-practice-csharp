@@ -259,8 +259,11 @@ namespace hackerRank
             //SuperReducedString superReducedString = new SuperReducedString();
             //superReducedString.Execute();
 
-            CamelCase camelCase = new CamelCase();
-            camelCase.Execute();
+            //CamelCase camelCase = new CamelCase();
+            //camelCase.Execute();
+
+            StrongPassword strongPassword = new StrongPassword();
+            strongPassword.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
