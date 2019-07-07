@@ -143,6 +143,7 @@
     <Compile Include="THL.cs" />
     <Compile Include="tutorial\JoinArrayLinq.cs" />
     <Compile Include="tutorial\LeftOuterJoinExample.cs" />
+    <Compile Include="TwoCharacters.cs" />
     <Compile Include="UtopianTree.cs" />
     <Compile Include="ViralAdvertising.cs" />
   </ItemGroup>

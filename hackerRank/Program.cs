@@ -262,8 +262,11 @@ namespace hackerRank
             //CamelCase camelCase = new CamelCase();
             //camelCase.Execute();
 
-            StrongPassword strongPassword = new StrongPassword();
-            strongPassword.Execute();
+            //StrongPassword strongPassword = new StrongPassword();
+            //strongPassword.Execute();
+
+            TwoCharacters twoCharacters = new TwoCharacters();
+            twoCharacters.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
