@@ -268,8 +268,11 @@ namespace hackerRank
             //TwoCharacters twoCharacters = new TwoCharacters();
             //twoCharacters.Execute();
 
-            CaesarCipher caesarCipher = new CaesarCipher();
-            caesarCipher.Execute();
+            //CaesarCipher caesarCipher = new CaesarCipher();
+            //caesarCipher.Execute();
+
+            MarsExploration marsExploration = new MarsExploration();
+            marsExploration.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
