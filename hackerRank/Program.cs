@@ -271,8 +271,11 @@ namespace hackerRank
             //CaesarCipher caesarCipher = new CaesarCipher();
             //caesarCipher.Execute();
 
-            MarsExploration marsExploration = new MarsExploration();
-            marsExploration.Execute();
+            //MarsExploration marsExploration = new MarsExploration();
+            //marsExploration.Execute();
+
+            HackerRankString hackerRankString = new HackerRankString();
+            hackerRankString.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
