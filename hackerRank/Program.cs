@@ -274,8 +274,11 @@ namespace hackerRank
             //MarsExploration marsExploration = new MarsExploration();
             //marsExploration.Execute();
 
-            HackerRankString hackerRankString = new HackerRankString();
-            hackerRankString.Execute();
+            //HackerRankString hackerRankString = new HackerRankString();
+            //hackerRankString.Execute();
+
+            Pangrams pangrams = new Pangrams();
+            pangrams.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
