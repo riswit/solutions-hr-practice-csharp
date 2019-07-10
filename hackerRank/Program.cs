@@ -277,8 +277,11 @@ namespace hackerRank
             //HackerRankString hackerRankString = new HackerRankString();
             //hackerRankString.Execute();
 
-            Pangrams pangrams = new Pangrams();
-            pangrams.Execute();
+            //Pangrams pangrams = new Pangrams();
+            //pangrams.Execute();
+
+            WeightedUniformStrings weightedUniformStrings = new WeightedUniformStrings();
+            weightedUniformStrings.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

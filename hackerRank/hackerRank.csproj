@@ -150,6 +150,7 @@
     <Compile Include="TwoCharacters.cs" />
     <Compile Include="UtopianTree.cs" />
     <Compile Include="ViralAdvertising.cs" />
+    <Compile Include="WeightedUniformStrings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
