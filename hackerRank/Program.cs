@@ -280,8 +280,11 @@ namespace hackerRank
             //Pangrams pangrams = new Pangrams();
             //pangrams.Execute();
 
-            WeightedUniformStrings weightedUniformStrings = new WeightedUniformStrings();
-            weightedUniformStrings.Execute();
+            //WeightedUniformStrings weightedUniformStrings = new WeightedUniformStrings();
+            //weightedUniformStrings.Execute();
+
+            SeparateTheNumbers separateTheNumbers = new SeparateTheNumbers();
+            separateTheNumbers.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

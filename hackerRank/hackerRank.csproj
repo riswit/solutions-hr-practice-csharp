@@ -131,6 +131,7 @@
     <Compile Include="RepeatedString.cs" />
     <Compile Include="RunningTimeAlgorithms.cs" />
     <Compile Include="SaveThePrisoner.cs" />
+    <Compile Include="SeparateTheNumbers.cs" />
     <Compile Include="SequenceEquation.cs" />
     <Compile Include="ServiceLane.cs" />
     <Compile Include="SherlockSquares.cs" />
