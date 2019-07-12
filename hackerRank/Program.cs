@@ -283,8 +283,11 @@ namespace hackerRank
             //WeightedUniformStrings weightedUniformStrings = new WeightedUniformStrings();
             //weightedUniformStrings.Execute();
 
-            SeparateTheNumbers separateTheNumbers = new SeparateTheNumbers();
-            separateTheNumbers.Execute();
+            //SeparateTheNumbers separateTheNumbers = new SeparateTheNumbers();
+            //separateTheNumbers.Execute();
+
+            FunnyString funnyString = new FunnyString();
+            funnyString.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
