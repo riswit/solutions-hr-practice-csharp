@@ -90,6 +90,7 @@
     <Compile Include="DesignerPDFViewer.cs" />
     <Compile Include="DivisibleSumPairs.cs" />
     <Compile Include="DrawingBook.cs" />
+    <Compile Include="DynamicArray.cs" />
     <Compile Include="ElectronicsShop.cs" />
     <Compile Include="EmasSupercomputer3.cs" />
     <Compile Include="Encryption.cs" />

@@ -292,8 +292,11 @@ namespace hackerRank
             //TwoDArrayDS twoDArrayDS = new TwoDArrayDS();
             //twoDArrayDS.Execute();
 
-            ArraysDS arraysDS = new ArraysDS();
-            arraysDS.Execute();
+            //ArraysDS arraysDS = new ArraysDS();
+            //arraysDS.Execute();
+
+            DynamicArray dynamicArray = new DynamicArray();
+            dynamicArray.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
