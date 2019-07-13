@@ -295,8 +295,11 @@ namespace hackerRank
             //ArraysDS arraysDS = new ArraysDS();
             //arraysDS.Execute();
 
-            DynamicArray dynamicArray = new DynamicArray();
-            dynamicArray.Execute();
+            //DynamicArray dynamicArray = new DynamicArray();
+            //dynamicArray.Execute();
+
+            LeftRotation leftRotation = new LeftRotation();
+            leftRotation.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
