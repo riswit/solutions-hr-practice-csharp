@@ -65,6 +65,7 @@
     <Compile Include="AngryProfessor.cs" />
     <Compile Include="AppendDelete.cs" />
     <Compile Include="AppleAndOrange.cs" />
+    <Compile Include="ArraysDS.cs" />
     <Compile Include="BeautifulDaysMovies.cs" />
     <Compile Include="BeautifulTriplets.cs" />
     <Compile Include="BetweenTwoSets.cs" />

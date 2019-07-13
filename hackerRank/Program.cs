@@ -289,8 +289,11 @@ namespace hackerRank
             //FunnyString funnyString = new FunnyString();
             //funnyString.Execute();
 
-            TwoDArrayDS twoDArrayDS = new TwoDArrayDS();
-            twoDArrayDS.Execute();
+            //TwoDArrayDS twoDArrayDS = new TwoDArrayDS();
+            //twoDArrayDS.Execute();
+
+            ArraysDS arraysDS = new ArraysDS();
+            arraysDS.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
