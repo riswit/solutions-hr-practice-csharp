@@ -286,8 +286,11 @@ namespace hackerRank
             //SeparateTheNumbers separateTheNumbers = new SeparateTheNumbers();
             //separateTheNumbers.Execute();
 
-            FunnyString funnyString = new FunnyString();
-            funnyString.Execute();
+            //FunnyString funnyString = new FunnyString();
+            //funnyString.Execute();
+
+            TwoDArrayDS twoDArrayDS = new TwoDArrayDS();
+            twoDArrayDS.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
