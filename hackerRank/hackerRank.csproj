@@ -124,6 +124,7 @@
     <Compile Include="MigratoryBirds.cs" />
     <Compile Include="MinimumDistances.cs" />
     <Compile Include="ModifiedKaprekarNumbers.cs" />
+    <Compile Include="NewYearChaos.cs" />
     <Compile Include="NonDivisibleSubset.cs" />
     <Compile Include="OrganizingContainersBalls.cs" />
     <Compile Include="Pangrams.cs" />

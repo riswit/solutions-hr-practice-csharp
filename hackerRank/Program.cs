@@ -298,8 +298,11 @@ namespace hackerRank
             //DynamicArray dynamicArray = new DynamicArray();
             //dynamicArray.Execute();
 
-            LeftRotation leftRotation = new LeftRotation();
-            leftRotation.Execute();
+            //LeftRotation leftRotation = new LeftRotation();
+            //leftRotation.Execute();
+
+            NewYearChaos newYearChaos = new NewYearChaos();
+            newYearChaos.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
