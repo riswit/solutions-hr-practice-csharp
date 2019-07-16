@@ -307,8 +307,11 @@ namespace hackerRank
             //Gemstones gemstones = new Gemstones();
             //gemstones.Execute();
 
-            AlternatingCharacters alternatingCharacters = new AlternatingCharacters();
-            alternatingCharacters.Execute();
+            //AlternatingCharacters alternatingCharacters = new AlternatingCharacters();
+            //alternatingCharacters.Execute();
+
+            BeautifulBinaryString beautifulBinaryString = new BeautifulBinaryString();
+            beautifulBinaryString.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
