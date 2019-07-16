@@ -304,8 +304,11 @@ namespace hackerRank
             //NewYearChaos newYearChaos = new NewYearChaos();
             //newYearChaos.Execute();
 
-            Gemstones gemstones = new Gemstones();
-            gemstones.Execute();
+            //Gemstones gemstones = new Gemstones();
+            //gemstones.Execute();
+
+            AlternatingCharacters alternatingCharacters = new AlternatingCharacters();
+            alternatingCharacters.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
