@@ -152,6 +152,7 @@
     <Compile Include="TheFullCountingSort.cs" />
     <Compile Include="TheGridSearch.cs" />
     <Compile Include="TheHurdleRace.cs" />
+    <Compile Include="TheLoveLetterMystery.cs" />
     <Compile Include="TheTimeInWords.cs" />
     <Compile Include="THL.cs" />
     <Compile Include="tutorial\JoinArrayLinq.cs" />

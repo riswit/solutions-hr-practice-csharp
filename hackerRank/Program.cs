@@ -310,8 +310,11 @@ namespace hackerRank
             //AlternatingCharacters alternatingCharacters = new AlternatingCharacters();
             //alternatingCharacters.Execute();
 
-            BeautifulBinaryString beautifulBinaryString = new BeautifulBinaryString();
-            beautifulBinaryString.Execute();
+            //BeautifulBinaryString beautifulBinaryString = new BeautifulBinaryString();
+            //beautifulBinaryString.Execute();
+
+            TheLoveLetterMystery theLoveLetterMystery = new TheLoveLetterMystery();
+            theLoveLetterMystery.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
