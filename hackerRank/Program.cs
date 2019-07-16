@@ -301,8 +301,11 @@ namespace hackerRank
             //LeftRotation leftRotation = new LeftRotation();
             //leftRotation.Execute();
 
-            NewYearChaos newYearChaos = new NewYearChaos();
-            newYearChaos.Execute();
+            //NewYearChaos newYearChaos = new NewYearChaos();
+            //newYearChaos.Execute();
+
+            Gemstones gemstones = new Gemstones();
+            gemstones.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

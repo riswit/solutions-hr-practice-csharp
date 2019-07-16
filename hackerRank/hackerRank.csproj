@@ -103,6 +103,7 @@
     <Compile Include="FormingMagicSquare.cs" />
     <Compile Include="FraudulentActivityNotifications.cs" />
     <Compile Include="FunnyString.cs" />
+    <Compile Include="Gemstones.cs" />
     <Compile Include="GradingStudents.cs" />
     <Compile Include="HackerRankString.cs" />
     <Compile Include="HalloweenSale.cs" />
