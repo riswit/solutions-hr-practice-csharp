@@ -130,6 +130,7 @@
     <Compile Include="NewYearChaos.cs" />
     <Compile Include="NonDivisibleSubset.cs" />
     <Compile Include="OrganizingContainersBalls.cs" />
+    <Compile Include="PalindromeIndex.cs" />
     <Compile Include="Pangrams.cs" />
     <Compile Include="PickingNumbers.cs" />
     <Compile Include="Program.cs" />

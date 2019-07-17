@@ -313,8 +313,11 @@ namespace hackerRank
             //BeautifulBinaryString beautifulBinaryString = new BeautifulBinaryString();
             //beautifulBinaryString.Execute();
 
-            TheLoveLetterMystery theLoveLetterMystery = new TheLoveLetterMystery();
-            theLoveLetterMystery.Execute();
+            //TheLoveLetterMystery theLoveLetterMystery = new TheLoveLetterMystery();
+            //theLoveLetterMystery.Execute();
+
+            PalindromeIndex palindromeIndex = new PalindromeIndex();
+            palindromeIndex.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
