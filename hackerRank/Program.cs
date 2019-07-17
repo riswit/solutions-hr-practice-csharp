@@ -316,8 +316,11 @@ namespace hackerRank
             //TheLoveLetterMystery theLoveLetterMystery = new TheLoveLetterMystery();
             //theLoveLetterMystery.Execute();
 
-            PalindromeIndex palindromeIndex = new PalindromeIndex();
-            palindromeIndex.Execute();
+            //PalindromeIndex palindromeIndex = new PalindromeIndex();
+            //palindromeIndex.Execute();
+
+            Anagram anagram = new Anagram();
+            anagram.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

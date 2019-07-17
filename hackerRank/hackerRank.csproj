@@ -63,6 +63,7 @@
     <Compile Include="ACMICPCTeam.cs" />
     <Compile Include="AlmostSorted.cs" />
     <Compile Include="AlternatingCharacters.cs" />
+    <Compile Include="Anagram.cs" />
     <Compile Include="AngryProfessor.cs" />
     <Compile Include="AppendDelete.cs" />
     <Compile Include="AppleAndOrange.cs" />
