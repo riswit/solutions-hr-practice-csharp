@@ -322,8 +322,11 @@ namespace hackerRank
             //Anagram anagram = new Anagram();
             //anagram.Execute();
 
-            MakingAnagrams makingAnagrams = new MakingAnagrams();
-            makingAnagrams.Execute();
+            //MakingAnagrams makingAnagrams = new MakingAnagrams();
+            //makingAnagrams.Execute();
+
+            GameOfThronesI gameOfThronesI = new GameOfThronesI();
+            gameOfThronesI.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
