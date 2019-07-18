@@ -319,8 +319,11 @@ namespace hackerRank
             //PalindromeIndex palindromeIndex = new PalindromeIndex();
             //palindromeIndex.Execute();
 
-            Anagram anagram = new Anagram();
-            anagram.Execute();
+            //Anagram anagram = new Anagram();
+            //anagram.Execute();
+
+            MakingAnagrams makingAnagrams = new MakingAnagrams();
+            makingAnagrams.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
