@@ -163,6 +163,7 @@
     <Compile Include="tutorial\LeftOuterJoinExample.cs" />
     <Compile Include="TwoCharacters.cs" />
     <Compile Include="TwoDArrayDS.cs" />
+    <Compile Include="TwoStrings.cs" />
     <Compile Include="UtopianTree.cs" />
     <Compile Include="ViralAdvertising.cs" />
     <Compile Include="WeightedUniformStrings.cs" />
