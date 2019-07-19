@@ -328,8 +328,11 @@ namespace hackerRank
             //GameOfThronesI gameOfThronesI = new GameOfThronesI();
             //gameOfThronesI.Execute();
 
-            TwoStrings twoStrings = new TwoStrings();
-            twoStrings.Execute();
+            //TwoStrings twoStrings = new TwoStrings();
+            //twoStrings.Execute();
+
+            StringConstruction stringConstruction = new StringConstruction();
+            stringConstruction.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

@@ -149,6 +149,7 @@
     <Compile Include="SherlockSquares.cs" />
     <Compile Include="SockMerchant.cs" />
     <Compile Include="StrangeCounter.cs" />
+    <Compile Include="StringConstruction.cs" />
     <Compile Include="StrongPassword.cs" />
     <Compile Include="SuperReducedString.cs" />
     <Compile Include="TaumBday.cs" />
