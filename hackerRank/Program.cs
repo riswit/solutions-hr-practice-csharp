@@ -331,8 +331,11 @@ namespace hackerRank
             //TwoStrings twoStrings = new TwoStrings();
             //twoStrings.Execute();
 
-            StringConstruction stringConstruction = new StringConstruction();
-            stringConstruction.Execute();
+            //StringConstruction stringConstruction = new StringConstruction();
+            //stringConstruction.Execute();
+
+            SherlockValidString sherlockValidString = new SherlockValidString();
+            sherlockValidString.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
