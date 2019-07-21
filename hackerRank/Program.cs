@@ -334,8 +334,11 @@ namespace hackerRank
             //StringConstruction stringConstruction = new StringConstruction();
             //stringConstruction.Execute();
 
-            SherlockValidString sherlockValidString = new SherlockValidString();
-            sherlockValidString.Execute();
+            //SherlockValidString sherlockValidString = new SherlockValidString();
+            //sherlockValidString.Execute();
+
+            HighestValuePalindrome highestValuePalindrome = new HighestValuePalindrome();
+            highestValuePalindrome.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
