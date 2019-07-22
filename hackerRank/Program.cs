@@ -337,8 +337,11 @@ namespace hackerRank
             //SherlockValidString sherlockValidString = new SherlockValidString();
             //sherlockValidString.Execute();
 
-            HighestValuePalindrome highestValuePalindrome = new HighestValuePalindrome();
-            highestValuePalindrome.Execute();
+            //HighestValuePalindrome highestValuePalindrome = new HighestValuePalindrome();
+            //highestValuePalindrome.Execute();
+
+            IceCreamParlor iceCreamParlor = new IceCreamParlor();
+            iceCreamParlor.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

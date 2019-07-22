@@ -113,6 +113,7 @@
     <Compile Include="HalloweenSale.cs" />
     <Compile Include="HappyLadybugs.cs" />
     <Compile Include="HighestValuePalindrome.cs" />
+    <Compile Include="IceCreamParlor.cs" />
     <Compile Include="InsertionSortAdvancedAnalysis.cs" />
     <Compile Include="InsertionSortPart1.cs" />
     <Compile Include="InsertionSortPart2.cs" />
