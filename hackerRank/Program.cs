@@ -343,8 +343,11 @@ namespace hackerRank
             //IceCreamParlor iceCreamParlor = new IceCreamParlor();
             //iceCreamParlor.Execute();
 
-            MissingNumbers missingNumbers = new MissingNumbers();
-            missingNumbers.Execute();
+            //MissingNumbers missingNumbers = new MissingNumbers();
+            //missingNumbers.Execute();
+
+            Pairs pairs = new Pairs();
+            pairs.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
