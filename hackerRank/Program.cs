@@ -346,8 +346,11 @@ namespace hackerRank
             //MissingNumbers missingNumbers = new MissingNumbers();
             //missingNumbers.Execute();
 
-            Pairs pairs = new Pairs();
-            pairs.Execute();
+            //Pairs pairs = new Pairs();
+            //pairs.Execute();
+
+            SherlockAndArray sherlockAndArray = new SherlockAndArray();
+            sherlockAndArray.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
