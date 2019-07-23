@@ -340,8 +340,11 @@ namespace hackerRank
             //HighestValuePalindrome highestValuePalindrome = new HighestValuePalindrome();
             //highestValuePalindrome.Execute();
 
-            IceCreamParlor iceCreamParlor = new IceCreamParlor();
-            iceCreamParlor.Execute();
+            //IceCreamParlor iceCreamParlor = new IceCreamParlor();
+            //iceCreamParlor.Execute();
+
+            MissingNumbers missingNumbers = new MissingNumbers();
+            missingNumbers.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

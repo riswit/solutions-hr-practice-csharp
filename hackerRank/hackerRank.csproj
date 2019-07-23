@@ -131,6 +131,7 @@
     <Compile Include="MatrixLayerRotation.cs" />
     <Compile Include="MigratoryBirds.cs" />
     <Compile Include="MinimumDistances.cs" />
+    <Compile Include="MissingNumbers.cs" />
     <Compile Include="ModifiedKaprekarNumbers.cs" />
     <Compile Include="NewYearChaos.cs" />
     <Compile Include="NonDivisibleSubset.cs" />
