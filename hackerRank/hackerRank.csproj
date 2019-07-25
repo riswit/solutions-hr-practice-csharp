@@ -129,6 +129,7 @@
     <Compile Include="ManasaStones.cs" />
     <Compile Include="MarsExploration.cs" />
     <Compile Include="MatrixLayerRotation.cs" />
+    <Compile Include="MaximumPalindromes.cs" />
     <Compile Include="MigratoryBirds.cs" />
     <Compile Include="MinimumDistances.cs" />
     <Compile Include="MissingNumbers.cs" />
@@ -200,6 +201,7 @@
   <ItemGroup>
     <Folder Include="testBigSorting\" />
     <Folder Include="testFraudulentActivityNotifications\" />
+    <Folder Include="testMaximumPalindromes\" />
     <Folder Include="testTheFullCountingSort\" />
     <Folder Include="testTHL\" />
   </ItemGroup>

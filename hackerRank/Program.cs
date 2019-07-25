@@ -349,8 +349,11 @@ namespace hackerRank
             //Pairs pairs = new Pairs();
             //pairs.Execute();
 
-            SherlockAndArray sherlockAndArray = new SherlockAndArray();
-            sherlockAndArray.Execute();
+            //SherlockAndArray sherlockAndArray = new SherlockAndArray();
+            //sherlockAndArray.Execute();
+
+            MaximumPalindromes maximumPalindromes = new MaximumPalindromes();
+            maximumPalindromes.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
