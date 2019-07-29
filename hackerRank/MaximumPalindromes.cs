@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace hackerRank
 {
@@ -13,22 +14,106 @@ namespace hackerRank
         {
             string s = "wuhmbspjnfviogqzldrcxtaeyk";
 
-            initialize(s);
-
             int l = 2;
             int r = 4;
             int resExp = 3;
 
-            int result = answerQuery(l, r);
+            bool testFile = true;
 
-            if (resExp != result)
+            int[][] queries = new int[][] {
+                new int[] { 1, 2}
+            };
+
+            int n = 0;
+            int[] S = { };
+            string dir = "";
+
+            if (testFile)
             {
-                Console.WriteLine("Errore - Expected: " + resExp + " - now: " + result);
+                dir = @"F:\test\hr\hackerRank\hackerRank\testMaximumPalindromes\";
+                var fileStream = new FileStream(dir + "input04.txt", FileMode.Open, FileAccess.Read);
+
+                using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
+                {
+                    string line;
+                    int i = 0;
+                    int countQ = 0;
+                    while ((line = streamReader.ReadLine()) != null)
+                    {
+                        if (i == 0)
+                        {
+                            s = line;
+                        }
+                        else if (i == 1)
+                        {
+                            n = int.Parse(line);
+                            queries = new int[n][];
+                        }
+                        else if (i > 1)
+                        {
+                            S = line.Split(' ').Select(Int32.Parse).ToArray();
+                            queries[countQ] = S;
+                            countQ++;
+                        }
+                        i++;
+                    }
+                }
             }
-            else
+
+            initialize(s);
+
+            var watch = new System.Diagnostics.Stopwatch();
+            watch.Start();
+
+            //int result = answerQuery(l, r);
+
+            //if (resExp != result)
+            //{
+            //    Console.WriteLine("Errore - Expected: " + resExp + " - now: " + result);
+            //}
+            //else
+            //{
+            //    Console.WriteLine("Perfetto!!!");
+            //    Console.WriteLine(result);
+            //}
+
+            watch.Stop();
+            Console.WriteLine($"Execution Time: {watch.ElapsedMilliseconds} ms");
+
+            ////////////////////////// test with output
+            bool exeTestResults = true;
+
+            if (exeTestResults)
             {
-                Console.WriteLine("Perfetto!!!");
-                Console.WriteLine(result);
+                dir = @"F:\test\hr\hackerRank\hackerRank\testMaximumPalindromes\";
+                var fileStream = new FileStream(dir + "output04.txt", FileMode.Open, FileAccess.Read);
+
+                using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
+                {
+                    string line;
+                    int i = 0;
+                    int[] arrQ;
+                    string res = "";
+
+                    while ((line = streamReader.ReadLine()) != null)
+                    {
+
+                        arrQ = queries[i];
+                        l = arrQ[0];
+                        r = arrQ[1];
+
+                        int result = answerQuery(l, r);
+
+                        if (result.ToString() != line.Trim())
+                        {
+                            Console.WriteLine("Errore!! Caso di test n° " + (i + 1).ToString() +
+                                                    " - Output: " + res.Trim() + " - Output Expected: " + line.Trim());
+                            break;
+                        }
+
+                        i++;
+                    }
+                }
             }
 
         }
@@ -56,7 +141,7 @@ namespace hackerRank
                 }
                 else
                 {
-                    return 0;
+                    return 2;
                 }
             }
 
@@ -67,25 +152,42 @@ namespace hackerRank
                 return res;
             }
 
-            Dictionary<char, int> t1 = (from a in s.GroupBy(x => x) where a.Count() % 2 == 0 select a).ToDictionary(
+            Dictionary<char, int> t1 = (from a in s.GroupBy(x => x) select a).ToDictionary(
             p => p.Key,
             p => p.Count()
             );
-            int nPairs = t1.Count();
+            int nt1 = t1.Count();
             int c = 0;
             int sumPairs = 0;
-            for (int i = 0; i < nPairs; i++)
+            int sumOdd = 0;
+
+            for (int i = 0; i < nt1; i++)
             {
                 c = t1.ElementAt(i).Value;
-                if (c > 2)
+                if (c % 2 == 0)
                 {
-                    sumPairs += (c / 2);
+                    if (c > 2)
+                    {
+                        sumPairs += (c / 2);
+                    }
+                    else
+                    {
+                        sumPairs += 1;
+                    }
                 }
                 else
                 {
-                    sumPairs += 1;
+                    if (c > 2)
+                    {
+                        sumOdd += ((c - 1) / 2);
+                    }
+                    else
+                    {
+                        sumOdd += 1;
+                    }
                 }
             }
+
             res = sumPairs * (res - 1);
             return res;
         }
@@ -110,8 +212,6 @@ namespace hackerRank
                     return 0;
                 }
             }
-
-
 
             int res = 0;
             Dictionary<char, int> t1 = (from a in s.GroupBy(x => x) select a).ToDictionary(
