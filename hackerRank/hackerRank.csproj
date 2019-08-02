@@ -126,6 +126,7 @@
     <Compile Include="LeftRotation.cs" />
     <Compile Include="LibraryFine.cs" />
     <Compile Include="LisaWorkbook.cs" />
+    <Compile Include="LonelyInteger.cs" />
     <Compile Include="MakingAnagrams.cs" />
     <Compile Include="ManasaStones.cs" />
     <Compile Include="MarsExploration.cs" />

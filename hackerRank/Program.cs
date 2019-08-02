@@ -367,8 +367,11 @@ namespace hackerRank
             //MaximizingXOR maximizingXOR = new MaximizingXOR();
             //maximizingXOR.Execute();
 
-            SumVsXOR sumVsXOR = new SumVsXOR();
-            sumVsXOR.Execute();
+            //SumVsXOR sumVsXOR = new SumVsXOR();
+            //sumVsXOR.Execute();
+
+            LonelyInteger lonelyInteger = new LonelyInteger();
+            lonelyInteger.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
