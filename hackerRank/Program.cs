@@ -358,8 +358,11 @@ namespace hackerRank
             //MaximumSubarraySum maximumSubarraySum = new MaximumSubarraySum();
             //maximumSubarraySum.Execute();
 
-            SherlockAnagrams sherlockAnagrams = new SherlockAnagrams();
-            sherlockAnagrams.Execute();
+            //SherlockAnagrams sherlockAnagrams = new SherlockAnagrams();
+            //sherlockAnagrams.Execute();
+
+            FlippingBits flippingBits = new FlippingBits();
+            flippingBits.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

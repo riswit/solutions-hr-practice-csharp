@@ -103,6 +103,7 @@
     <Compile Include="FindDigits.cs" />
     <Compile Include="FindMedian.cs" />
     <Compile Include="FlatlandSpaceStations.cs" />
+    <Compile Include="FlippingBits.cs" />
     <Compile Include="FormingMagicSquare.cs" />
     <Compile Include="FraudulentActivityNotifications.cs" />
     <Compile Include="FunnyString.cs" />
