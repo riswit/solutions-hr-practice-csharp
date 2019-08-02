@@ -130,6 +130,7 @@
     <Compile Include="MarsExploration.cs" />
     <Compile Include="MatrixLayerRotation.cs" />
     <Compile Include="MaximumPalindromes.cs" />
+    <Compile Include="MaximumSubarraySum.cs" />
     <Compile Include="MigratoryBirds.cs" />
     <Compile Include="MinimumDistances.cs" />
     <Compile Include="MissingNumbers.cs" />
@@ -151,6 +152,7 @@
     <Compile Include="SeparateTheNumbers.cs" />
     <Compile Include="SequenceEquation.cs" />
     <Compile Include="ServiceLane.cs" />
+    <Compile Include="SherlockAnagrams.cs" />
     <Compile Include="SherlockAndArray.cs" />
     <Compile Include="SherlockSquares.cs" />
     <Compile Include="SherlockValidString.cs" />
