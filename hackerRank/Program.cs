@@ -361,8 +361,11 @@ namespace hackerRank
             //SherlockAnagrams sherlockAnagrams = new SherlockAnagrams();
             //sherlockAnagrams.Execute();
 
-            FlippingBits flippingBits = new FlippingBits();
-            flippingBits.Execute();
+            //FlippingBits flippingBits = new FlippingBits();
+            //flippingBits.Execute();
+
+            MaximizingXOR maximizingXOR = new MaximizingXOR();
+            maximizingXOR.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
