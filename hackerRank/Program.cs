@@ -364,8 +364,11 @@ namespace hackerRank
             //FlippingBits flippingBits = new FlippingBits();
             //flippingBits.Execute();
 
-            MaximizingXOR maximizingXOR = new MaximizingXOR();
-            maximizingXOR.Execute();
+            //MaximizingXOR maximizingXOR = new MaximizingXOR();
+            //maximizingXOR.Execute();
+
+            SumVsXOR sumVsXOR = new SumVsXOR();
+            sumVsXOR.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
