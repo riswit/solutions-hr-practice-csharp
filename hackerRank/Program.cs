@@ -370,8 +370,17 @@ namespace hackerRank
             //SumVsXOR sumVsXOR = new SumVsXOR();
             //sumVsXOR.Execute();
 
-            LonelyInteger lonelyInteger = new LonelyInteger();
-            lonelyInteger.Execute();
+            //LonelyInteger lonelyInteger = new LonelyInteger();
+            //lonelyInteger.Execute();
+
+            //PokerNim pokerNim = new PokerNim();
+            //pokerNim.Execute();
+
+            //IntroductionNimGame introductionNimGame = new IntroductionNimGame();
+            //introductionNimGame.Execute();
+
+            CommonChild commonChild = new CommonChild();
+            commonChild.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

@@ -84,6 +84,7 @@
     <Compile Include="CircularArrayRotation.cs" />
     <Compile Include="ClimbingLeaderboard.cs" />
     <Compile Include="ClosestNumbers.cs" />
+    <Compile Include="CommonChild.cs" />
     <Compile Include="CorrectnessLoopInvariant.cs" />
     <Compile Include="CountingSort1.cs" />
     <Compile Include="CountingSort2.cs" />
@@ -118,6 +119,7 @@
     <Compile Include="InsertionSortAdvancedAnalysis.cs" />
     <Compile Include="InsertionSortPart1.cs" />
     <Compile Include="InsertionSortPart2.cs" />
+    <Compile Include="IntroductionNimGame.cs" />
     <Compile Include="IntroTutorialChallenges.cs" />
     <Compile Include="JumpingClouds.cs" />
     <Compile Include="JumpingOnTheClouds.cs" />
@@ -145,6 +147,7 @@
     <Compile Include="PalindromeIndex.cs" />
     <Compile Include="Pangrams.cs" />
     <Compile Include="PickingNumbers.cs" />
+    <Compile Include="PokerNim.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueensAttackII.cs" />
