@@ -379,8 +379,14 @@ namespace hackerRank
             //IntroductionNimGame introductionNimGame = new IntroductionNimGame();
             //introductionNimGame.Execute();
 
-            CommonChild commonChild = new CommonChild();
-            commonChild.Execute();
+            //CommonChild commonChild = new CommonChild();
+            //commonChild.Execute();
+
+            //BearSteadyGene bearSteadyGene = new BearSteadyGene();
+            //bearSteadyGene.Execute();
+
+            LilyHomework lilyHomework = new LilyHomework();
+            lilyHomework.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

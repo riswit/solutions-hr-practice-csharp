@@ -68,6 +68,7 @@
     <Compile Include="AppendDelete.cs" />
     <Compile Include="AppleAndOrange.cs" />
     <Compile Include="ArraysDS.cs" />
+    <Compile Include="BearSteadyGene.cs" />
     <Compile Include="BeautifulBinaryString.cs" />
     <Compile Include="BeautifulDaysMovies.cs" />
     <Compile Include="BeautifulTriplets.cs" />
@@ -127,6 +128,7 @@
     <Compile Include="LarrysArray.cs" />
     <Compile Include="LeftRotation.cs" />
     <Compile Include="LibraryFine.cs" />
+    <Compile Include="LilyHomework.cs" />
     <Compile Include="LisaWorkbook.cs" />
     <Compile Include="LonelyInteger.cs" />
     <Compile Include="MakingAnagrams.cs" />
