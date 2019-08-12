@@ -385,8 +385,14 @@ namespace hackerRank
             //BearSteadyGene bearSteadyGene = new BearSteadyGene();
             //bearSteadyGene.Execute();
 
-            LilyHomework lilyHomework = new LilyHomework();
-            lilyHomework.Execute();
+            //LilyHomework lilyHomework = new LilyHomework();
+            //lilyHomework.Execute();
+
+            //HackerlandRadioTransmitters hackerlandRadioTransmitters = new HackerlandRadioTransmitters();
+            //hackerlandRadioTransmitters.Execute();
+
+            ConnectedCellsGrid connectedCellsGrid = new ConnectedCellsGrid();
+            connectedCellsGrid.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

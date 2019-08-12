@@ -86,6 +86,7 @@
     <Compile Include="ClimbingLeaderboard.cs" />
     <Compile Include="ClosestNumbers.cs" />
     <Compile Include="CommonChild.cs" />
+    <Compile Include="ConnectedCellsGrid.cs" />
     <Compile Include="CorrectnessLoopInvariant.cs" />
     <Compile Include="CountingSort1.cs" />
     <Compile Include="CountingSort2.cs" />
@@ -112,6 +113,7 @@
     <Compile Include="GameOfThronesI.cs" />
     <Compile Include="Gemstones.cs" />
     <Compile Include="GradingStudents.cs" />
+    <Compile Include="HackerlandRadioTransmitters.cs" />
     <Compile Include="HackerRankString.cs" />
     <Compile Include="HalloweenSale.cs" />
     <Compile Include="HappyLadybugs.cs" />
