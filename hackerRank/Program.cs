@@ -391,8 +391,11 @@ namespace hackerRank
             //HackerlandRadioTransmitters hackerlandRadioTransmitters = new HackerlandRadioTransmitters();
             //hackerlandRadioTransmitters.Execute();
 
-            ConnectedCellsGrid connectedCellsGrid = new ConnectedCellsGrid();
-            connectedCellsGrid.Execute();
+            //ConnectedCellsGrid connectedCellsGrid = new ConnectedCellsGrid();
+            //connectedCellsGrid.Execute();
+
+            CountLuck countLuck = new CountLuck();
+            countLuck.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
