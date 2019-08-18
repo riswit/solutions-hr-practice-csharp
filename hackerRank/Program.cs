@@ -394,8 +394,11 @@ namespace hackerRank
             //ConnectedCellsGrid connectedCellsGrid = new ConnectedCellsGrid();
             //connectedCellsGrid.Execute();
 
-            CountLuck countLuck = new CountLuck();
-            countLuck.Execute();
+            //CountLuck countLuck = new CountLuck();
+            //countLuck.Execute();
+
+            CutTree cutTree = new CutTree();
+            cutTree.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

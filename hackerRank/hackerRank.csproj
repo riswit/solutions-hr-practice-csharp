@@ -93,6 +93,7 @@
     <Compile Include="CountingValleys.cs" />
     <Compile Include="CountLuck.cs" />
     <Compile Include="CutSticks.cs" />
+    <Compile Include="CutTree.cs" />
     <Compile Include="DayOfTheProgrammer.cs" />
     <Compile Include="DesignerPDFViewer.cs" />
     <Compile Include="DivisibleSumPairs.cs" />
