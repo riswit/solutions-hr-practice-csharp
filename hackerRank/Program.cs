@@ -382,9 +382,6 @@ namespace hackerRank
             //CommonChild commonChild = new CommonChild();
             //commonChild.Execute();
 
-            //BearSteadyGene bearSteadyGene = new BearSteadyGene();
-            //bearSteadyGene.Execute();
-
             //LilyHomework lilyHomework = new LilyHomework();
             //lilyHomework.Execute();
 
@@ -397,8 +394,11 @@ namespace hackerRank
             //CountLuck countLuck = new CountLuck();
             //countLuck.Execute();
 
-            CutTree cutTree = new CutTree();
-            cutTree.Execute();
+            //CutTree cutTree = new CutTree();
+            //cutTree.Execute();
+
+            BearSteadyGene bearSteadyGene = new BearSteadyGene();
+            bearSteadyGene.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
