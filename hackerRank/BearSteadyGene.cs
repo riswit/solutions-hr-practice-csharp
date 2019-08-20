@@ -32,6 +32,7 @@ namespace hackerRank
         static int steadyGene(string gene)
         {
             int res = 0;
+            int min = 1000000000;
             ma = gene.Length / 4;
 
             Dictionary<char, int> mTot = getDictCount(gene);
@@ -55,6 +56,7 @@ namespace hackerRank
             for (int i = 0; i < gene.Length; i++)
             {
                 mPos[gene[i]].Add(i);
+
                 switch (gene[i])
                 {
                     case 'A':
@@ -76,15 +78,46 @@ namespace hackerRank
                 }
             }
 
-            int geneMaxValue = mTot.Select(e => e.Value).Max();
-            int diff = geneMaxValue - ma;
-            char geneOverflow = getGeneOverflow(mTot, geneMaxValue);
+            //int geneMaxValue = mTot.Select(e => e.Value).Max();
+            //int diff = geneMaxValue - ma;
+            //char g = getGeneOverflow(mTot, geneMaxValue);
             int d = 0;
             int p = 0;
-            int a = 0;
+            int init = 0;
+            int fini = 0;
+            string s = "";
+            int c = 0;
+
+            Dictionary<char, int> gCut = new Dictionary<char, int>();
+            gCut.Add('A', getValueCut(mTot, 'A'));
+            gCut.Add('C', getValueCut(mTot, 'C'));
+            gCut.Add('G', getValueCut(mTot, 'G'));
+            gCut.Add('T', getValueCut(mTot, 'T'));
+
+            int sumCut = gCut.Select(e => e.Value).Sum();
+
+            foreach (KeyValuePair<char, int> e in gCut.Where(e => e.Value > 0))
+            {
+                List<int> mp = mPos[e.Key];
+                int i = 0;
+                c = mp.Count();
+
+                while (i + e.Value - 1 < c)
+                {
+                    
+                    init = mp[i];
+                    fini = mp[i + e.Value - 1]
+                    d = mp[i];
+
+                    i++;
+                }
+
+            }
+
+            /*
             for (d = diff; d > 0; d--)
             {
-                string c = new String(geneOverflow, d);
+                string c = new String(g, d);
                 p = gene.IndexOf(c);
                 if (p > -1)
                 {
@@ -92,11 +125,20 @@ namespace hackerRank
                     {
                         return d;
                     }
-                    a = diff - d;
-                    List<int> mp = mPos[geneOverflow];
+                    ap = diff - d;
+                    List<int> mp = mPos[g];
                     int j = 0;
-                    res = mp[mI[p + d - 1] + a] - p + 1;
-                    string s = gene.Substring(p, res);
+                                        
+                    //s = gene.Substring(p, res);
+
+                    for (int i = mI[p]; i < mp.Count(); i++)
+                    {
+
+                    }
+                    for (int i = mI[p] - 1; i >= 0; i--)
+                    {
+
+                    }
 
                     mTot = equalize(mTot, s);
                     if (isSteady(mTot))
@@ -107,11 +149,11 @@ namespace hackerRank
                     //break;
                 }
             }
-
+            */
             return res;
         }
 
-        static Dictionary<char, int> equalize(Dictionary<char, int> mTot, string s)
+        static Dictionary<char, int> removePlus(Dictionary<char, int> mTot, string s)
         {
             Dictionary<char, int> mT = getDictCount(s);
 
@@ -120,13 +162,18 @@ namespace hackerRank
                 mTot[e.Key] -= e.Value;
             }
 
+            return mTot;
+        }
+
+        static Dictionary<char, int> equalize(Dictionary<char, int> mTot, string s)
+        {
             int lim = s.Length;
             int di = 0;
             foreach (KeyValuePair<char, int> e in mTot)
             {
-                if (mTot[e.Key] < ma)
+                if (e.Value < ma)
                 {
-                    di = ma - mTot[e.Key];
+                    di = ma - e.Value;
                     mTot[e.Key] += di;
                     lim -= di;
                 }
@@ -148,11 +195,37 @@ namespace hackerRank
 
         static Dictionary<char, int> getDictCount(string str)
         {
-            Dictionary<char, int> mTot = (from a in str.ToCharArray().GroupBy(x => x) select a).ToDictionary(
+            Dictionary<char, int> t = (from a in str.ToCharArray().GroupBy(x => x) select a).ToDictionary(
                                                                             p => p.Key,
                                                                             p => p.Count()
                                                                             );
+
+            Dictionary<char, int> mTot = new Dictionary<char, int>();
+            mTot.Add('A', getValueMap(t, 'A'));
+            mTot.Add('C', getValueMap(t, 'C'));
+            mTot.Add('G', getValueMap(t, 'G'));
+            mTot.Add('T', getValueMap(t, 'T'));
+
             return mTot;
+        }
+
+        static int getValueMap(Dictionary<char, int> t, char e)
+        {
+            int v = 0;
+            t.TryGetValue(e, out v);
+            return v;
+        }
+
+        static int getValueCut(Dictionary<char, int> t, char e)
+        {
+            int v = 0;
+            t.TryGetValue(e, out v);
+            int r = v - ma;
+            if (r < 0)
+            {
+                return 0;
+            }
+            return r;
         }
 
         static bool isSteady(Dictionary<char, int> t)
