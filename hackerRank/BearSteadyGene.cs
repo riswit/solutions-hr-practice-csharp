@@ -47,40 +47,11 @@ namespace hackerRank
             mPos.Add('G', new List<int>());
             mPos.Add('T', new List<int>());
 
-            Dictionary<int, int> mI = new Dictionary<int, int>();
-            int iA = 0;
-            int iC = 0;
-            int iG = 0;
-            int iT = 0;
-
             for (int i = 0; i < gene.Length; i++)
             {
                 mPos[gene[i]].Add(i);
-
-                switch (gene[i])
-                {
-                    case 'A':
-                        mI.Add(i, iA);
-                        iA++;
-                        break;
-                    case 'C':
-                        mI.Add(i, iC);
-                        iC++;
-                        break;
-                    case 'G':
-                        mI.Add(i, iG);
-                        iG++;
-                        break;
-                    case 'T':
-                        mI.Add(i, iT);
-                        iT++;
-                        break;
-                }
             }
 
-            //int geneMaxValue = mTot.Select(e => e.Value).Max();
-            //int diff = geneMaxValue - ma;
-            //char g = getGeneOverflow(mTot, geneMaxValue);
             int d = 0;
             int p = 0;
             int init = 0;
@@ -95,62 +66,109 @@ namespace hackerRank
             gCut.Add('T', getValueCut(mTot, 'T'));
 
             int sumCut = gCut.Select(e => e.Value).Sum();
-
+            int count = 0;
+            int n1 = 0;
+            int n2 = 0;
+            int p1 = 0;
+            int p2 = 0;
+            int maxV = 0;
+            char c1 = '_';
+            char c2 = '_';
+            int[] mp;
+            List<int> mp1 = new List<int>();
+            List<int> mp2 = new List<int>();
             foreach (KeyValuePair<char, int> e in gCut.Where(e => e.Value > 0))
             {
-                List<int> mp = mPos[e.Key];
-                int i = 0;
-                c = mp.Count();
+                count += 1;
 
-                while (i + e.Value - 1 < c)
+                if (count == 1)
                 {
-                    
-                    init = mp[i];
-                    fini = mp[i + e.Value - 1]
-                    d = mp[i];
-
-                    i++;
+                    mp1 = mPos[e.Key];
+                    n1 = e.Value;
+                    p1 = mp1[0];
+                    c1 = e.Key;
+                }
+                else 
+                {
+                    mp2 = mPos[e.Key];
+                    n2 = e.Value;
+                    p2 = mp2[0];
+                    c2 = e.Key;
                 }
 
+                if (e.Value > maxV)
+                {
+                    maxV = e.Value;
+                }
             }
 
-            /*
-            for (d = diff; d > 0; d--)
+            if (count == 1 && maxV == 1)
             {
-                string c = new String(g, d);
-                p = gene.IndexOf(c);
-                if (p > -1)
+                return 1;
+            }
+
+            int nCut = n1 + n2;
+            int dist = 0;
+            init = p1;
+            mp = new int[mp1.Count()];
+            mp1.CopyTo(mp);
+
+            if (count > 1)
+            {
+                if (p2 < init)
                 {
-                    if (d == diff && d > 1)
-                    {
-                        return d;
-                    }
-                    ap = diff - d;
-                    List<int> mp = mPos[g];
-                    int j = 0;
-                                        
-                    //s = gene.Substring(p, res);
+                    init = p2;
 
-                    for (int i = mI[p]; i < mp.Count(); i++)
-                    {
-
-                    }
-                    for (int i = mI[p] - 1; i >= 0; i--)
-                    {
-
-                    }
-
-                    mTot = equalize(mTot, s);
-                    if (isSteady(mTot))
-                    {
-                        return res;
-                    }
-
-                    //break;
+                    mp = new int[mp2.Count()];
+                    mp2.CopyTo(mp);
                 }
             }
-            */
-            return res;
+            int countE = 0;
+            int countD = 0;
+            int k = 0;
+
+            while (k < mp.Count())
+            {
+                Dictionary<char, int> mTotTemp = new Dictionary<char, int>(mTot);
+                for (int i = init; i < gene.Length; i++)
+                {
+                    countE += 1;
+                    char e = gene[i];
+                    if (e.Equals(c1) || e.Equals(c2))
+                    {
+                        countD += 1;
+                        mTotTemp[e] -= 1;
+                        mTotTemp = upMTot(mTotTemp, e);
+                        if (isSteady(mTotTemp))
+                        {
+                            if (countE < min)
+                            {
+                                min = countE;
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                k += 1;
+            }
+
+
+            return min;
+        }
+
+        static Dictionary<char, int> upMTot(Dictionary<char, int> mTot, char e)
+        {
+            foreach (KeyValuePair<char, int> el in mTot.Where(x => !x.Equals(e)))
+            {
+                if (mTot[el.Key] < ma)
+                {
+                    mTot[el.Key] += 1;
+                    break;
+                }
+            }
+
+            return mTot;
         }
 
         static Dictionary<char, int> removePlus(Dictionary<char, int> mTot, string s)
