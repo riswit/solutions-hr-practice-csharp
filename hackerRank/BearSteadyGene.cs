@@ -10,7 +10,10 @@ namespace hackerRank
     {
         public void Execute()
         {
-            string gene = "GAAATAAA";
+            //string gene = "GAAATAAA";
+            //int resExp = 5;
+
+            string gene = "TGATGCCGTCCCCTCAACTTGAGTGCTCCTAATGCGTTGC";
             int resExp = 5;
 
             int result = steadyGene(gene);
@@ -27,11 +30,9 @@ namespace hackerRank
         }
 
         public static int ma;
-        public static List<List<int>> tree;
 
         static int steadyGene(string gene)
         {
-            int res = 0;
             int min = 1000000000;
             ma = gene.Length / 4;
 
@@ -52,20 +53,12 @@ namespace hackerRank
                 mPos[gene[i]].Add(i);
             }
 
-            int d = 0;
-            int p = 0;
-            int init = 0;
-            int fini = 0;
-            string s = "";
-            int c = 0;
-
             Dictionary<char, int> gCut = new Dictionary<char, int>();
             gCut.Add('A', getValueCut(mTot, 'A'));
             gCut.Add('C', getValueCut(mTot, 'C'));
             gCut.Add('G', getValueCut(mTot, 'G'));
             gCut.Add('T', getValueCut(mTot, 'T'));
 
-            int sumCut = gCut.Select(e => e.Value).Sum();
             int count = 0;
             int n1 = 0;
             int n2 = 0;
@@ -100,6 +93,7 @@ namespace hackerRank
                 {
                     maxV = e.Value;
                 }
+
             }
 
             if (count == 1 && maxV == 1)
@@ -109,7 +103,7 @@ namespace hackerRank
 
             int nCut = n1 + n2;
             int dist = 0;
-            init = p1;
+            int init = p1;
             mp = new int[mp1.Count()];
             mp1.CopyTo(mp);
 
@@ -123,93 +117,149 @@ namespace hackerRank
                     mp2.CopyTo(mp);
                 }
             }
-            int countE = 0;
-            int countD = 0;
-            int k = 0;
 
-            while (k < mp.Count())
+            int k = 0;
+            int posL = 0;
+            int posR = 0;
+
+            while (k < mp1.Count())
             {
-                Dictionary<char, int> mTotTemp = new Dictionary<char, int>(mTot);
-                for (int i = init; i < gene.Length; i++)
+                int start = mp1[k];
+                int end = 0;
+                int start2 = 0;
+                int end2 = 0;
+
+                if (k + n1 - 1 < mp1.Count())
                 {
-                    countE += 1;
-                    char e = gene[i];
-                    if (e.Equals(c1) || e.Equals(c2))
+                    end = mp1[k + n1 - 1];
+                }
+                else
+                {
+                    break;
+                }
+
+                dist = end - start + 1;
+
+                if (count > 1)
+                {
+                    string str = gene.Substring(start, dist);
+                    int totn2Into = str.Where(e => e.Equals(c2)).Count();
+                    if (totn2Into < n2)
                     {
-                        countD += 1;
-                        mTotTemp[e] -= 1;
-                        mTotTemp = upMTot(mTotTemp, e);
-                        if (isSteady(mTotTemp))
+                        int totn2Out = n2 - totn2Into;
+                        int[] tL = mp2.Where(e => e < start).ToArray();
+                        int[] tR = mp2.Where(e => e > end).ToArray();
+
+                        int indL = tL.Length - 1;
+                        int indR = 0;
+                        if (tR.Length == 0)
                         {
-                            if (countE < min)
+                            indR = -1;
+                        }
+                        bool ok = false;
+                        while ((indL >= 0 && indL < tL.Length) || (indR >= 0 && indR < tR.Length))
+                        {
+                            if (indL >= 0 && indL < tL.Length)
                             {
-                                min = countE;
-                                break;
+                                posL = tL[indL];
+                            }
+                            if (indR >= 0 && indR < tR.Length)
+                            {
+                                posR = tR[indR];
+                            }
+                            if (indL >= 0 && indR >= 0)
+                            {
+
+                            }
+                            else if (indL >= 0 && indR < 0)
+                            {
+
+                            }
+                            else if (indL < 0 && indR >= 0)
+                            {
+
+                            }
+
+                            if (start - posL <= posR - end)
+                            {
+
+                                totn2Out -= 1;
+                                indL -= 1;
+                            }
+                            else
+                            {
+
+                                indR += 1;
                             }
                         }
+
+                        end2 = mp2[n2 - 1];
+                        if (start2 < start)
+                        {
+                            start = start2;
+                        }
+                        if (end2 > end)
+                        {
+                            end = end2;
+                        }
                     }
+
+                }
+
+                if (dist < min)
+                {
+                    min = dist;
                 }
 
                 k += 1;
             }
 
+            if (count > 1)
+            {
+                k = 0;
+
+                while (k < mp2.Count())
+                {
+                    int start = mp2[k];
+                    int end = 0;
+                    int start2 = 0;
+                    int end2 = 0;
+
+                    if (k + n2 - 1 < mp2.Count())
+                    {
+                        end = mp2[k + n2 - 1];
+                    }
+                    else
+                    {
+                        break;
+                    }
+
+                    start2 = mp1[0];
+                    end2 = mp1[n1 - 1];
+
+                    if (start2 < start)
+                    {
+                        start = start2;
+                    }
+                    if (end2 > end)
+                    {
+                        end = end2;
+                    }
+
+                    dist = end - start + 1;
+
+                    if (dist < min)
+                    {
+                        min = dist;
+                    }
+
+                    k += 1;
+                }
+            }
 
             return min;
         }
 
-        static Dictionary<char, int> upMTot(Dictionary<char, int> mTot, char e)
-        {
-            foreach (KeyValuePair<char, int> el in mTot.Where(x => !x.Equals(e)))
-            {
-                if (mTot[el.Key] < ma)
-                {
-                    mTot[el.Key] += 1;
-                    break;
-                }
-            }
-
-            return mTot;
-        }
-
-        static Dictionary<char, int> removePlus(Dictionary<char, int> mTot, string s)
-        {
-            Dictionary<char, int> mT = getDictCount(s);
-
-            foreach (KeyValuePair<char,int> e in mT)
-            {
-                mTot[e.Key] -= e.Value;
-            }
-
-            return mTot;
-        }
-
-        static Dictionary<char, int> equalize(Dictionary<char, int> mTot, string s)
-        {
-            int lim = s.Length;
-            int di = 0;
-            foreach (KeyValuePair<char, int> e in mTot)
-            {
-                if (e.Value < ma)
-                {
-                    di = ma - e.Value;
-                    mTot[e.Key] += di;
-                    lim -= di;
-                }
-                if (lim <= 0)
-                {
-                    break;
-                }
-            }
-
-            return mTot;
-        }
-
-        static char getGeneOverflow(Dictionary<char, int> mTot, int geneMaxValue)
-        {
-            char geneOverflow = mTot.Where(e => e.Value.Equals(geneMaxValue)).Select(x => x.Key).First();
-
-            return geneOverflow;
-        }
 
         static Dictionary<char, int> getDictCount(string str)
         {
@@ -255,6 +305,60 @@ namespace hackerRank
 
             return false;
         }
+
+        //static Dictionary<char, int> upMTot(Dictionary<char, int> mTot, char e)
+        //{
+        //    foreach (KeyValuePair<char, int> el in mTot.Where(x => !x.Equals(e)))
+        //    {
+        //        if (mTot[el.Key] < ma)
+        //        {
+        //            mTot[el.Key] += 1;
+        //            break;
+        //        }
+        //    }
+
+        //    return mTot;
+        //}
+
+        //static Dictionary<char, int> removePlus(Dictionary<char, int> mTot, string s)
+        //{
+        //    Dictionary<char, int> mT = getDictCount(s);
+
+        //    foreach (KeyValuePair<char,int> e in mT)
+        //    {
+        //        mTot[e.Key] -= e.Value;
+        //    }
+
+        //    return mTot;
+        //}
+
+        //static Dictionary<char, int> equalize(Dictionary<char, int> mTot, string s)
+        //{
+        //    int lim = s.Length;
+        //    int di = 0;
+        //    foreach (KeyValuePair<char, int> e in mTot)
+        //    {
+        //        if (e.Value < ma)
+        //        {
+        //            di = ma - e.Value;
+        //            mTot[e.Key] += di;
+        //            lim -= di;
+        //        }
+        //        if (lim <= 0)
+        //        {
+        //            break;
+        //        }
+        //    }
+
+        //    return mTot;
+        //}
+
+        //static char getGeneOverflow(Dictionary<char, int> mTot, int geneMaxValue)
+        //{
+        //    char geneOverflow = mTot.Where(e => e.Value.Equals(geneMaxValue)).Select(x => x.Key).First();
+
+        //    return geneOverflow;
+        //}
 
     }
 }
