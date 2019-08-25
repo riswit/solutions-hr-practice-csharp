@@ -400,11 +400,11 @@ namespace hackerRank
             //BearSteadyGene bearSteadyGene = new BearSteadyGene();
             //bearSteadyGene.Execute();
 
-            MorganString morganString = new MorganString();
-            morganString.Execute();
+            //MorganString morganString = new MorganString();
+            //morganString.Execute();
 
-            //MinimumSwaps2 minimumSwaps2 = new MinimumSwaps2();
-            //minimumSwaps2.Execute();
+            MinimumSwaps2 minimumSwaps2 = new MinimumSwaps2();
+            minimumSwaps2.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

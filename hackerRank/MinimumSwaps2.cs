@@ -30,24 +30,39 @@ namespace hackerRank
 
         static int minimumSwaps(int[] arr)
         {
-            int res = 0;
             int sw = 0;
-            int i = 0;
 
-            for (i = 0; i < arr.Length; i++)
+            int iR = arr.Length - 1;
+
+            int i = 0;
+            int res = 0;
+
+            while (i < arr.Length)
             {
-                if (arr[i] == (i + 1))
+                int arrValue = i + 1;
+
+                if (arr[i] == arrValue)
                 {
+                    i++;
                     continue;
                 }
-                sw = arr[i];
-                arr[i] = arr[arr[i] - 1];
-                arr[arr[i] - 1] = sw;
 
-                res += 1;
-                i--;
+                while (arr[iR] != arrValue)
+                {
+                    iR--;
+                }
+
+                if (iR != i)
+                {
+                    sw = arr[i];
+                    arr[i] = arr[iR];
+                    arr[iR] = sw;
+                    res++;
+                }
+
+                iR = arr.Length - 1;
+                i++;
             }
-
             return res;
         }
     }
