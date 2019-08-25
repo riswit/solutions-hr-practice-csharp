@@ -144,8 +144,10 @@
     <Compile Include="MaximumSubarraySum.cs" />
     <Compile Include="MigratoryBirds.cs" />
     <Compile Include="MinimumDistances.cs" />
+    <Compile Include="MinimumSwaps2.cs" />
     <Compile Include="MissingNumbers.cs" />
     <Compile Include="ModifiedKaprekarNumbers.cs" />
+    <Compile Include="MorganString.cs" />
     <Compile Include="NewYearChaos.cs" />
     <Compile Include="NonDivisibleSubset.cs" />
     <Compile Include="OrganizingContainersBalls.cs" />
