@@ -67,6 +67,7 @@
     <Compile Include="AngryProfessor.cs" />
     <Compile Include="AppendDelete.cs" />
     <Compile Include="AppleAndOrange.cs" />
+    <Compile Include="ArrayManipulation.cs" />
     <Compile Include="ArraysDS.cs" />
     <Compile Include="BearSteadyGene.cs" />
     <Compile Include="BeautifulBinaryString.cs" />

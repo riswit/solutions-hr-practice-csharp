@@ -403,8 +403,11 @@ namespace hackerRank
             //MorganString morganString = new MorganString();
             //morganString.Execute();
 
-            MinimumSwaps2 minimumSwaps2 = new MinimumSwaps2();
-            minimumSwaps2.Execute();
+            //MinimumSwaps2 minimumSwaps2 = new MinimumSwaps2();
+            //minimumSwaps2.Execute();
+
+            ArrayManipulation arrayManipulation = new ArrayManipulation();
+            arrayManipulation.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
