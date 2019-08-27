@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,15 +36,59 @@ namespace hackerRank
             //};
             //long resExp = 31;
 
-            int n = 4;
+            //int n = 4;
+            //int[][] queries = new int[][] {
+            //    new int[] { 2, 3, 603 },
+            //    new int[] { 1, 1, 286 },
+            //    new int[] { 4, 4, 882 }
+            //};
+            //long resExp = 882;
+
             int[][] queries = new int[][] {
-                new int[] { 2, 3, 603 },
-                new int[] { 1, 1, 286 },
-                new int[] { 4, 4, 882 }
+                new int[] { 0, 0}
             };
-            long resExp = 882;
+
+            long resExp = 2497169732;
+
+            bool testFile = true;
+            int n = 0;
+            int[] S = { };
+            string dir = "";
+            if (testFile)
+            {
+                dir = @"F:\test\hr\hackerRank\hackerRank\testArrayManipulation\";
+                var fileStream = new FileStream(dir + "input07.txt", FileMode.Open, FileAccess.Read);
+
+                using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
+                {
+                    string line;
+                    int i = 0;
+                    int countQ = 0;
+                    while ((line = streamReader.ReadLine()) != null)
+                    {
+                        if (i == 0)
+                        {
+                            S = line.Split(' ').Select(Int32.Parse).ToArray();
+                            n = S[0];
+                            queries = new int[S[1]][];
+                        }
+                        else if (i > 0)
+                        {
+                            S = line.Split(' ').Select(Int32.Parse).ToArray();
+                            queries[countQ] = S;
+                            countQ++;
+                        }
+                        i++;
+                    }
+                }
+            }
+
+            var watch = new System.Diagnostics.Stopwatch();
+            watch.Start();
 
             long result = arrayManipulation(n, queries);
+
+            watch.Stop();
 
             if (resExp != result)
             {
@@ -54,48 +99,57 @@ namespace hackerRank
                 Console.WriteLine(result);
                 Console.WriteLine("Perfetto!!!");
             }
+            Console.WriteLine($"Execution Time: {watch.ElapsedMilliseconds} ms");
         }
 
         static long arrayManipulation(int n, int[][] queries)
         {
-            long[] tl = new long[n + 1];
+            long maxValue = 0;
+
             int[] o = new int[n + 1];
-            List<int> tl1 = new List<int>();
+            //long[] o1 = new long[1000000000];
 
-            int[][] tl0 = new int[n + 1][];
+            //Dictionary<int, long> tTot = o.Select((e, ind) => ind).ToDictionary(p => p, p => 0L);
+            //Dictionary<int, long> tTotK = o.Select((e, ind) => ind).ToDictionary(p => p, p => 0L);
 
-            Dictionary<int, int[]> dict = new Dictionary<int, int[]>();
             int nDict = 0;
+            int d = 0;
+            int count = 0;
+            int a = 0;
+            int b = 0;
+            int k = 0;
+            int i = 0;
+            int j = 0;
 
-            for (int i = 0; i < queries.Length; i++)
+            for (i = 0; i < queries.Length; i++)
             {
-                tl[queries[i][0]] += queries[i][2];
-                if (tl[queries[i][0]] != tl[queries[i][1]])
+                k = queries[i][2];
+                if (k == 0)
                 {
-                    tl[queries[i][1]] += queries[i][2];
+                    continue;
                 }
-                if (queries[i][1] - queries[i][0] - 1 > 0)
-                {
-                    int[] a1 = Enumerable.Repeat(queries[i][2], queries[i][1] - queries[i][0] - 1).ToArray();
 
-                    tl0[queries[i][0]] = a1;
+                a = queries[i][0];
+                b = queries[i][1];
 
-                    //dict.TryGetValue(queries[i][0], out tl0);
+                //if (a.Equals(b))
+                //{
+                //    tTotK[k] += 1;
+                //}
+                //else
+                //{
+                //    tTotK[k] += 2;
 
-                    //if (tl0 == null)
-                    //{
-                    //    tl0.Add(tl1);
-                    //    dict.Add(queries[i][0], tl0);
-                    //    nDict += 1;
-                    //}
-                    //else
-                    //{
-                    //    tl0.Add(tl1);
-                    //    dict[queries[i][0]] = tl0;
-                    //}
-                }
+                //    d = b - a - 1;
+                //    if (d > 0)
+                //    {
+                //        tTotK[k] += d;
+                //    }
+                //}
+
+                count += 1;
             }
-            long maxValue = tl.Max();
+            //maxValue = tTot.Select(e => e.Value).Max();
 
             //foreach (KeyValuePair<int, List<List<int>>> e in dict)
             //{

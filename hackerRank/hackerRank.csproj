@@ -217,6 +217,7 @@
     <Content Include="testQueensAttackII\input06.txt" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="testArrayManipulation\" />
     <Folder Include="testBigSorting\" />
     <Folder Include="testFraudulentActivityNotifications\" />
     <Folder Include="testMaximumPalindromes\" />
