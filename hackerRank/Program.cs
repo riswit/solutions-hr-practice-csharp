@@ -385,9 +385,6 @@ namespace hackerRank
             //LilyHomework lilyHomework = new LilyHomework();
             //lilyHomework.Execute();
 
-            //HackerlandRadioTransmitters hackerlandRadioTransmitters = new HackerlandRadioTransmitters();
-            //hackerlandRadioTransmitters.Execute();
-
             //ConnectedCellsGrid connectedCellsGrid = new ConnectedCellsGrid();
             //connectedCellsGrid.Execute();
 
@@ -406,8 +403,11 @@ namespace hackerRank
             //MinimumSwaps2 minimumSwaps2 = new MinimumSwaps2();
             //minimumSwaps2.Execute();
 
-            ArrayManipulation arrayManipulation = new ArrayManipulation();
-            arrayManipulation.Execute();
+            //ArrayManipulation arrayManipulation = new ArrayManipulation();
+            //arrayManipulation.Execute();
+
+            HackerlandRadioTransmitters hackerlandRadioTransmitters = new HackerlandRadioTransmitters();
+            hackerlandRadioTransmitters.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
