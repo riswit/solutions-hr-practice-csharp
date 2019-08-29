@@ -10,13 +10,13 @@ namespace hackerRank
     {
         public void Execute()
         {
-            int k = 2;
-            int[] x = { 7, 2, 4, 6, 5, 9, 12, 11, 100 };
-            int resExp = 3;
-
             //int k = 2;
-            //int[] x = { 9, 5, 4, 2, 6, 15, 12 };
-            //int resExp = 4;
+            //int[] x = { 7, 2, 4, 6, 5, 9, 12, 11 };
+            //int resExp = 3;
+
+            int k = 2;
+            int[] x = { 9, 5, 4, 2, 6, 15, 12 };
+            int resExp = 4;
 
             //int k = 1;
             //int[] x = { 1, 2, 3, 4, 5 };
@@ -42,49 +42,84 @@ namespace hackerRank
         static int hackerlandRadioTransmitters(int[] x, int k)
         {
             int res = 0;
-            int c = 0;
 
-            int p = (k * 2) + 1;
-            int max = x.Max();
-            long i = 1;
-            int[] arr = new int[max + 1];
+            bool[] arrAntenna = new bool[x.Length];
+            int lastElem = 0;
+            int covL = 0;
+            int covR = 0;
 
-            for (i = 1; i <= max; i++)
+            x = x.OrderBy(e => e).ToArray();
+            int max = x[x.Length - 1];
+            int min = x[0];
+            int[] arrHouse = new int[max + 1];
+            bool[] arrP = new bool[max + 1];
+
+            for (int i = 0; i < x.Length; i++)
             {
-                if (c == k && res == 0)
+                //arrHouse[x[i]] = i + 1;
+                arrP[x[i]] = true;
+            }
+
+            int h = x[0];
+            int c = 0;
+            int dL = 0;
+            int dR = 0;
+            int a = 0;
+
+            while (c < x.Length)
+            {
+                for (int j = c + 1; j < x.Length; j++)
                 {
-                    arr[i - 1] = 1;
-                    c = 1;
-                    res += 1;
-                }
-                else
-                {
-                    if (c == p)
+                    dL = x[j] - x[c];
+                    if (dL < k)
                     {
-                        arr[i - 1] = 1;
-                        c = 1;
+                        if (j == x.Length - 1)
+                        {
+                            res += 1;
+                            c = x.Length;
+                            break;
+                        }
+                        continue;
+                    }
+                    if (dL > k)
+                    {
+                        c = j - 1;
+                        arrHouse[x[j - 1]] = 1;
                     }
                     else
                     {
-                        c += 1;
+                        c = j;
+                        arrHouse[x[j]] = 1;
                     }
-                }
-            }
 
-            if (c <= p && c > k)
-            {
-                arr[max] = 1;
-            }
-
-            res = 0;
-
-            for (int j = 0; j < arr.Length; j++)
-            {
-                if (arr[j] == 1)
-                {
                     res += 1;
+                    a = c;
+
+                    for (int j2 = x[c] + 1; j2 <= max; j2++)
+                    {
+                        if (arrP[j2])
+                        {
+                            c += 1;
+                        }
+                        dR = j2 - x[a];
+                        if (dR > k)
+                        {
+                            break;
+                        }
+                    }
+
+                    break;
                 }
+
             }
+
+            //for (int j = 0; j < arrAntenna.Length; j++)
+            //{
+            //    if (arrAntenna[j])
+            //    {
+            //        res += 1;
+            //    }
+            //}
 
             return res;
         }
