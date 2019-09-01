@@ -47,28 +47,15 @@ namespace hackerRank
             }
             int res = 0;
 
-            bool[] arrAntenna = new bool[x.Length];
-            int lastElem = 0;
-            int covL = 0;
-            int covR = 0;
-
             x = x.OrderBy(e => e).ToArray();
             int max = x[x.Length - 1];
             int min = x[0];
             int[] arrHouse = new int[max + 1];
             bool[] arrP = new bool[max + 1];
 
-            for (int i = 0; i < x.Length; i++)
-            {
-                //arrHouse[x[i]] = i + 1;
-                arrP[x[i]] = true;
-            }
-
             int h = x[0];
             int c = 0;
             int dL = 0;
-            int dR = 0;
-            int a = 0;
 
             while (c < x.Length)
             {
@@ -97,7 +84,6 @@ namespace hackerRank
 
                     arrHouse[x[c]] = 1;
                     res += 1;
-                    a = c;
 
                     if (c + 1 >= x.Length)
                     {

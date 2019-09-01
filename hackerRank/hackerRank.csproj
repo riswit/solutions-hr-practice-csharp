@@ -116,6 +116,7 @@
     <Compile Include="GameOfThronesI.cs" />
     <Compile Include="Gemstones.cs" />
     <Compile Include="GradingStudents.cs" />
+    <Compile Include="GridlandMetro.cs" />
     <Compile Include="HackerlandRadioTransmitters.cs" />
     <Compile Include="HackerRankString.cs" />
     <Compile Include="HalloweenSale.cs" />
@@ -220,6 +221,7 @@
     <Folder Include="testArrayManipulation\" />
     <Folder Include="testBigSorting\" />
     <Folder Include="testFraudulentActivityNotifications\" />
+    <Folder Include="testGridlandMetro\" />
     <Folder Include="testMaximumPalindromes\" />
     <Folder Include="testTheFullCountingSort\" />
     <Folder Include="testTHL\" />

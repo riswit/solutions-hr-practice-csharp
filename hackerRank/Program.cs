@@ -406,8 +406,11 @@ namespace hackerRank
             //ArrayManipulation arrayManipulation = new ArrayManipulation();
             //arrayManipulation.Execute();
 
-            HackerlandRadioTransmitters hackerlandRadioTransmitters = new HackerlandRadioTransmitters();
-            hackerlandRadioTransmitters.Execute();
+            //HackerlandRadioTransmitters hackerlandRadioTransmitters = new HackerlandRadioTransmitters();
+            //hackerlandRadioTransmitters.Execute();
+
+            GridlandMetro gridlandMetro = new GridlandMetro();
+            gridlandMetro.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
