@@ -90,7 +90,7 @@ namespace hackerRank
             long cc2 = 0;
             Dictionary<long, List<long[]>> t = new Dictionary<long, List<long[]>>();
             Dictionary<long, long> tSucc = new Dictionary<long, long>();
-            Dictionary<long, List<long[]>> lampposts = new Dictionary<long, List<long[]>>();
+            //Dictionary<long, List<long[]>> lampposts = new Dictionary<long, List<long[]>>();
             Dictionary<long, long> lamppostsTot = new Dictionary<long, long>();
             Dictionary<long, bool> tFreeUp = new Dictionary<long, bool>();
             Dictionary<long, bool> tFreeBottom = new Dictionary<long, bool>();
@@ -99,7 +99,8 @@ namespace hackerRank
             long[] l0 = null;
             List<long[]> l1 = null;
             List<long[]> lUp = null;
-            List<long[]> list1 = new List<long[]>();
+            //List<long[]> list1 = new List<long[]>();
+            List<long[]> listT;
             List<long[]> listFree = new List<long[]>();
             long tot = 0;
             long maxR = track.Max(e => e[0]);
@@ -107,12 +108,14 @@ namespace hackerRank
             bool upFree = false;
             bool bottomFree = false;
             long rPrev = 0;
-            long min = 0;
-            long max = 0;
+            long minC = 0;
+            long maxC = 0;
             long lim1 = 0;
             long lim2 = 0;
             int count = 0;
             int count2 = 0;
+            bool fOver = false;
+            int ind = 0;
 
             long[][] t1 = track.OrderBy(e => e[0]).ToArray();
             
@@ -130,11 +133,11 @@ namespace hackerRank
 
                 if (l1 == null)
                 {
-                    list1 = new List<long[]>();
-                    list1.Add(l0);
-                    t.Add(r, list1);
-                    //tTot.Add(r, tot);
-                    lampposts.Add(r, new List<long[]>());
+                    l1 = new List<long[]>();
+                    l1.Add(l0);
+                    t.Add(r, l1);
+
+                    //lampposts.Add(r, new List<long[]>());
                     lamppostsTot.Add(r, 0);
                     if (rPrev == 0)
                     {
@@ -161,8 +164,44 @@ namespace hackerRank
                 }
                 else
                 {
-                    list1.Add(l0);
-                    t[r] = list1;
+                    fOver = false;
+                    listT = new List<long[]>(t[r].OrderBy(x => x[0]));
+                    ind = 0;
+                    foreach (long[] a in listT)
+                    {
+                        if (!(c1 > a[1] + 1 || c2 < a[0] - 1))
+                        {
+                            if (c1 < a[0])
+                            {
+                                minC = c1;
+                            }
+                            else
+                            {
+                                minC = a[0];
+                            }
+                            if (c2 > a[1])
+                            {
+                                maxC = c2;
+                            }
+                            else
+                            {
+                                maxC = a[1];
+                            }
+                            fOver = true;
+                            break;
+                        }
+                        ind += 1;
+                    }
+                    if (fOver)
+                    {
+                        l1[ind][0] = minC;
+                        l1[ind][1] = maxC;
+                    }
+                    else
+                    {
+                        l1.Add(l0);
+                    }
+                    t[r] = l1;
                 }
 
                 if (r != rPrev) { rPrev = r; }
@@ -175,8 +214,8 @@ namespace hackerRank
             {
                 l1 = row.Value.OrderBy(e => e[0]).ToList();
                 count = l1.Count();
-                min = l1[0][0];
-                max = l1[count - 1][1];
+                //minC = l1[0][0];
+                //maxC = l1[count - 1][1];
                 upFree = tFreeUp[row.Key];
                 bottomFree = tFreeBottom[row.Key];
 
@@ -189,27 +228,23 @@ namespace hackerRank
 
                     if (upFree)
                     {
-                        lampposts[row.Key].Add(new long[3] { row.Key - 1, lim1, lim2 });
+                        //lampposts[row.Key].Add(new long[3] { row.Key - 1, lim1, lim2 });
                         lamppostsTot[row.Key] += (lim2 - lim1 + 1);
                     }
-                    else
-                    {
-                        if (row.Key > 1)
-                        {
-                            lUp = t[row.Key - 1];
-                            count2 = lUp.Count();
-                            for (int j = 0; j < count2; j++)
-                            {
-                                cc1 = lUp[i][0];
-                                cc2 = lUp[i][1];
 
-                            }
-                        }
+                    lUp = t[row.Key - 1];
+                    count2 = lUp.Count();
+                    for (int j = 0; j < count2; j++)
+                    {
+                        cc1 = lUp[i][0];
+                        cc2 = lUp[i][1];
+
+
                     }
 
                     if (bottomFree)
                     {
-                        lampposts[row.Key].Add(new long[3] { row.Key +1,  lim1, lim2 });
+                        //lampposts[row.Key].Add(new long[3] { row.Key +1,  lim1, lim2 });
                         lamppostsTot[row.Key] += (lim2 - lim1 + 1);
                         if (c1 > 1)
                         {
