@@ -79,7 +79,7 @@ namespace hackerRank
         {
             long res = 0;
 
-            if (k == 0) { return 0; }
+            if (k == 0) { return n * m; }
 
             long[] arrT = new long[n + 1];
 
@@ -90,16 +90,14 @@ namespace hackerRank
             long cc2 = 0;
             Dictionary<long, List<long[]>> t = new Dictionary<long, List<long[]>>();
             Dictionary<long, long> tSucc = new Dictionary<long, long>();
-            //Dictionary<long, List<long[]>> lampposts = new Dictionary<long, List<long[]>>();
             Dictionary<long, long> lamppostsTot = new Dictionary<long, long>();
             Dictionary<long, bool> tFreeUp = new Dictionary<long, bool>();
             Dictionary<long, bool> tFreeBottom = new Dictionary<long, bool>();
-            //Dictionary<long, long> tTot = new Dictionary<long, long>();
 
             long[] l0 = null;
             List<long[]> l1 = null;
             List<long[]> lUp = null;
-            //List<long[]> list1 = new List<long[]>();
+            List<long[]> lBottom = null;
             List<long[]> listT;
             List<long[]> listFree = new List<long[]>();
             long tot = 0;
@@ -112,10 +110,15 @@ namespace hackerRank
             long maxC = 0;
             long lim1 = 0;
             long lim2 = 0;
+            long lim1Prev = 0;
+            long lim2Prev = 0;
             int count = 0;
             int count2 = 0;
             bool fOver = false;
             int ind = 0;
+            long maxT = 0;
+            long maxTDiff = 0;
+            long nTUp = 0;
 
             long[][] t1 = track.OrderBy(e => e[0]).ToArray();
             
@@ -137,7 +140,6 @@ namespace hackerRank
                     l1.Add(l0);
                     t.Add(r, l1);
 
-                    //lampposts.Add(r, new List<long[]>());
                     lamppostsTot.Add(r, 0);
                     if (rPrev == 0)
                     {
@@ -145,7 +147,7 @@ namespace hackerRank
                     }
                     else
                     {
-                        if (r > rPrev + 1)
+                        if (r > rPrev + 2)
                         {
                             tFreeUp.Add(r, true);
                             tFreeBottom.Add(rPrev, true);
@@ -171,22 +173,8 @@ namespace hackerRank
                     {
                         if (!(c1 > a[1] + 1 || c2 < a[0] - 1))
                         {
-                            if (c1 < a[0])
-                            {
-                                minC = c1;
-                            }
-                            else
-                            {
-                                minC = a[0];
-                            }
-                            if (c2 > a[1])
-                            {
-                                maxC = c2;
-                            }
-                            else
-                            {
-                                maxC = a[1];
-                            }
+                            if (c1 < a[0]) { minC = c1; } else { minC = a[0]; }
+                            if (c2 > a[1]) { maxC = c2; } else { maxC = a[1]; }
                             fOver = true;
                             break;
                         }
@@ -209,15 +197,16 @@ namespace hackerRank
             }
 
             nRow = 0;
+            rPrev = 0;
 
             foreach (KeyValuePair<long, List<long[]>> row in t)
             {
                 l1 = row.Value.OrderBy(e => e[0]).ToList();
                 count = l1.Count();
-                //minC = l1[0][0];
-                //maxC = l1[count - 1][1];
                 upFree = tFreeUp[row.Key];
                 bottomFree = tFreeBottom[row.Key];
+                lim1Prev = 0;
+                lim2Prev = 0;
 
                 for (int i = 0; i < count; i++)
                 {
@@ -225,36 +214,105 @@ namespace hackerRank
                     c2 = l1[i][1];
                     if (c1 > 1) { lim1 = c1 - 1; } else { lim1 = c1; }
                     if (c2 < m) { lim2 = c2 + 1; } else { lim2 = c2; }
+                    maxT = lim2 - lim1 + 1;
+                    maxTDiff = maxT;
 
+                    //side left and right
+                    if (lim1 > 1 && lim1 > lim2Prev + 1)
+                    {
+                        lamppostsTot[row.Key] += 1;
+                        if (lim2Prev > 0 && lim1 > lim2Prev + 2)
+                        {
+                            lamppostsTot[row.Key] += 1;
+                        }
+                    }
+                    if (lim2 < m && i == count - 1)
+                    {
+                        lamppostsTot[row.Key] += 1;
+                    }
+
+                    //up
                     if (upFree)
                     {
-                        //lampposts[row.Key].Add(new long[3] { row.Key - 1, lim1, lim2 });
-                        lamppostsTot[row.Key] += (lim2 - lim1 + 1);
+                        lamppostsTot[row.Key] += (maxT);
                     }
-
-                    lUp = t[row.Key - 1];
-                    count2 = lUp.Count();
-                    for (int j = 0; j < count2; j++)
+                    else
                     {
-                        cc1 = lUp[i][0];
-                        cc2 = lUp[i][1];
+                        if (row.Key > 1 && row.Key == rPrev + 1)
+                        {
+                            lUp = new List<long[]>(t[row.Key - 1]);
+                            count2 = lUp.Count();
+                            for (int j = 0; j < count2; j++)
+                            {
+                                cc1 = lUp[i][0] - 1;
+                                cc2 = lUp[i][1] + 1;
+                                if (cc1 >= c1 && cc1 <= c2)
+                                {
+                                    if (cc2 <= lim2) { nTUp = cc2 - cc1 + 1; } else { nTUp = lim2 - cc1 + 1; }
+                                    maxTDiff -= nTUp;
+                                }
 
-
+                            }
+                            if (maxTDiff > 0)
+                            {
+                                lamppostsTot[row.Key] += maxTDiff;
+                            }
+                        }
                     }
 
+                    //bottom
                     if (bottomFree)
                     {
-                        //lampposts[row.Key].Add(new long[3] { row.Key +1,  lim1, lim2 });
-                        lamppostsTot[row.Key] += (lim2 - lim1 + 1);
-                        if (c1 > 1)
+                        lamppostsTot[row.Key] += maxT;
+                    }
+                    else
+                    {
+                        if (nRow < t.Count - 1)
                         {
-                            lamppostsTot[row.Key] += 1;
-                        }
-                        if (c2 < m)
-                        {
-                            lamppostsTot[row.Key] += 1;
+                            if (row.Key + 1 == tSucc[row.Key])
+                            {
+                                lBottom = new List<long[]>(t[row.Key + 1]);
+                                count2 = lBottom.Count();
+                                for (int j = 0; j < count2; j++)
+                                {
+                                    cc1 = lBottom[i][0] - 1;
+                                    cc2 = lBottom[i][1] + 1;
+                                    if (cc1 >= c1 && cc1 <= c2)
+                                    {
+                                        if (cc2 <= lim2) { nTUp = cc2 - cc1 + 1; } else { nTUp = lim2 - cc1 + 1; }
+                                        maxTDiff -= nTUp;
+                                    }
+                                }
+
+                                if (nRow + 1 < t.Count - 1)
+                                {
+                                    if (row.Key + 2 == tSucc[row.Key + 1])
+                                    {
+                                        lBottom = new List<long[]>(t[row.Key + 2]);
+                                        count2 = lBottom.Count();
+                                        for (int j = 0; j < count2; j++)
+                                        {
+                                            cc1 = lBottom[i][0] - 1;
+                                            cc2 = lBottom[i][1] + 1;
+                                            if (cc1 >= c1 && cc1 <= c2)
+                                            {
+                                                if (cc2 <= lim2) { nTUp = cc2 - cc1 + 1; } else { nTUp = lim2 - cc1 + 1; }
+                                                maxTDiff -= nTUp;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                if (maxTDiff > 0)
+                                {
+                                    lamppostsTot[row.Key] += maxTDiff;
+                                }
+                            }
                         }
                     }
+
+                    if (lim1Prev != lim1) { lim1Prev = lim1; }
+                    if (lim2Prev != lim2) { lim2Prev = lim2; }
                 }
 
                 nRow += 1;
