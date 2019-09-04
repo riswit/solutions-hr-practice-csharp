@@ -78,6 +78,7 @@
     <Compile Include="BigSorting.cs" />
     <Compile Include="BirthdayChocolate.cs" />
     <Compile Include="BonAppetit.cs" />
+    <Compile Include="BreadthFirstSearch.cs" />
     <Compile Include="BreakingRecords.cs" />
     <Compile Include="CaesarCipher.cs" />
     <Compile Include="CamelCase.cs" />
