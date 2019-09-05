@@ -221,6 +221,7 @@
   <ItemGroup>
     <Folder Include="testArrayManipulation\" />
     <Folder Include="testBigSorting\" />
+    <Folder Include="testBreadthFirstSearch\" />
     <Folder Include="testFraudulentActivityNotifications\" />
     <Folder Include="testGridlandMetro\" />
     <Folder Include="testMaximumPalindromes\" />
