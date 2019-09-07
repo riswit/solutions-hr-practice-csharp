@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace hackerRank
 {
+    //https://www.hackerrank.com/challenges/count-luck/problem
     class CountLuck
     {
         public void Execute()

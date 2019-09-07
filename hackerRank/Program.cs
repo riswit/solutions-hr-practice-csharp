@@ -412,8 +412,11 @@ namespace hackerRank
             //GridlandMetro gridlandMetro = new GridlandMetro();
             //gridlandMetro.Execute();
 
-            BreadthFirstSearch breadthFirstSearch = new BreadthFirstSearch();
-            breadthFirstSearch.Execute();
+            //BreadthFirstSearch breadthFirstSearch = new BreadthFirstSearch();
+            //breadthFirstSearch.Execute();
+
+            SimilarPair similarPair = new SimilarPair();
+            similarPair.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

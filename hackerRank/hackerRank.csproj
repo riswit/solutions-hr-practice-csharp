@@ -173,6 +173,7 @@
     <Compile Include="SherlockAndArray.cs" />
     <Compile Include="SherlockSquares.cs" />
     <Compile Include="SherlockValidString.cs" />
+    <Compile Include="SimilarPair.cs" />
     <Compile Include="SockMerchant.cs" />
     <Compile Include="StrangeCounter.cs" />
     <Compile Include="StringConstruction.cs" />
@@ -225,6 +226,7 @@
     <Folder Include="testFraudulentActivityNotifications\" />
     <Folder Include="testGridlandMetro\" />
     <Folder Include="testMaximumPalindromes\" />
+    <Folder Include="testSimilarPair\" />
     <Folder Include="testTheFullCountingSort\" />
     <Folder Include="testTHL\" />
   </ItemGroup>

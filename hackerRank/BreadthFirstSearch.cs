@@ -177,7 +177,7 @@ namespace hackerRank
                     {
                         break;
                     }
-                    l0 = t[v]; //.OrderBy(x => x).ToList();
+                    l0 = t[v]; 
                     count = l0.Count();
 
                     for (int i = 0; i < count; i++)
