@@ -415,8 +415,11 @@ namespace hackerRank
             //BreadthFirstSearch breadthFirstSearch = new BreadthFirstSearch();
             //breadthFirstSearch.Execute();
 
-            SimilarPair similarPair = new SimilarPair();
-            similarPair.Execute();
+            //SimilarPair similarPair = new SimilarPair();
+            //similarPair.Execute();
+
+            JourneyMoon journeyMoon = new JourneyMoon();
+            journeyMoon.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 namespace hackerRank
 {
     //https://www.hackerrank.com/challenges/similarpair/problem
+    //keys: dfs
     class SimilarPair
     {
         public void Execute()

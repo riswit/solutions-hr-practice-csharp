@@ -129,6 +129,7 @@
     <Compile Include="InsertionSortPart2.cs" />
     <Compile Include="IntroductionNimGame.cs" />
     <Compile Include="IntroTutorialChallenges.cs" />
+    <Compile Include="JourneyMoon.cs" />
     <Compile Include="JumpingClouds.cs" />
     <Compile Include="JumpingOnTheClouds.cs" />
     <Compile Include="Kangaroo.cs" />
