@@ -418,8 +418,11 @@ namespace hackerRank
             //SimilarPair similarPair = new SimilarPair();
             //similarPair.Execute();
 
-            JourneyMoon journeyMoon = new JourneyMoon();
-            journeyMoon.Execute();
+            //JourneyMoon journeyMoon = new JourneyMoon();
+            //journeyMoon.Execute();
+
+            MinimumLoss minimumLoss = new MinimumLoss();
+            minimumLoss.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
