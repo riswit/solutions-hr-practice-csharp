@@ -421,8 +421,11 @@ namespace hackerRank
             //JourneyMoon journeyMoon = new JourneyMoon();
             //journeyMoon.Execute();
 
-            MinimumLoss minimumLoss = new MinimumLoss();
-            minimumLoss.Execute();
+            //MinimumLoss minimumLoss = new MinimumLoss();
+            //minimumLoss.Execute();
+
+            RedKnightShortestPath redKnightShortestPath = new RedKnightShortestPath();
+            redKnightShortestPath.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
