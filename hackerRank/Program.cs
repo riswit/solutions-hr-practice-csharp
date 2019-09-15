@@ -424,8 +424,11 @@ namespace hackerRank
             //MinimumLoss minimumLoss = new MinimumLoss();
             //minimumLoss.Execute();
 
-            RedKnightShortestPath redKnightShortestPath = new RedKnightShortestPath();
-            redKnightShortestPath.Execute();
+            //RedKnightShortestPath redKnightShortestPath = new RedKnightShortestPath();
+            //redKnightShortestPath.Execute();
+
+            EvenTree evenTree = new EvenTree();
+            evenTree.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

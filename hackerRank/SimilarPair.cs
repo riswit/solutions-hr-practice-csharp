@@ -92,17 +92,12 @@ namespace hackerRank
             int res = 0;
 
             Dictionary<int, List<int>> t = new Dictionary<int, List<int>>();
-            int v = 0;
-            int w = 0;
             List<int> l0 = null;
             int a = 0;
             int b = 0;
             int numT = 0;
 
             Dictionary<int, Dictionary<int, bool>> arrView = new Dictionary<int, Dictionary<int, bool>>();
-
-            //var e1 = edges.OrderBy(x => x[0]).ToArray();
-            //int lene1 = e1.Count();
 
             for (int i = 0; i < edges.Length; i++)
             {

@@ -105,6 +105,7 @@
     <Compile Include="EmasSupercomputer3.cs" />
     <Compile Include="Encryption.cs" />
     <Compile Include="EqualizeTheArray.cs" />
+    <Compile Include="EvenTree.cs" />
     <Compile Include="ExtraLongFactorials.cs" />
     <Compile Include="FairRations.cs" />
     <Compile Include="FindDigits.cs" />
