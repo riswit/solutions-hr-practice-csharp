@@ -427,8 +427,11 @@ namespace hackerRank
             //RedKnightShortestPath redKnightShortestPath = new RedKnightShortestPath();
             //redKnightShortestPath.Execute();
 
-            EvenTree evenTree = new EvenTree();
-            evenTree.Execute();
+            //EvenTree evenTree = new EvenTree();
+            //evenTree.Execute();
+
+            FrequencyQueries frequencyQueries = new FrequencyQueries();
+            frequencyQueries.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

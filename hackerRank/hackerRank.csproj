@@ -114,6 +114,7 @@
     <Compile Include="FlippingBits.cs" />
     <Compile Include="FormingMagicSquare.cs" />
     <Compile Include="FraudulentActivityNotifications.cs" />
+    <Compile Include="FrequencyQueries.cs" />
     <Compile Include="FunnyString.cs" />
     <Compile Include="GameOfThronesI.cs" />
     <Compile Include="Gemstones.cs" />
