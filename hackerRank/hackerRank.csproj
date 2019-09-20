@@ -124,6 +124,7 @@
     <Compile Include="HackerRankString.cs" />
     <Compile Include="HalloweenSale.cs" />
     <Compile Include="HappyLadybugs.cs" />
+    <Compile Include="HashTablesRansomNote.cs" />
     <Compile Include="HighestValuePalindrome.cs" />
     <Compile Include="IceCreamParlor.cs" />
     <Compile Include="InsertionSortAdvancedAnalysis.cs" />

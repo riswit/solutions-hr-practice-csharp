@@ -430,8 +430,11 @@ namespace hackerRank
             //EvenTree evenTree = new EvenTree();
             //evenTree.Execute();
 
-            FrequencyQueries frequencyQueries = new FrequencyQueries();
-            frequencyQueries.Execute();
+            //FrequencyQueries frequencyQueries = new FrequencyQueries();
+            //frequencyQueries.Execute();
+
+            HashTablesRansomNote hashTablesRansomNote = new HashTablesRansomNote();
+            hashTablesRansomNote.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
