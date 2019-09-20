@@ -229,6 +229,7 @@
     <Folder Include="testBigSorting\" />
     <Folder Include="testBreadthFirstSearch\" />
     <Folder Include="testFraudulentActivityNotifications\" />
+    <Folder Include="testFrequencyQueries\" />
     <Folder Include="testGridlandMetro\" />
     <Folder Include="testMaximumPalindromes\" />
     <Folder Include="testSimilarPair\" />
