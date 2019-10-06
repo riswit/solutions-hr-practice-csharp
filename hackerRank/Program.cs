@@ -433,8 +433,11 @@ namespace hackerRank
             //FrequencyQueries frequencyQueries = new FrequencyQueries();
             //frequencyQueries.Execute();
 
-            HashTablesRansomNote hashTablesRansomNote = new HashTablesRansomNote();
-            hashTablesRansomNote.Execute();
+            //HashTablesRansomNote hashTablesRansomNote = new HashTablesRansomNote();
+            //hashTablesRansomNote.Execute();
+
+            MarcCakewalk marcCakewalk = new MarcCakewalk();
+            marcCakewalk.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
