@@ -119,6 +119,7 @@
     <Compile Include="GameOfThronesI.cs" />
     <Compile Include="Gemstones.cs" />
     <Compile Include="GradingStudents.cs" />
+    <Compile Include="GridChallenge.cs" />
     <Compile Include="GridlandMetro.cs" />
     <Compile Include="HackerlandRadioTransmitters.cs" />
     <Compile Include="HackerRankString.cs" />

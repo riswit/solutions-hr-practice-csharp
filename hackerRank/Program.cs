@@ -436,8 +436,11 @@ namespace hackerRank
             //HashTablesRansomNote hashTablesRansomNote = new HashTablesRansomNote();
             //hashTablesRansomNote.Execute();
 
-            MarcCakewalk marcCakewalk = new MarcCakewalk();
-            marcCakewalk.Execute();
+            //MarcCakewalk marcCakewalk = new MarcCakewalk();
+            //marcCakewalk.Execute();
+
+            GridChallenge gridChallenge = new GridChallenge();
+            gridChallenge.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
