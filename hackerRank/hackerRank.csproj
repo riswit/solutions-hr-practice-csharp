@@ -155,6 +155,7 @@
     <Compile Include="MaximumPalindromes.cs" />
     <Compile Include="MaximumSubarraySum.cs" />
     <Compile Include="MigratoryBirds.cs" />
+    <Compile Include="MinimumAbsoluteDifference.cs" />
     <Compile Include="MinimumDistances.cs" />
     <Compile Include="MinimumLoss.cs" />
     <Compile Include="MinimumSwaps2.cs" />

@@ -451,8 +451,11 @@ namespace hackerRank
             //PermutingTwoArrays permutingTwoArrays = new PermutingTwoArrays();
             //permutingTwoArrays.Execute();
 
-            MarkToys markToys = new MarkToys();
-            markToys.Execute();
+            //MarkToys markToys = new MarkToys();
+            //markToys.Execute();
+
+            MinimumAbsoluteDifference minimumAbsoluteDifference = new MinimumAbsoluteDifference();
+            minimumAbsoluteDifference.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
