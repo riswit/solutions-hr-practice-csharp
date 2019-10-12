@@ -445,8 +445,11 @@ namespace hackerRank
             //BuildString buildString = new BuildString();
             //buildString.Execute();
 
-            JimOrders jimOrders = new JimOrders();
-            jimOrders.Execute();
+            //JimOrders jimOrders = new JimOrders();
+            //jimOrders.Execute();
+
+            PermutingTwoArrays permutingTwoArrays = new PermutingTwoArrays();
+            permutingTwoArrays.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

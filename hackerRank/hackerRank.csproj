@@ -166,6 +166,7 @@
     <Compile Include="Pairs.cs" />
     <Compile Include="PalindromeIndex.cs" />
     <Compile Include="Pangrams.cs" />
+    <Compile Include="PermutingTwoArrays.cs" />
     <Compile Include="PickingNumbers.cs" />
     <Compile Include="PokerNim.cs" />
     <Compile Include="Program.cs" />
