@@ -448,8 +448,11 @@ namespace hackerRank
             //JimOrders jimOrders = new JimOrders();
             //jimOrders.Execute();
 
-            PermutingTwoArrays permutingTwoArrays = new PermutingTwoArrays();
-            permutingTwoArrays.Execute();
+            //PermutingTwoArrays permutingTwoArrays = new PermutingTwoArrays();
+            //permutingTwoArrays.Execute();
+
+            MarkToys markToys = new MarkToys();
+            markToys.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

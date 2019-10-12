@@ -148,6 +148,7 @@
     <Compile Include="MakingAnagrams.cs" />
     <Compile Include="ManasaStones.cs" />
     <Compile Include="MarcCakewalk.cs" />
+    <Compile Include="MarkToys.cs" />
     <Compile Include="MarsExploration.cs" />
     <Compile Include="MatrixLayerRotation.cs" />
     <Compile Include="MaximizingXOR.cs" />
