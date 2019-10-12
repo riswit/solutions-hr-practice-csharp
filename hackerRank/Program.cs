@@ -439,8 +439,11 @@ namespace hackerRank
             //MarcCakewalk marcCakewalk = new MarcCakewalk();
             //marcCakewalk.Execute();
 
-            GridChallenge gridChallenge = new GridChallenge();
-            gridChallenge.Execute();
+            //GridChallenge gridChallenge = new GridChallenge();
+            //gridChallenge.Execute();
+
+            BuildString buildString = new BuildString();
+            buildString.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
