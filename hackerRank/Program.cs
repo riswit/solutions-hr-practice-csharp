@@ -457,8 +457,11 @@ namespace hackerRank
             //MinimumAbsoluteDifference minimumAbsoluteDifference = new MinimumAbsoluteDifference();
             //minimumAbsoluteDifference.Execute();
 
-            PriyankaToys priyankaToys = new PriyankaToys();
-            priyankaToys.Execute();
+            //PriyankaToys priyankaToys = new PriyankaToys();
+            //priyankaToys.Execute();
+
+            SherlockBeast sherlockBeast = new SherlockBeast();
+            sherlockBeast.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();
