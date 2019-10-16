@@ -460,8 +460,11 @@ namespace hackerRank
             //PriyankaToys priyankaToys = new PriyankaToys();
             //priyankaToys.Execute();
 
-            SherlockBeast sherlockBeast = new SherlockBeast();
-            sherlockBeast.Execute();
+            LargestPermutation largestPermutation = new LargestPermutation();
+            largestPermutation.Execute();
+
+            //SherlockBeast sherlockBeast = new SherlockBeast();
+            //sherlockBeast.Execute();
 
             Console.WriteLine("Press any key to continue ...");
             Console.ReadKey();

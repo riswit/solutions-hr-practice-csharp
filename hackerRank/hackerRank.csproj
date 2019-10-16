@@ -139,6 +139,7 @@
     <Compile Include="JumpingClouds.cs" />
     <Compile Include="JumpingOnTheClouds.cs" />
     <Compile Include="Kangaroo.cs" />
+    <Compile Include="LargestPermutation.cs" />
     <Compile Include="LarrysArray.cs" />
     <Compile Include="LeftRotation.cs" />
     <Compile Include="LibraryFine.cs" />
