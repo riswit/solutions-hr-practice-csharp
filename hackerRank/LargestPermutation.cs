@@ -19,6 +19,7 @@ namespace hackerRank
             if (string.Join(" ", resExp) != string.Join(" ", result))
             {
                 Console.WriteLine("Errore - Expected: " + string.Join(" ", resExp) + " - now: " + string.Join(" ", result));
+                Console.WriteLine("Errore!!!");
             }
             else
             {
@@ -34,15 +35,34 @@ namespace hackerRank
             int[] res = arr.ToArray();
             for (int i = 0; i < arr.Length; i++)
             {
-                pos[od[i]] = i;
+                pos[arr[i]] = i;
+            }
+            int j = 0;
+            int temp = 0;
+            for (int i = 0; i < od.Length; i++)
+            {
+                if (od[i] > res[j])
+                {
+                    temp = res[j];
+                    res[j] = od[i];
+                    res[pos[od[i]]] = temp;
+                }
+                j += 1;
+                if (j == k)
+                {
+                    break;
+                }
             }
 
-            for (int j = 0; j < k; j++)
-            {
-                int first = arr[j];
-                res[j] = od[j];
-                res[pos[od[j]]] = first;
-            }
+            //for (int j = 0; j < k; j++)
+            //{
+            //    int first = res[j];
+            //    if (first < od[j])
+            //    {
+            //        res[j] = od[j];
+            //        res[pos[od[j]]] = first;
+            //    }
+            //}
 
             return res;
         }
