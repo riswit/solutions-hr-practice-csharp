@@ -109,6 +109,7 @@
     <Compile Include="EvenTree.cs" />
     <Compile Include="ExtraLongFactorials.cs" />
     <Compile Include="FairRations.cs" />
+    <Compile Include="FibonacciModified.cs" />
     <Compile Include="FindDigits.cs" />
     <Compile Include="FindMedian.cs" />
     <Compile Include="FlatlandSpaceStations.cs" />
