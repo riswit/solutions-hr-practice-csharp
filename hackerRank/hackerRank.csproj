@@ -193,6 +193,7 @@
     <Compile Include="SherlockValidString.cs" />
     <Compile Include="SimilarPair.cs" />
     <Compile Include="SockMerchant.cs" />
+    <Compile Include="SortingBubbleSort.cs" />
     <Compile Include="StrangeCounter.cs" />
     <Compile Include="StringConstruction.cs" />
     <Compile Include="StrongPassword.cs" />
